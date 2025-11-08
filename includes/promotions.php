@@ -125,28 +125,49 @@ function promotion_pdf_url($path)
         <div class="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
             <div class="space-y-4">
                 <p class="text-sm font-semibold uppercase tracking-[0.3em] text-accent">Offres spéciales</p>
-                <h2 class="text-3xl font-semibold tracking-tight text-white md:text-4xl">Promotions &amp; offres du moment</h2>
+                <div class="flex items-center gap-3">
+                    <h2 class="text-3xl font-semibold tracking-tight text-white md:text-4xl">Promotions &amp; offres du moment</h2>
+                </div>
             </div>
+            <!-- Arrow buttons placed to the right of the header on md+ screens to avoid overlapping the title -->
+            <div class="hidden md:flex items-center ml-8 gap-6">
+                <button id="promotions-prev-top" aria-label="Précédent" class="inline-flex items-center justify-center rounded-full bg-white text-slate-900 p-2 shadow-md border border-white/20 w-12 h-12 text-lg">
+                    ‹
+                </button>
+                <button id="promotions-next-top" aria-label="Suivant" class="inline-flex items-center justify-center rounded-full bg-white text-slate-900 p-2 shadow-md border border-white/20 w-12 h-12 text-lg">
+                    ›
+                </button>
+            </div>
+        </div>
         </div>
 
         <style>
-            /* Carousel: show up to 3 items per row on desktop, responsive single item on small screens */
+            /* Carousel: responsive layout and scrollbar hiding
+               - .promotions-wrap centers the carousel
+               - #promotions-carousel will be paged via JS (overflow hidden)
+            */
             .promotions-wrap{position:relative;max-width:1300px;margin-left:auto;margin-right:auto}
-            #promotions-carousel{display:flex;gap:2rem;overflow-x:auto;scroll-behavior:smooth;padding-bottom:1rem;-webkit-overflow-scrolling:touch}
-            /* Calculate 3 items visible accounting for gaps */
-            #promotions-carousel article{flex:0 0 calc((100% - 4rem) / 3);min-width:280px}
-            #promotions-prev,#promotions-next{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,0,0,0.6);color:#ffd24d;border:none;padding:0.5rem 0.75rem;border-radius:999px;cursor:pointer;z-index:10}
-            #promotions-prev{left:-1.5rem}
-            #promotions-next{right:-1.5rem}
-            /* On narrower screens show one item and hide arrows */
-            @media (max-width:900px){#promotions-carousel article{flex:0 0 80%;min-width:260px} #promotions-prev,#promotions-next{display:none}}
+            /* Allow native horizontal scrolling (show scrollbar) so users can drag/scroll the row */
+            #promotions-carousel{display:flex;gap:2rem;overflow-x:auto;scroll-behavior:smooth;padding-bottom:1rem;touch-action:pan-y;-webkit-overflow-scrolling:touch}
+            /* Desktop large: show 3 items per view (two gaps = 4rem) */
+            #promotions-carousel article{flex:0 0 calc((100% - 4rem) / 3);min-width:220px}
+            /* Medium screens: show 2 items */
+            @media (max-width:1199px){#promotions-carousel article{flex:0 0 calc((100% - 2rem) / 2);min-width:260px}}
+
+            /* Top arrow buttons (next/prev) placed beside the title — larger and boxed for better discoverability */
+            #promotions-prev-top, #promotions-next-top{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;background:#ffffff;color:#0f172a;border:1px solid rgba(255,255,255,0.15);box-shadow:0 6px 18px rgba(2,6,23,0.5);cursor:pointer}
+            #promotions-prev-top{width:48px;height:48px;font-size:1.1rem;padding:0}
+            #promotions-next-top{width:48px;height:48px;font-size:1.1rem;padding:0}
+
+
+            /* On narrower screens show one item and hide arrows (mobile touch swipes are fine) */
+            @media (max-width:900px){#promotions-carousel article{flex:0 0 100%;min-width:260px} #promotions-prev-top,#promotions-next-top{display:none}}
         </style>
 
         <div class="mt-14 promotions-wrap">
             <?php if (empty($promotions)): ?>
                 <div class="text-white/70">Aucune promotion disponible pour le moment.</div>
             <?php else: ?>
-                <button id="promotions-prev" aria-label="Previous">‹</button>
                 <div id="promotions-carousel">
                 <?php foreach ($promotions as $p):
                     // optional: skip expired promotions
@@ -219,7 +240,10 @@ function promotion_pdf_url($path)
                         ?>
                         <?php if (!empty($pdfUrl)): ?>
                             <div class="mt-3">
-                                <a class="inline-block rounded bg-white/5 px-3 py-2 text-sm font-semibold text-accent hover:bg-white/10" href="<?= htmlspecialchars($pdfUrl) ?>" rel="noopener noreferrer" target="_blank">Télécharge le catalogue</a>
+                                <a class="inline-block rounded bg-white/5 px-3 py-2 text-sm font-semibold text-accent hover:bg-white/10" href="<?= htmlspecialchars($pdfUrl) ?>" rel="noopener noreferrer" target="_blank">
+                                    Télécharger le catalogue
+                                    <span aria-hidden="true" class="ml-2">📥</span>
+                                </a>
                             </div>
                         <?php endif; ?>
                         <?php if ($validLabel): ?>
@@ -229,50 +253,152 @@ function promotion_pdf_url($path)
                 </article>
                 <?php endforeach; ?>
                 </div>
-                <button id="promotions-next" aria-label="Next">›</button>
+                
             <?php endif; ?>
         </div>
+                </div>
 
         <script>
             (function(){
                 var container = document.getElementById('promotions-carousel');
-                var btnPrev = document.getElementById('promotions-prev');
-                var btnNext = document.getElementById('promotions-next');
+                var btnPrevTop = document.getElementById('promotions-prev-top');
+                var btnNextTop = document.getElementById('promotions-next-top');
                 if (!container) return;
 
-                function scrollByPage(dir){
-                    // Prefer scrolling by one card width when possible
-                    var card = container.querySelector('article');
-                    var gap = parseInt(getComputedStyle(container).gap) || 32;
-                    var scrollAmount = container.clientWidth * 0.9; // fallback
-                    if (card) {
-                        var w = card.getBoundingClientRect().width;
-                        scrollAmount = Math.round(w + gap);
+                var cards = Array.prototype.slice.call(container.querySelectorAll('article'));
+                var itemCount = cards.length;
+
+                // determine visible slots responsively: 1 on small screens, 2 on desktop
+                function computeVisibleSlots() {
+                    var w = window.innerWidth;
+                    if (w <= 900) return 1;
+                    if (w <= 1199) return 2;
+                    return 3;
+                }
+                var visibleSlots = computeVisibleSlots();
+                var pages = Math.max(1, Math.ceil(itemCount / visibleSlots));
+                var currentPage = 0;
+
+                // hide controls if not enough items
+                function maybeHideControls() {
+                    if (itemCount <= visibleSlots) {
+                        [btnPrevTop, btnNextTop].forEach(function(b){ if (b) b.style.display = 'none'; });
+                        return true;
                     }
-                    container.scrollBy({left: dir * scrollAmount, behavior: 'smooth'});
+                    [btnPrevTop, btnNextTop].forEach(function(b){ if (b) b.style.display = ''; });
+                    return false;
+                }
+                if (maybeHideControls()) return;
+
+                // pagination dots removed per user request
+
+                function goToPage(pageIndex) {
+                    // recalc sizes
+                    visibleSlots = computeVisibleSlots();
+                    pages = Math.max(1, Math.ceil(itemCount / visibleSlots));
+                    pageIndex = Math.max(0, Math.min(pages - 1, pageIndex));
+
+                    var gap = parseFloat(getComputedStyle(container).gap) || 32;
+                    var card = cards[0];
+                    var cardW = card ? card.getBoundingClientRect().width : container.clientWidth;
+                    var pageWidth = Math.round((cardW * visibleSlots) + (gap * (visibleSlots - 1)));
+                    var left = Math.round(pageIndex * pageWidth);
+                    // use smooth scroll where supported
+                    container.scrollTo({ left: left, behavior: 'smooth' });
+                    currentPage = pageIndex;
                 }
 
-                var itemCount = container.querySelectorAll('article').length;
-                var visibleSlots = 3; // number of cards visible before enabling scroll/autoplay
+                function nextPage(){ goToPage((currentPage + 1) % pages); }
+                function prevPage(){ goToPage((currentPage - 1 + pages) % pages); }
 
-                if (itemCount <= visibleSlots) {
-                    // Not enough items: hide controls and don't autoplay
-                    if (btnPrev) btnPrev.style.display = 'none';
-                    if (btnNext) btnNext.style.display = 'none';
-                } else {
-                    if (btnPrev) btnPrev.addEventListener('click', function(e){ e.preventDefault(); scrollByPage(-1); });
-                    if (btnNext) btnNext.addEventListener('click', function(e){ e.preventDefault(); scrollByPage(1); });
+                // Scroll by N cards (n can be negative). Uses card width + gap so each click moves exactly one card.
+                function scrollByCards(n) {
+                    var gap = parseFloat(getComputedStyle(container).gap) || 32;
+                    var card = cards[0];
+                    if (!card) return;
+                    var cardW = card.getBoundingClientRect().width;
+                    var delta = Math.round((cardW + gap) * n);
+                    var maxLeft = Math.max(0, container.scrollWidth - container.clientWidth);
+                    var target = Math.round(container.scrollLeft + delta);
+                    if (target < 0) target = 0;
+                    if (target > maxLeft) target = maxLeft;
+                    container.scrollTo({ left: target, behavior: 'smooth' });
+                    // update currentPage approximation (optional)
+                    var pageWidth = Math.round((cardW * visibleSlots) + (gap * (visibleSlots - 1)));
+                    currentPage = Math.max(0, Math.min(pages - 1, Math.round(target / (pageWidth || 1))));
+                }
 
-                    // Autoplay: advance every 4s; pause on hover
-                    var autoplay = true;
-                    var intervalMs = 4000;
-                    var timer = null;
-                    function startTimer(){ if (!autoplay) return; timer = setInterval(function(){ scrollByPage(1); }, intervalMs); }
-                    function stopTimer(){ if (timer) { clearInterval(timer); timer = null; } }
-                    container.addEventListener('mouseenter', stopTimer);
-                    container.addEventListener('mouseleave', startTimer);
+                // wire top buttons only
+                var prevButtons = [btnPrevTop].filter(Boolean);
+                var nextButtons = [btnNextTop].filter(Boolean);
+                prevButtons.forEach(function(b){ b.addEventListener('click', function(e){ e.preventDefault(); scrollByCards(-1); startTimer(); }); });
+                nextButtons.forEach(function(b){ b.addEventListener('click', function(e){ e.preventDefault(); scrollByCards(1); startTimer(); }); });
+
+                // keyboard navigation for accessibility
+                container.addEventListener('keydown', function(e){
+                    if (e.key === 'ArrowRight') { scrollByCards(1); startTimer(); }
+                    if (e.key === 'ArrowLeft') { scrollByCards(-1); startTimer(); }
+                });
+
+                // autoplay
+                var intervalMs = 4000;
+                var autoplay = true;
+                var timer = null;
+                function startTimer(){ if (!autoplay) return; stopTimer(); timer = setInterval(nextPage, intervalMs); }
+                function stopTimer(){ if (timer) { clearInterval(timer); timer = null; } }
+
+                // pause on hover/focus
+                container.addEventListener('mouseenter', stopTimer);
+                container.addEventListener('mouseleave', startTimer);
+
+                // Recompute pages/dots after images have loaded to avoid sizing mismatch
+                function afterImagesLoaded(cb) {
+                    var imgs = Array.prototype.slice.call(container.querySelectorAll('img'));
+                    if (!imgs.length) return cb();
+                    var remaining = imgs.length;
+                    var done = function(){ remaining--; if (remaining <= 0) cb(); };
+                    imgs.forEach(function(img){
+                        if (img.complete) return done();
+                        img.addEventListener('load', done);
+                        img.addEventListener('error', done);
+                    });
+                    // safety timeout
+                    setTimeout(cb, 1200);
+                }
+
+                // resize handling to keep page alignment
+                var resizeTimeout = null;
+                window.addEventListener('resize', function(){
+                    clearTimeout(resizeTimeout);
+                    resizeTimeout = setTimeout(function(){
+                        // recompute pages and rebuild dots if breakpoint changed
+                        var oldVisible = visibleSlots;
+                        visibleSlots = computeVisibleSlots();
+                        pages = Math.max(1, Math.ceil(itemCount / visibleSlots));
+                        if (oldVisible !== visibleSlots) {
+                            // clamp currentPage
+                            currentPage = Math.max(0, Math.min(currentPage, pages - 1));
+                        }
+                        goToPage(currentPage);
+                    }, 150);
+                });
+
+                // initial setup after images loaded (so card sizes are stable)
+                afterImagesLoaded(function(){
+                    // refresh list of cards and counts (in case DOM changed while loading)
+                    cards = Array.prototype.slice.call(container.querySelectorAll('article'));
+                    itemCount = cards.length;
+                    visibleSlots = computeVisibleSlots();
+                    pages = Math.max(1, Math.ceil(itemCount / visibleSlots));
+
+                    if (maybeHideControls()) return;
+                    // ensure container is focusable for keyboard control
+                    if (!container.getAttribute('tabindex')) container.setAttribute('tabindex','0');
+
+                    // align to current page (0) and start autoplay
+                    goToPage(currentPage);
                     startTimer();
-                }
+                });
             })();
         </script>
     </div>

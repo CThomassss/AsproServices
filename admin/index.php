@@ -43,13 +43,17 @@ if (!$cssFile) {
   <main class="min-h-screen">
     <div class="admin-wrapper">
       <header class="admin-header">
-        <div>
-          <h1 class="admin-title">Gestion des promotions</h1>
-          <p class="admin-sub">Ajoutez, mettez à jour ou supprimez les offres mises en avant sur la page d'accueil.</p>
-        </div>
-        <div class="admin-user">
-          <div class="connected-as text-sm">Connecté en tant que <strong class="username"><?= htmlspecialchars($_SESSION['user']['username']) ?></strong></div>
-          <a href="logout.php" class="logout-pill">Se déconnecter</a>
+  <h1 class="admin-title" style="margin-bottom:0;">Gestion des promotions</h1>
+
+        <!-- Second row: subtitle on the left, user info on the right (aligned on the same line) -->
+  <div class="admin-header-row" style="display:flex;align-items:center;gap:32px;margin-top:6px;width:100%;">
+          <!-- subtitle should be allowed to shrink/grow while user block stays pinned right -->
+          <p class="admin-sub" style="margin:0;flex:1;min-width:0;">Ajoutez, mettez à jour ou supprimez les offres mises en avant sur la page d'accueil.</p>
+
+          <div class="admin-user" style="white-space:nowrap;margin-left:auto;display:flex;align-items:center;gap:12px;">
+            <div class="connected-as text-sm" style="margin:0;">Connecté en tant que <strong class="username"><?= htmlspecialchars($_SESSION['user']['username']) ?></strong></div>
+            <a href="logout.php" class="logout-pill">Se déconnecter</a>
+          </div>
         </div>
       </header>
 
@@ -76,7 +80,12 @@ if (!$cssFile) {
             </div>
             <div class="form-row">
               <label class="text-sm">Avantage / remise
-                <input name="discount" required placeholder="Ex : -20%" class="input" />
+                <!-- Use a numeric input to prevent arbitrary text. We'll format to percent on submit -->
+                <input id="discount-input" name="discount_raw" type="number" inputmode="numeric" min="0" max="100" step="1" required placeholder="Ex : 20" class="input" aria-describedby="discount-help" />
+                <!-- Hidden field that will contain the normalized value sent to the server (e.g. "-20%") -->
+                <input type="hidden" name="discount" id="discount-hidden" />
+                <div id="discount-help" class="text-xs text-secondary mt-1">Entrez un nombre entre 0 et 100. Le symbole % et le signe <code>-</code> seront ajoutés automatiquement.</div>
+                <div id="discount-error" class="text-xs text-red-600 mt-1" style="display:none;">Veuillez saisir un nombre entier entre 0 et 100.</div>
               </label>
             </div>
             <div class="form-row" style="grid-column:1 / -1">
@@ -230,6 +239,50 @@ if (!$cssFile) {
       var btnReject = document.getElementById('confirm-reject');
       var activeForm = null;
       var activeAction = null; // 'delete-promo' | 'delete-user' | 'activate-user'
+
+      // Discount input: client-side validation and normalization
+      var promoForm = document.querySelector('form[action="add_promotion.php"]');
+      var discountInput = document.getElementById('discount-input');
+      var discountHidden = document.getElementById('discount-hidden');
+      var discountError = document.getElementById('discount-error');
+      if (discountInput) {
+        // simple live validation UI
+        discountInput.addEventListener('input', function(){
+          if (!discountError) return;
+          var v = this.value;
+          if (v === '') { discountError.style.display = 'none'; return; }
+          var n = Number(v);
+          if (!Number.isFinite(n) || n < 0 || n > 100) {
+            discountError.textContent = 'Veuillez saisir un nombre entre 0 et 100.';
+            discountError.style.display = 'block';
+          } else {
+            discountError.style.display = 'none';
+          }
+        });
+      }
+      if (promoForm) {
+        promoForm.addEventListener('submit', function(e){
+          if (!discountInput || !discountHidden) return; // no-op
+          var raw = discountInput.value;
+          if (raw === '') {
+            discountError.textContent = 'La remise est requise.';
+            discountError.style.display = 'block';
+            e.preventDefault();
+            return;
+          }
+          var n = Math.round(Number(raw));
+          if (!Number.isFinite(n) || n < 0 || n > 100) {
+            discountError.textContent = 'La remise doit être un nombre entre 0 et 100.';
+            discountError.style.display = 'block';
+            e.preventDefault();
+            return;
+          }
+          // normalized value: '0%' or '-NN%'
+          var normalized = (n === 0) ? '0%' : ('-' + n + '%');
+          discountHidden.value = normalized;
+          // allow submit; visible number input remains untouched
+        });
+      }
 
       document.addEventListener('click', function(e){
         // promotion delete buttons (existing)

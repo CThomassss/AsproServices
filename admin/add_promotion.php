@@ -24,6 +24,32 @@ if ($title === '' || $discount === '' || $description === '' || $validUntil === 
     exit;
 }
 
+// Normalize and validate discount: accept values like "20", "-20", "20%", "-20%" and
+// ensure the numeric part is between 0 and 100. We store discounts as "-NN%" (or "0%" for zero).
+$normalizedDiscount = null;
+// Try to extract an integer from the provided value
+if (preg_match('/-?\d+/', $discount, $m)) {
+    $num = intval($m[0]);
+    // Use absolute value for range check; business rule: magnitude 0..100
+    $num = abs($num);
+    if ($num < 0 || $num > 100) {
+        $_SESSION['flash'] = 'La remise doit être un nombre entre 0 et 100.';
+        header('Location: index.php');
+        exit;
+    }
+    if ($num === 0) {
+        $normalizedDiscount = '0%';
+    } else {
+        // store as negative percentage to indicate a reduction
+        $normalizedDiscount = '-' . $num . '%';
+    }
+} else {
+    // No valid number found
+    $_SESSION['flash'] = 'Format de remise invalide. Saisissez un nombre entre 0 et 100.';
+    header('Location: index.php');
+    exit;
+}
+
 $imageUrl = null;
 $pdfUrl = null;
 
@@ -59,7 +85,7 @@ if (empty($pdfUrl) && !empty($_POST['urlpdf'])) {
 
 $id = addPromotion([
     'title' => $title,
-    'discount' => $discount,
+    'discount' => $normalizedDiscount,
     'description' => $description,
     'validUntil' => $validUntil,
     'imageUrl' => $imageUrl,

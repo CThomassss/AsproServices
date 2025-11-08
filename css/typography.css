@@ -1,0 +1,37 @@
+/* typography.css — minimal: only controls font family and smoothing.
+   Purpose: provide a single place to change typeface for public pages.
+   NOTE: This file intentionally does NOT set colors or layout styles.
+*/
+
+html, body { height: 100%; }
+body {
+  /* Use Times New Roman for the public pages as requested */
+  font-family: "Times New Roman", Times, serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.45;
+  margin: 0;
+}
+
+/* Headings inherit the serif stack but keep natural weight */
+h1, h2, h3, h4, h5 { font-family: "Times New Roman", Times, serif; margin: 0; }
+
+/* Lightweight utilities related to typography only (no colors) */
+p { margin: 0 0 1rem; }
+.small { font-size: .875rem; }
+.center { text-align: center; }
+
+/* Allow opt-out on pages that don't want the global serif */
+body[class*="no-typography"] { font-family: inherit; }
+
+/*
+  Next.js / build CSS sometimes injects a class on <html> (like __variable_...) that
+  sets a different font-family with equal specificity. To ensure index.html uses
+  Times New Roman regardless of those generated classes, add a targeted override.
+  This file is only included on public pages (index.html), so this override won't
+  affect the admin interface.
+*/
+html[class*="__variable"],
+html[class*="__variable"] * {
+  font-family: "Times New Roman", Times, serif !important;
+}

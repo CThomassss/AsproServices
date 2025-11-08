@@ -2,116 +2,119 @@
 :after,
 :before {
   box-sizing:border-box;
-  /* --------------------------------------------------------------------------- */
-  /* Concatenated CSS bundle
-     Source files (in this order):
-       - css/layout.css
-       - css/globals.css
-       - css/3
-       - css/4
-       - css/5
-       - css/6
-       - css/7
-       - css/8
-       - css/9
-       - css/10
-       - css/11
-       - css/12
-       - css/feuille
-     NOTE: original file saved as css/ddb61d76dd79ae12.css.bak
-  */
+  border:0 solid #e5e7eb
+}
+:after,
+:before {
+  --tw-content:""
+}
+:host,
+html {
+  line-height:1.5;
+  -webkit-text-size-adjust:100%;
+  -moz-tab-size:4;
+  -o-tab-size:4;
+  tab-size:4;
+  font-family:var(--font-manrope),system-ui,sans-serif;
+  font-feature-settings:normal;
+  font-variation-settings:normal;
+  -webkit-tap-highlight-color:transparent
+}
+/* Typography control intentionally minimal here.
+  The site's generated CSS used to contain direct font-family rules and
+  !important overrides which caused conflicts with the admin and a desire
+  to centralize typography. We now keep font-face definitions and the
+  font variables in the compiled layout files, but the effective font stack
+  for body text must be set from a single source (`css/typography.css`).
+  Do NOT add direct `font-family` declarations or !important overrides here.
+*/
 
-  /* >>> BEGIN: css/layout.css */
-  /*! tailwind compiled + site layout rules (from css/layout.css) */
-  /* (content from css/layout.css follows) */
-  @font-face {
-    font-family: 'InterVar';
-    font-weight: 100 900;
-    font-style: normal;
-    font-display: swap;
-    src: url('/fonts/Inter-Variable.woff2') format('woff2');
-  }
-  /* -- many layout styles (truncated for brevity in this comment) -- */
-  /* Inserted full contents of css/layout.css below: */
-  /*
-    (full content previously read from css/layout.css)
-  */
+/* Headings should use the site's heading stack (defined by the build) */
+h1,h2,h3,h4,h5,h6{font-family:var(--heading-stack)}
 
-  /* >>> END: css/layout.css */
 
-  /* >>> BEGIN: css/globals.css */
-  /* globals/tailwind directives and base rules (from css/globals.css) */
-  @tailwind base;
-  @tailwind components;
-  @tailwind utilities;
-
-  *, ::before, ::after { box-sizing: border-box; }
-  html { font-family: var(--font-manrope), system-ui, sans-serif; }
-  /* (rest of css/globals.css content inserted) */
-
-  /* >>> END: css/globals.css */
-
-  /* >>> BEGIN: css/3 */
-  /* source: css/3 */
-  /* small helper/styles or third-party fragment */
-  .skip-to-content{position:absolute;left:-9999px}
-  /* >>> END: css/3 */
-
-  /* >>> BEGIN: css/4 */
-  /* source: css/4 (google font / unicode-range fragments) */
-  @font-face{font-family: 'GoogleSans'; font-style: normal; font-weight: 400; src: url('/fonts/GoogleSans.woff2') format('woff2');}
-  /* >>> END: css/4 */
-
-  /* >>> BEGIN: css/5 */
-  /* source: css/5 */
-  /* small font override */
-  /* >>> END: css/5 */
-
-  /* >>> BEGIN: css/6 */
-  /* source: css/6 (google maps / gm-style fragments) */
-  .gm-style .gm-style-cc a { color: #000; }
-  /* >>> END: css/6 */
-
-  /* >>> BEGIN: css/7 */
-  /* source: css/7 (print rules for gm) */
-  @media print { .gm-style, .gm-style img { max-width: none; } }
-  /* >>> END: css/7 */
-
-  /* >>> BEGIN: css/8 */
-  /* source: css/8 */
-  .gm-style-moc { image-rendering: pixelated; }
-  /* >>> END: css/8 */
-
-  /* >>> BEGIN: css/9 */
-  /* source: css/9 */
-  .gm-style img { max-width: none; }
-  /* >>> END: css/9 */
-
-  /* >>> BEGIN: css/10 */
-  /* source: css/10 */
-  .gm-inset-map { overflow: hidden; }
-  /* >>> END: css/10 */
-
-  /* >>> BEGIN: css/11 */
-  /* source: css/11 */
-  #mapDiv { height: 100%; }
-  /* >>> END: css/11 */
-
-  /* >>> BEGIN: css/12 */
-  /* source: css/12 */
-  .gm-style .icon { display:inline-block; }
-  /* >>> END: css/12 */
-
-  /* >>> BEGIN: css/feuille */
-  /* feuille: additional tailwind / overrides */
-  /* (full content from css/feuille inserted here) */
-  @layer components {
-    .btn { @apply px-4 py-2 bg-blue-600 text-white rounded; }
-  }
-  /* >>> END: css/feuille */
-
-  /* End of concatenated bundle */
-
+body {
+  margin:0;
+  line-height:inherit
+}
+hr {
+  height:0;
+  color:inherit;
+  border-top-width:1px
+}
+abbr:where([title]) {
+  -webkit-text-decoration:underline dotted;
+  text-decoration:underline dotted
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size:inherit;
+  font-weight:inherit
+}
+a {
+  color:inherit;
+  text-decoration:inherit
+}
+b,
+strong {
+  font-weight:bolder
+}
+code,
+kbd,
+pre,
+samp {
+  font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;
+  font-feature-settings:normal;
+  font-variation-settings:normal;
+  font-size:1em
+}
+small {
+  font-size:80%
+}
+sub,
+sup {
+  font-size:75%;
+  line-height:0;
+  position:relative;
+  vertical-align:baseline
+}
+sub {
+  bottom:-.25em
+}
+sup {
+  top:-.5em
+}
+table {
+  text-indent:0;
+  border-color:inherit;
+  border-collapse:collapse
+}
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family:inherit;
+  font-feature-settings:inherit;
+  font-variation-settings:inherit;
+  font-size:100%;
+  font-weight:inherit;
+  line-height:inherit;
+  color:inherit;
+  margin:0;
+  padding:0
+}
+button,
+select {
+  text-transform:none
+}
+[type=button],
+[type=reset],
+[type=submit],
 button {
   -webkit-appearance:button;
   background-color:transparent;
