@@ -1,0 +1,1648 @@
+<!DOCTYPE html>
+<html class="__variable_ba02cf __variable_5bd5f9" lang="fr">
+ <head>
+ 
+     <link rel="stylesheet" href="css/ddb61d76dd79ae12.css"> 
+
+     <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <link as="image" fetchpriority="high" imagesizes="(min-width: 768px) 176px, 160px" imagesrcset="public/images/asProServ_logo.png?w=16&q=75 16w, public/images/asProServ_logo.png?w=32&q=75 32w, public/images/asProServ_logo.png?w=48&q=75 48w, public/images/asProServ_logo.png?w=64&q=75 64w, public/images/asProServ_logo.png?w=96&q=75 96w, public/images/asProServ_logo.png?w=128&q=75 128w, public/images/asProServ_logo.png?w=256&q=75 256w, public/images/asProServ_logo.png?w=384&q=75 384w, public/images/asProServ_logo.png?w=640&q=75 640w, public/images/asProServ_logo.png?w=750&q=75 750w, public/images/asProServ_logo.png?w=828&q=75 828w, public/images/asProServ_logo.png?w=1080&q=75 1080w, public/images/asProServ_logo.png?w=1200&q=75 1200w, public/images/asProServ_logo.png?w=1920&q=75 1920w, public/images/asProServ_logo.png?w=2048&q=75 2048w, public/images/asProServ_logo.png?w=3840&q=75 3840w" rel="preload"/>
+  <link as="image" fetchpriority="high" imagesizes="100vw" imagesrcset="public/images/Hero-section.webp?w=640&q=75 640w, public/images/Hero-section.webp?w=750&q=75 750w, public/images/Hero-section.webp?w=828&q=75 828w, public/images/Hero-section.webp?w=1080&q=75 1080w, public/images/Hero-section.webp?w=1200&q=75 1200w, public/images/Hero-section.webp?w=1920&q=75 1920w, public/images/Hero-section.webp?w=2048&q=75 2048w, public/images/Hero-section.webp?w=3840&q=75 3840w" rel="preload"/>
+  <link as="image" fetchpriority="high" imagesizes="100vw" imagesrcset="public/images/Stive-camion.jpg?w=640&q=75 640w, public/images/Stive-camion.jpg?w=750&q=75 750w, public/images/Stive-camion.jpg?w=828&q=75 828w, public/images/Stive-camion.jpg?w=1080&q=75 1080w, public/images/Stive-camion.jpg?w=1200&q=75 1200w, public/images/Stive-camion.jpg?w=1920&q=75 1920w, public/images/Stive-camion.jpg?w=2048&q=75 2048w, public/images/Stive-camion.jpg?w=3840&q=75 3840w" rel="preload"/>
+    <style>
+
+</style>
+  <link as="script" crossorigin="" fetchpriority="low" href="./frontend/_next/static/chunks/webpack-3d3e2f3f4f558231.js" rel="preload"/>
+  <script async="" crossorigin="" src="./frontend/_next/static/chunks/fd9d1056-9e625e8be9cf6216.js">
+  </script>
+  <script async="" crossorigin="" src="./frontend/_next/static/chunks/69-1d6742ffaaebb4eb.js">
+  </script>
+  <!-- Small ScrollReveal runtime: applies `.sr` and `.sr-visible` to hidden sections
+       - Targets elements with the typical exported classes `translate-y-8 opacity-0` or any
+         element marked with `data-sr`.
+       - Supports optional `data-sr-delay="200"` (ms).
+       - Loads only on browsers (no-op on server-side).
+  -->
+  <script>
+    (function () {
+      if (typeof window === 'undefined') return;
+      try {
+        var prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        // allow parent containers to declare a stagger pattern:
+        // <div data-sr-stagger data-sr-base="0" data-sr-step="80"> ... </div>
+        Array.prototype.slice.call(document.querySelectorAll('[data-sr-stagger]')).forEach(function (parent) {
+          var base = parseInt(parent.getAttribute('data-sr-base') || '0', 10) || 0;
+          var step = parseInt(parent.getAttribute('data-sr-step') || '100', 10) || 100;
+          var children = parent.querySelectorAll('.translate-y-8.opacity-0, [data-sr-child]');
+          Array.prototype.forEach.call(children, function (child, i) {
+            if (!child.hasAttribute('data-sr-delay')) {
+              child.setAttribute('data-sr-delay', String(base + i * step));
+            }
+          });
+        });
+
+        var selector = '.translate-y-8.opacity-0, [data-sr]';
+        var nodes = Array.prototype.slice.call(document.querySelectorAll(selector));
+        if (!nodes.length) return;
+
+        function revealNow(el) {
+          var delayAttr = el.getAttribute('data-sr-delay') || '0';
+          var delay = parseInt(delayAttr, 10) || 0;
+          if (delay) {
+            setTimeout(function () { el.classList.add('sr-visible'); }, delay);
+          } else {
+            el.classList.add('sr-visible');
+          }
+        }
+
+        if (prefersReduced) {
+          nodes.forEach(function (el) {
+            el.classList.add('sr', 'sr-visible');
+          });
+          return;
+        }
+
+        var observer = new IntersectionObserver(function (entries, obs) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              var el = entry.target;
+              revealNow(el);
+              obs.unobserve(el);
+            }
+          });
+        }, { threshold: 0.1, rootMargin: '0px 0px -100px 0px' });
+
+        nodes.forEach(function (el) {
+          if (el.__sr_processed) return;
+          el.__sr_processed = true;
+          el.classList.add('sr');
+
+          // If element is already inside viewport, reveal immediately (respect delay)
+          var rect = el.getBoundingClientRect();
+          if (rect.top < window.innerHeight && rect.bottom > 0) {
+            revealNow(el);
+          } else {
+            observer.observe(el);
+          }
+        });
+      } catch (e) {
+        console.error('ScrollReveal helper error:', e);
+      }
+    })();
+  </script>
+  <script async="" crossorigin="" src="./frontend/_next/static/chunks/main-app-7f3339c15161d55d.js">
+  </script>
+  <script async="" src="./frontend/_next/static/chunks/866-4a1b4f5fd27f74c7.js">
+  </script>
+  <script async="" src="./frontend/_next/static/chunks/app/page-8f0182166fe77c1e.js">
+  </script>
+  <title>
+   AS PRO SERVICES | Fourniture d’outillage professionnel à Nougaroulet
+  </title>
+  <meta content="AS PRO SERVICES accompagne les professionnels du Sud-Ouest avec une sélection exigeante d'outillage, de consommables et un service après-vente réactif depuis plus de 20 ans." name="description"/>
+  <meta content="AS PRO SERVICES,Outillage professionnel,Nougaroulet,Gers,32,64,65,82,31,40,Consommables professionnels,Service après-vente" name="keywords"/>
+  <link href="https://www.asproservices.fr/" rel="canonical"/>
+  <meta content="AS PRO SERVICES | Outillage et consommables professionnels" property="og:title"/>
+  <meta content="AS PRO SERVICES fournit outillage, consommables et conseils personnalisés aux professionnels du Sud-Ouest depuis plus de 20 ans." property="og:description"/>
+  <meta content="AS PRO SERVICES" property="og:site_name"/>
+  <meta content="fr_FR" property="og:locale"/>
+  <meta content="https://www.asproservices.fr/og-cover.svg" property="og:image"/>
+  <meta content="1200" property="og:image:width"/>
+  <meta content="630" property="og:image:height"/>
+  <meta content="AS PRO SERVICES - Outillage professionnel" property="og:image:alt"/>
+  <meta content="website" property="og:type"/>
+  <meta content="summary_large_image" name="twitter:card"/>
+  <meta content="AS PRO SERVICES" name="twitter:title"/>
+  <meta content="Votre partenaire outillage et consommables professionnels dans le Sud-Ouest avec 20 ans d'expérience." name="twitter:description"/>
+  <meta content="https://www.asproservices.fr/og-cover.svg" name="twitter:image"/>
+  <script crossorigin="" nomodule="" src="./frontend/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js">
+  </script>
+ </head>
+ <body>
+  <main class="bg-[rgb(247,249,251)]">
+   <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"HardwareStore","name":"AS PRO SERVICES","description":"Fournisseur indépendant d'outillage professionnel, consommables et service après-vente basé à Nougaroulet (Gers).","url":"https://www.asproservices.fr","telephone":"+33607159308","email":"aspro.services@orange.fr","address":{"@type":"PostalAddress","streetAddress":"Lieu-dit la Boubée, 32270 Nougaroulet","addressLocality":"Nougaroulet","postalCode":"32270","addressCountry":"FR"},"areaServed":["Gers","Landes","Hautes-Pyrénées","Pyrénées-Atlantiques","Tarn-et-Garonne","Haute-Garonne"],"openingHours":"Mo-Fr 08:00-18:00","founder":{"@type":"Person","name":"AS PRO SERVICES"},"sameAs":[]}
+   </script>
+   <section class="relative flex min-h-screen items-center overflow-hidden bg-slate-950 text-white" id="accueil">
+    <header class="z-50 border-b transition-colors duration-300 fixed top-0 left-0 w-full border-transparent bg-transparent">
+     <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
+      <a class="flex items-center gap-3" href="#accueil">
+       <div class="relative h-14 w-40 overflow-hidden rounded-full bg-white px-4 py-2 shadow-lg transition-all hover:scale-105 md:w-44">
+  <img alt="AS PRO SERVICES" class="object-contain p-1" data-nimg="fill" decoding="async" fetchpriority="high" sizes="(min-width: 768px) 176px, 160px" src="public/images/asProServ_logo.png" srcset="public/images/asProServ_logo.png?w=16&q=75 16w, public/images/asProServ_logo.png?w=32&q=75 32w, public/images/asProServ_logo.png?w=48&q=75 48w, public/images/asProServ_logo.png?w=64&q=75 64w, public/images/asProServ_logo.png?w=96&q=75 96w, public/images/asProServ_logo.png?w=128&q=75 128w, public/images/asProServ_logo.png?w=256&q=75 256w, public/images/asProServ_logo.png?w=384&q=75 384w, public/images/asProServ_logo.png?w=640&q=75 640w, public/images/asProServ_logo.png?w=750&q=75 750w, public/images/asProServ_logo.png?w=828&q=75 828w, public/images/asProServ_logo.png?w=1080&q=75 1080w, public/images/asProServ_logo.png?w=1200&q=75 1200w, public/images/asProServ_logo.png?w=1920&q=75 1920w, public/images/asProServ_logo.png?w=2048&q=75 2048w, public/images/asProServ_logo.png?w=3840&q=75 3840w" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent"/>
+       </div>
+      </a>
+      <nav class="hidden items-center gap-8 md:flex">
+       <a class="text-sm font-semibold transition relative text-accent after:absolute after:bottom-[-8px] after:left-0 after:right-0 after:h-0.5 after:rounded-full after:bg-accent" href="#accueil">
+        Accueil
+       </a>
+       <a class="text-sm font-semibold transition relative text-white hover:text-accent" href="#a-propos">
+        À propos
+       </a>
+       <a class="text-sm font-semibold transition relative text-white hover:text-accent" href="#services">
+        Services
+       </a>
+       <a class="text-sm font-semibold transition relative text-white hover:text-accent" href="#fournisseurs">
+        Fournisseurs
+       </a>
+       <a class="text-sm font-semibold transition relative text-white hover:text-accent" href="#promotions">
+        Promotions
+       </a>
+       <a class="text-sm font-semibold transition relative text-white hover:text-accent" href="#temoignages">
+        Témoignages
+       </a>
+       <a class="text-sm font-semibold transition relative text-white hover:text-accent" href="#contact">
+        Contact
+       </a>
+       <a class="rounded-full px-4 py-2 text-sm font-semibold transition border border-white text-white hover:bg-white/10" href="tel:+33607159308">
+        06 07 15 93 08
+       </a>
+      </nav>
+      <button aria-controls="header-mobile-nav" aria-expanded="false" aria-label="Ouvrir le menu" class="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-full border transition border-white/40 bg-transparent" type="button">
+       <span class="sr-only">
+        Menu
+       </span>
+       <div class="flex flex-col gap-1.5">
+        <span class="block h-0.5 w-6 transition bg-white">
+        </span>
+        <span class="block h-0.5 w-6 transition bg-white">
+        </span>
+        <span class="block h-0.5 w-6 transition bg-white">
+        </span>
+       </div>
+      </button>
+     </div>
+     <div aria-hidden="true" class="md:hidden overflow-hidden transition-all duration-300 border-t border-white/20 bg-slate-900/95 text-white pointer-events-none max-h-0 opacity-0" id="header-mobile-nav">
+      <nav class="flex flex-col gap-2 px-4 py-4">
+       <a class="rounded-xl px-3 py-2 text-sm font-semibold transition text-white hover:bg-white/10" href="#accueil">
+        Accueil
+       </a>
+       <a class="rounded-xl px-3 py-2 text-sm font-semibold transition text-white hover:bg-white/10" href="#a-propos">
+        À propos
+       </a>
+       <a class="rounded-xl px-3 py-2 text-sm font-semibold transition text-white hover:bg-white/10" href="#services">
+        Services
+       </a>
+       <a class="rounded-xl px-3 py-2 text-sm font-semibold transition text-white hover:bg-white/10" href="#fournisseurs">
+        Fournisseurs
+       </a>
+       <a class="rounded-xl px-3 py-2 text-sm font-semibold transition text-white hover:bg-white/10" href="#promotions">
+        Promotions
+       </a>
+       <a class="rounded-xl px-3 py-2 text-sm font-semibold transition text-white hover:bg-white/10" href="#temoignages">
+        Témoignages
+       </a>
+       <a class="rounded-xl px-3 py-2 text-sm font-semibold transition text-white hover:bg-white/10" href="#contact">
+        Contact
+       </a>
+       <a class="rounded-xl border px-3 py-2 text-center text-sm font-semibold transition border-white/40 text-white hover:bg-white/10" href="tel:+33607159308">
+        Appeler
+        <!-- -->
+        06 07 15 93 08
+       </a>
+      </nav>
+     </div>
+    </header>
+    <div class="absolute inset-0">
+  <img alt="Atelier équipé AS PRO SERVICES" class="object-cover" data-nimg="fill" decoding="async" fetchpriority="high" sizes="100vw" src="public/images/Hero-section.webp?w=3840&q=75" srcset="public/images/Hero-section.webp?w=640&q=75 640w, public/images/Hero-section.webp?w=750&q=75 750w, public/images/Hero-section.webp?w=828&q=75 828w, public/images/Hero-section.webp?w=1080&q=75 1080w, public/images/Hero-section.webp?w=1200&q=75 1200w, public/images/Hero-section.webp?w=1920&q=75 1920w, public/images/Hero-section.webp?w=2048&q=75 2048w, public/images/Hero-section.webp?w=3840&q=75 3840w" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent"/>
+     <div class="absolute inset-0 bg-slate-950/75">
+     </div>
+     <div class="absolute inset-0 bg-gradient-to-r from-slate-950/80 via-slate-900/60 to-slate-900/25">
+     </div>
+     <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(245,180,0,0.18),_transparent_55%)] mix-blend-screen">
+     </div>
+     <div aria-hidden="true" class="absolute inset-x-0 bottom-[-30%] h-[70%] bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent blur-3xl">
+     </div>
+    </div>
+    <div class="relative mx-auto flex w-full max-w-6xl flex-col gap-12 px-4 pb-28 pt-36 lg:flex-row lg:items-center">
+     <div class="relative z-10 flex max-w-2xl flex-1 flex-col gap-8 text-left">
+      <div class="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/15 px-5 py-2 text-xs font-semibold uppercase tracking-[0.35em] text-accent shadow-soft">
+       Professionnel depuis 2005
+      </div>
+      <h1 class="text-4xl font-semibold leading-tight sm:text-5xl lg:text-6xl">
+       Votre partenaire
+       <br/>
+       <span class="bg-gradient-to-r from-accent via-white to-accent/80 bg-clip-text text-transparent">
+        outillage
+       </span>
+       <br/>
+       professionnel de proximité
+      </h1>
+      <p class="max-w-xl text-lg leading-relaxed text-white/80">
+       Distribution d'outillage, d'équipements et de consommables pour les professionnels du bâtiment, de l'industrie et des ateliers. J'assure conseil, livraison et service après-vente sur le terrain.
+      </p>
+      <div class="flex flex-wrap items-center gap-3 text-sm text-white/70">
+       <span class="flex h-10 items-center rounded-full border border-white/15 bg-white/10 px-4 font-semibold tracking-widest text-[0.65rem] uppercase text-accent">
+        L'outillage professionnel au service de votre métier
+       </span>
+      </div>
+      <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
+       <a class="inline-flex items-center justify-center gap-2 rounded-full bg-accent px-8 py-3 text-base font-semibold text-slate-900 shadow-[0_18px_40px_rgba(245,180,0,0.25)] transition hover:-translate-y-0.5 hover:bg-accent/90" href="#promotions">
+        Découvrir les offres du moment
+       </a>
+       <a class="inline-flex items-center justify-center gap-3 rounded-full border border-white/30 px-6 py-3 text-base font-semibold text-white transition hover:border-accent/60 hover:text-accent whitespace-nowrap" href="tel:+33607159308">
+        <svg class="h-5 w-5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+         <path d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" stroke-linecap="round" stroke-linejoin="round">
+         </path>
+        </svg>
+        <span>
+         Appeler le
+         <!-- -->
+         06 07 15 93 08
+        </span>
+       </a>
+      </div>
+      <div class="mt-6 flex flex-wrap items-center gap-2 text-xs font-semibold uppercase tracking-wider text-white/60">
+       <span class="rounded-full border border-white/15 bg-white/5 px-3 py-1">
+        Gers (32)
+       </span>
+       <span class="rounded-full border border-white/15 bg-white/5 px-3 py-1">
+        Haute-Garonne (31)
+       </span>
+       <span class="rounded-full border border-white/15 bg-white/5 px-3 py-1">
+        Landes (40)
+       </span>
+       <span class="rounded-full border border-white/15 bg-white/5 px-3 py-1">
+        Lot-et-Garonne (47)
+       </span>
+       <span class="rounded-full border border-accent/30 bg-accent/20 px-3 py-1 text-accent">
+        +
+        <!-- -->
+        2
+        <!-- -->
+        départements
+       </span>
+      </div>
+     </div>
+     <div class="relative z-10 flex flex-1 justify-end">
+      <div class="relative w-full max-w-lg rounded-[32px] border border-white/10 bg-white/5 p-8 shadow-soft backdrop-blur">
+       <div aria-hidden="true" class="absolute -left-12 top-16 hidden h-32 w-32 rounded-full bg-accent/20 blur-3xl lg:block">
+       </div>
+       <div aria-hidden="true" class="absolute -right-12 -top-10 hidden h-28 w-28 rounded-full bg-primary/30 blur-3xl lg:block">
+       </div>
+       <div class="flex flex-col gap-5">
+        <div class="group relative flex items-start gap-4 rounded-2xl border border-white/10 bg-slate-950/40 p-5 transition hover:border-accent/40 hover:bg-slate-950/30">
+         <span class="flex h-11 w-11 items-center justify-center rounded-2xl bg-accent/15 text-accent transition group-hover:bg-accent group-hover:text-slate-900">
+          <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+           <path d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" stroke-linecap="round" stroke-linejoin="round">
+           </path>
+          </svg>
+         </span>
+         <div class="space-y-1">
+          <p class="text-base font-semibold text-white">
+           Expertise terrain
+          </p>
+          <p class="text-sm text-white/60">
+           Présence terrain, accompagnement et SAV réactif.
+          </p>
+         </div>
+         <span aria-hidden="true" class="absolute -right-2 -top-2 h-8 w-8 rounded-full bg-white/5 opacity-0 blur group-hover:opacity-100">
+         </span>
+        </div>
+        <div class="group relative flex items-start gap-4 rounded-2xl border border-white/10 bg-slate-950/40 p-5 transition hover:border-accent/40 hover:bg-slate-950/30">
+         <span class="flex h-11 w-11 items-center justify-center rounded-2xl bg-accent/15 text-accent transition group-hover:bg-accent group-hover:text-slate-900">
+          <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+           <path d="M7 11.5V14m0-2.5v-6a1.5 1.5 0 113 0m-3 6a1.5 1.5 0 00-3 0v2a7.5 7.5 0 0015 0v-5a1.5 1.5 0 00-3 0m-6-3V11m0-5.5v-1a1.5 1.5 0 013 0v1m0 0V11m0-5.5a1.5 1.5 0 013 0v3m0 0V11" stroke-linecap="round" stroke-linejoin="round">
+           </path>
+          </svg>
+         </span>
+         <div class="space-y-1">
+          <p class="text-base font-semibold text-white">
+           Conseil personnalisé
+          </p>
+          <p class="text-sm text-white/60">
+           Un interlocuteur unique pour vos métiers.
+          </p>
+         </div>
+         <span aria-hidden="true" class="absolute -right-2 -top-2 h-8 w-8 rounded-full bg-white/5 opacity-0 blur group-hover:opacity-100">
+         </span>
+        </div>
+        <div class="group relative flex items-start gap-4 rounded-2xl border border-white/10 bg-slate-950/40 p-5 transition hover:border-accent/40 hover:bg-slate-950/30">
+         <span class="flex h-11 w-11 items-center justify-center rounded-2xl bg-accent/15 text-accent transition group-hover:bg-accent group-hover:text-slate-900">
+          <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+           <path d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25zM6.75 12h.008v.008H6.75V12zm0 3h.008v.008H6.75V15zm0 3h.008v.008H6.75V18z" stroke-linecap="round" stroke-linejoin="round">
+           </path>
+          </svg>
+         </span>
+         <div class="space-y-1">
+          <p class="text-base font-semibold text-white">
+           Livraison rapide
+          </p>
+          <p class="text-sm text-white/60">
+           Intervention en Occitanie et au-delà.
+          </p>
+         </div>
+         <span aria-hidden="true" class="absolute -right-2 -top-2 h-8 w-8 rounded-full bg-white/5 opacity-0 blur group-hover:opacity-100">
+         </span>
+        </div>
+       </div>
+       <div class="mt-6 rounded-2xl border border-white/10 bg-white/5 p-5 text-sm text-white/75 shadow-inner">
+        <p class="font-semibold text-white">
+         Besoin d’un diagnostic atelier ?
+        </p>
+        <p class="mt-1 text-white/60">
+         Je me déplace chez vous pour analyser vos besoins, livrer le matériel et activer le SAV en direct.
+        </p>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section class="relative overflow-hidden bg-gradient-to-b from-white via-slate-50/50 to-white py-24" id="a-propos">
+    <div class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,_rgba(30,76,122,0.08),_transparent_60%)]">
+    </div>
+    <div class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_bottom_right,_rgba(245,180,0,0.05),_transparent_50%)]">
+    </div>
+    <div class="mx-auto max-w-7xl px-4">
+  <div class="transition-all duration-700 ease-out translate-y-0 opacity-100">
+      <div class="mb-16 text-center">
+       <p class="text-sm font-semibold uppercase tracking-[0.3em] text-primary">
+        À propos
+       </p>
+       <h2 class="mt-4 text-4xl font-semibold tracking-tight text-slate-900 md:text-5xl">
+        Indépendant, engagé et proche du terrain
+       </h2>
+       <p class="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-slate-600">
+        J'accompagne les artisans, PME, collectivités et industriels principalement en Occitanie. Ma différence : des visites régulières sur site, une sélection exigeante des produits et un service après-vente que je pilote directement.
+       </p>
+      </div>
+     </div>
+  <div class="grid gap-6 lg:grid-cols-3">
+  <div class="flex flex-col gap-6">
+   <div class="transition-all duration-700 ease-out translate-y-0 opacity-100">
+        <div class="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-white to-primary/5 p-6 shadow-soft transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/20">
+         <div class="absolute -right-4 -top-4 h-24 w-24 rounded-full bg-primary/5 blur-2xl transition-all duration-500 group-hover:bg-primary/10">
+         </div>
+         <div class="relative">
+          <p class="bg-gradient-to-br from-primary to-primary/70 bg-clip-text text-5xl font-bold text-transparent">
+           20+
+          </p>
+          <p class="mt-3 text-xs font-bold uppercase tracking-[0.3em] text-primary/70">
+           années d’engagement
+          </p>
+          <p class="mt-3 text-sm leading-relaxed text-slate-600">
+           Disponibilité terrain, conseils et SAV réactif pour chaque client.
+          </p>
+         </div>
+        </div>
+       </div>
+  <div class="transition-all duration-700 ease-out translate-y-0 opacity-100">
+        <div class="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-white to-primary/5 p-6 shadow-soft transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/20">
+         <div class="absolute -right-4 -top-4 h-24 w-24 rounded-full bg-primary/5 blur-2xl transition-all duration-500 group-hover:bg-primary/10">
+         </div>
+         <div class="relative">
+          <p class="bg-gradient-to-br from-primary to-primary/70 bg-clip-text text-5xl font-bold text-transparent">
+           6
+          </p>
+          <p class="mt-3 text-xs font-bold uppercase tracking-[0.3em] text-primary/70">
+           départements couverts
+          </p>
+          <p class="mt-3 text-sm leading-relaxed text-slate-600">
+           Gers (32) · Haute-Garonne (31) · Landes (40) · Lot-et-Garonne (47) · Hautes-Pyrénées (65) · Tarn-et-Garonne (82)
+          </p>
+         </div>
+        </div>
+       </div>
+  <div class="transition-all duration-700 ease-out translate-y-0 opacity-100">
+        <div class="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-white to-primary/5 p-6 shadow-soft transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/20">
+         <div class="absolute -right-4 -top-4 h-24 w-24 rounded-full bg-primary/5 blur-2xl transition-all duration-500 group-hover:bg-primary/10">
+         </div>
+         <div class="relative">
+          <p class="bg-gradient-to-br from-primary to-primary/70 bg-clip-text text-5xl font-bold text-transparent">
+           100%
+          </p>
+          <p class="mt-3 text-xs font-bold uppercase tracking-[0.3em] text-primary/70">
+           marques sélectionnées
+          </p>
+          <p class="mt-3 text-sm leading-relaxed text-slate-600">
+           Des fabricants reconnus pour la fiabilité de leurs outils.
+          </p>
+         </div>
+        </div>
+       </div>
+      </div>
+  <div class="transition-all duration-700 ease-out translate-y-0 opacity-100 lg:col-span-2">
+       <div class="group relative min-h-[500px] overflow-hidden rounded-[36px] bg-slate-900 shadow-2xl transition-all duration-700 hover:shadow-3xl">
+  <img alt="Stive, fondateur AS PRO SERVICES en visite chez un client" class="object-cover transition duration-700 group-hover:scale-105" data-nimg="fill" decoding="async" fetchpriority="high" sizes="100vw" src="public/images/Stive-camion.jpg" srcset="public/images/Stive-camion.jpg?w=640&q=75 640w, public/images/Stive-camion.jpg?w=750&q=75 750w, public/images/Stive-camion.jpg?w=828&q=75 828w, public/images/Stive-camion.jpg?w=1080&q=75 1080w, public/images/Stive-camion.jpg?w=1200&q=75 1200w, public/images/Stive-camion.jpg?w=1920&q=75 1920w, public/images/Stive-camion.jpg?w=2048&q=75 2048w, public/images/Stive-camion.jpg?w=3840&q=75 3840w" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent">
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-accent/20 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+        </div>
+        <div class="absolute inset-x-0 bottom-0 p-10 transition-transform duration-500 group-hover:translate-y-0">
+         <div class="mb-4 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-accent to-accent/90 px-5 py-2 shadow-lg transition-all duration-300 hover:scale-105">
+          <span class="text-2xl">
+           👨‍💼
+          </span>
+          <span class="text-sm font-bold uppercase tracking-wide text-slate-900">
+           Stive, fondateur
+          </span>
+         </div>
+         <p class="text-2xl font-bold leading-tight text-white drop-shadow-lg">
+          "Rester joignable et présent sur le terrain est la meilleure façon d'apporter une réponse rapide à chaque besoin."
+         </p>
+         <p class="mt-4 text-sm leading-relaxed text-white/90 drop-shadow">
+          Accompagnement sur site, diagnostic atelier, suivi de vos commandes et déclenchement des réparations SAV.
+         </p>
+        </div>
+       </div>
+      </div>
+     </div>
+  <div class="mt-6 grid gap-6 lg:grid-cols-[1.5fr_1fr]">
+   <div class="transition-all duration-700 ease-out translate-y-0 opacity-100">
+       <div class="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-primary/8 via-primary/5 to-white p-8 shadow-soft transition-all duration-500 hover:-translate-y-1 hover:shadow-xl">
+        <div class="absolute -left-10 -top-10 h-32 w-32 rounded-full bg-primary/10 blur-3xl transition-all duration-500 group-hover:bg-primary/20">
+        </div>
+        <div class="relative">
+         <div class="mb-2 inline-flex items-center gap-2">
+          <div class="rounded-full bg-primary/10 p-2">
+           <svg class="h-5 w-5 text-primary" fill="currentColor" viewbox="0 0 20 20">
+            <path clip-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" fill-rule="evenodd">
+            </path>
+           </svg>
+          </div>
+          <p class="text-sm font-bold uppercase tracking-[0.3em] text-primary">
+           Mes engagements
+          </p>
+         </div>
+         <ul class="mt-6 space-y-4 text-sm leading-relaxed text-slate-700">
+          <li class="group/item flex items-start gap-3 transition-all duration-300 hover:translate-x-1" style="animation-delay:0ms">
+           <div class="mt-0.5 rounded-full bg-gradient-to-br from-primary to-primary/70 p-1 shadow-sm transition-all duration-300 group-hover/item:scale-110 group-hover/item:shadow-md">
+            <svg class="h-3 w-3 text-white" fill="currentColor" viewbox="0 0 20 20">
+             <path clip-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" fill-rule="evenodd">
+             </path>
+            </svg>
+           </div>
+           <span class="flex-1">
+            Indépendant et proche de vos métiers
+           </span>
+          </li>
+          <li class="group/item flex items-start gap-3 transition-all duration-300 hover:translate-x-1" style="animation-delay:50ms">
+           <div class="mt-0.5 rounded-full bg-gradient-to-br from-primary to-primary/70 p-1 shadow-sm transition-all duration-300 group-hover/item:scale-110 group-hover/item:shadow-md">
+            <svg class="h-3 w-3 text-white" fill="currentColor" viewbox="0 0 20 20">
+             <path clip-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" fill-rule="evenodd">
+             </path>
+            </svg>
+           </div>
+           <span class="flex-1">
+            Conseil personnalisé sur site ou à distance
+           </span>
+          </li>
+          <li class="group/item flex items-start gap-3 transition-all duration-300 hover:translate-x-1" style="animation-delay:100ms">
+           <div class="mt-0.5 rounded-full bg-gradient-to-br from-primary to-primary/70 p-1 shadow-sm transition-all duration-300 group-hover/item:scale-110 group-hover/item:shadow-md">
+            <svg class="h-3 w-3 text-white" fill="currentColor" viewbox="0 0 20 20">
+             <path clip-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" fill-rule="evenodd">
+             </path>
+            </svg>
+           </div>
+           <span class="flex-1">
+            Sélection exigeante des meilleures marques
+           </span>
+          </li>
+          <li class="group/item flex items-start gap-3 transition-all duration-300 hover:translate-x-1" style="animation-delay:150ms">
+           <div class="mt-0.5 rounded-full bg-gradient-to-br from-primary to-primary/70 p-1 shadow-sm transition-all duration-300 group-hover/item:scale-110 group-hover/item:shadow-md">
+            <svg class="h-3 w-3 text-white" fill="currentColor" viewbox="0 0 20 20">
+             <path clip-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" fill-rule="evenodd">
+             </path>
+            </svg>
+           </div>
+           <span class="flex-1">
+            Service après-vente réactif et suivi durable
+           </span>
+          </li>
+         </ul>
+         <div class="mt-8 flex flex-wrap gap-2">
+          <span class="rounded-full bg-gradient-to-r from-primary/10 to-primary/5 px-4 py-2 text-xs font-bold uppercase tracking-wide text-primary transition-all duration-300 hover:scale-105 hover:from-primary/20 hover:to-primary/10 hover:shadow-md">
+           Fournir l'outillage et les consommables les plus adaptés aux exigences professionnelles
+          </span>
+          <span class="rounded-full bg-gradient-to-r from-primary/10 to-primary/5 px-4 py-2 text-xs font-bold uppercase tracking-wide text-primary transition-all duration-300 hover:scale-105 hover:from-primary/20 hover:to-primary/10 hover:shadow-md">
+           Assurer un accompagnement technique fiable sur la durée
+          </span>
+          <span class="rounded-full bg-gradient-to-r from-primary/10 to-primary/5 px-4 py-2 text-xs font-bold uppercase tracking-wide text-primary transition-all duration-300 hover:scale-105 hover:from-primary/20 hover:to-primary/10 hover:shadow-md">
+           Être votre relais local des grandes marques spécialisées
+          </span>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="transition-all duration-700 ease-out translate-y-8 opacity-0">
+       <div class="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-accent/8 via-accent/5 to-white p-8 shadow-soft transition-all duration-500 hover:-translate-y-1 hover:shadow-xl">
+        <div class="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-accent/10 blur-3xl transition-all duration-500 group-hover:bg-accent/20">
+        </div>
+        <div class="relative">
+         <div class="mb-2 inline-flex items-center gap-2">
+          <div class="rounded-full bg-accent/20 p-2">
+           <svg class="h-5 w-5 text-accent" fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24">
+            <path d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" stroke-linecap="round" stroke-linejoin="round">
+            </path>
+           </svg>
+          </div>
+          <p class="text-sm font-bold uppercase tracking-[0.3em] text-accent">
+           Zones d'intervention
+          </p>
+         </div>
+         <div class="mt-6 grid grid-cols-2 gap-3">
+          <div class="group/area relative overflow-hidden rounded-xl border-2 border-accent/20 bg-white px-4 py-3 text-center text-sm font-semibold text-slate-700 shadow-sm transition-all duration-300 hover:scale-105 hover:border-accent hover:bg-gradient-to-br hover:from-accent/10 hover:to-accent/5 hover:shadow-md" style="animation-delay:0ms">
+           <div class="absolute inset-0 bg-gradient-to-br from-accent/0 to-accent/0 transition-all duration-300 group-hover/area:from-accent/5 group-hover/area:to-accent/10">
+           </div>
+           <span class="relative">
+            Gers (32)
+           </span>
+          </div>
+          <div class="group/area relative overflow-hidden rounded-xl border-2 border-accent/20 bg-white px-4 py-3 text-center text-sm font-semibold text-slate-700 shadow-sm transition-all duration-300 hover:scale-105 hover:border-accent hover:bg-gradient-to-br hover:from-accent/10 hover:to-accent/5 hover:shadow-md" style="animation-delay:50ms">
+           <div class="absolute inset-0 bg-gradient-to-br from-accent/0 to-accent/0 transition-all duration-300 group-hover/area:from-accent/5 group-hover/area:to-accent/10">
+           </div>
+           <span class="relative">
+            Haute-Garonne (31)
+           </span>
+          </div>
+          <div class="group/area relative overflow-hidden rounded-xl border-2 border-accent/20 bg-white px-4 py-3 text-center text-sm font-semibold text-slate-700 shadow-sm transition-all duration-300 hover:scale-105 hover:border-accent hover:bg-gradient-to-br hover:from-accent/10 hover:to-accent/5 hover:shadow-md" style="animation-delay:100ms">
+           <div class="absolute inset-0 bg-gradient-to-br from-accent/0 to-accent/0 transition-all duration-300 group-hover/area:from-accent/5 group-hover/area:to-accent/10">
+           </div>
+           <span class="relative">
+            Landes (40)
+           </span>
+          </div>
+          <div class="group/area relative overflow-hidden rounded-xl border-2 border-accent/20 bg-white px-4 py-3 text-center text-sm font-semibold text-slate-700 shadow-sm transition-all duration-300 hover:scale-105 hover:border-accent hover:bg-gradient-to-br hover:from-accent/10 hover:to-accent/5 hover:shadow-md" style="animation-delay:150ms">
+           <div class="absolute inset-0 bg-gradient-to-br from-accent/0 to-accent/0 transition-all duration-300 group-hover/area:from-accent/5 group-hover/area:to-accent/10">
+           </div>
+           <span class="relative">
+            Lot-et-Garonne (47)
+           </span>
+          </div>
+          <div class="group/area relative overflow-hidden rounded-xl border-2 border-accent/20 bg-white px-4 py-3 text-center text-sm font-semibold text-slate-700 shadow-sm transition-all duration-300 hover:scale-105 hover:border-accent hover:bg-gradient-to-br hover:from-accent/10 hover:to-accent/5 hover:shadow-md" style="animation-delay:200ms">
+           <div class="absolute inset-0 bg-gradient-to-br from-accent/0 to-accent/0 transition-all duration-300 group-hover/area:from-accent/5 group-hover/area:to-accent/10">
+           </div>
+           <span class="relative">
+            Hautes-Pyrénées (65)
+           </span>
+          </div>
+          <div class="group/area relative overflow-hidden rounded-xl border-2 border-accent/20 bg-white px-4 py-3 text-center text-sm font-semibold text-slate-700 shadow-sm transition-all duration-300 hover:scale-105 hover:border-accent hover:bg-gradient-to-br hover:from-accent/10 hover:to-accent/5 hover:shadow-md" style="animation-delay:250ms">
+           <div class="absolute inset-0 bg-gradient-to-br from-accent/0 to-accent/0 transition-all duration-300 group-hover/area:from-accent/5 group-hover/area:to-accent/10">
+           </div>
+           <span class="relative">
+            Tarn-et-Garonne (82)
+           </span>
+          </div>
+         </div>
+         <div class="mt-8 grid grid-cols-2 gap-3 text-xs font-semibold uppercase tracking-wide text-slate-600">
+          <div class="flex items-center gap-2 rounded-lg bg-slate-50 px-3 py-2 transition-colors hover:bg-accent/10">
+           <span>
+            📦
+           </span>
+           Livraison
+          </div>
+          <div class="flex items-center gap-2 rounded-lg bg-slate-50 px-3 py-2 transition-colors hover:bg-accent/10">
+           <span>
+            🔧
+           </span>
+           Mise en route
+          </div>
+          <div class="flex items-center gap-2 rounded-lg bg-slate-50 px-3 py-2 transition-colors hover:bg-accent/10">
+           <span>
+            ⚙️
+           </span>
+           Suivi SAV
+          </div>
+          <div class="flex items-center gap-2 rounded-lg bg-slate-50 px-3 py-2 transition-colors hover:bg-accent/10">
+           <span>
+            💡
+           </span>
+           Conseils
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="transition-all duration-700 ease-out translate-y-8 opacity-0">
+      <div class="group mt-6 rounded-3xl bg-gradient-to-br from-slate-50 via-white to-slate-50 p-8 shadow-soft transition-all duration-500 hover:shadow-xl lg:p-12">
+       <div class="mb-2 inline-flex items-center gap-2">
+        <div class="rounded-full bg-gradient-to-br from-primary/10 to-accent/10 p-2">
+         <svg class="h-5 w-5 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+          <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round">
+          </path>
+         </svg>
+        </div>
+        <p class="text-center text-sm font-bold uppercase tracking-[0.3em] text-primary">
+         Mon histoire
+        </p>
+       </div>
+       <div class="relative mt-10">
+        <div aria-hidden="true" class="absolute left-0 top-0 h-1 w-full overflow-hidden rounded-full bg-slate-200">
+         <div class="h-full w-full animate-pulse bg-gradient-to-r from-primary via-accent to-primary">
+         </div>
+        </div>
+        <div class="grid gap-12 pt-12 md:grid-cols-3">
+         <div class="group/step relative transition-all duration-500 hover:-translate-y-1" style="animation-delay:0ms">
+          <div aria-hidden="true" class="absolute -top-12 left-0 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border-4 border-white bg-gradient-to-br from-primary via-primary to-accent shadow-lg transition-all duration-500 group-hover/step:scale-125 group-hover/step:shadow-xl group-hover/step:shadow-primary/30">
+           <span class="text-xs font-bold text-white">
+            05
+           </span>
+          </div>
+          <div class="rounded-2xl bg-gradient-to-br from-white to-slate-50/50 p-6 shadow-sm transition-all duration-500 group-hover/step:shadow-lg">
+           <span class="inline-flex items-center rounded-full bg-gradient-to-r from-primary/15 to-accent/15 px-4 py-2 text-xs font-bold uppercase tracking-[0.2em] text-primary shadow-sm">
+            2005
+           </span>
+           <p class="mt-4 bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-base font-bold uppercase tracking-wide text-transparent">
+            Débuts
+           </p>
+           <p class="mt-3 text-sm leading-relaxed text-slate-600">
+            Salarié dans une grande entreprise de vente d'outillage, j'y ai développé mon expertise et ma connaissance des besoins professionnels.
+           </p>
+          </div>
+         </div>
+         <div class="group/step relative transition-all duration-500 hover:-translate-y-1" style="animation-delay:100ms">
+          <div aria-hidden="true" class="absolute -top-12 left-0 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border-4 border-white bg-gradient-to-br from-primary via-primary to-accent shadow-lg transition-all duration-500 group-hover/step:scale-125 group-hover/step:shadow-xl group-hover/step:shadow-primary/30">
+           <span class="text-xs font-bold text-white">
+            13
+           </span>
+          </div>
+          <div class="rounded-2xl bg-gradient-to-br from-white to-slate-50/50 p-6 shadow-sm transition-all duration-500 group-hover/step:shadow-lg">
+           <span class="inline-flex items-center rounded-full bg-gradient-to-r from-primary/15 to-accent/15 px-4 py-2 text-xs font-bold uppercase tracking-[0.2em] text-primary shadow-sm">
+            2013
+           </span>
+           <p class="mt-4 bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-base font-bold uppercase tracking-wide text-transparent">
+            Création AS PRO SERVICES
+           </p>
+           <p class="mt-3 text-sm leading-relaxed text-slate-600">
+            Création de mon entreprise pour proposer un service personnalisé et de proximité aux artisans et PME de la région.
+           </p>
+          </div>
+         </div>
+         <div class="group/step relative transition-all duration-500 hover:-translate-y-1" style="animation-delay:200ms">
+          <div aria-hidden="true" class="absolute -top-12 left-0 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border-4 border-white bg-gradient-to-br from-primary via-primary to-accent shadow-lg transition-all duration-500 group-hover/step:scale-125 group-hover/step:shadow-xl group-hover/step:shadow-primary/30">
+           <span class="text-xs font-bold text-white">
+            20
+           </span>
+          </div>
+          <div class="rounded-2xl bg-gradient-to-br from-white to-slate-50/50 p-6 shadow-sm transition-all duration-500 group-hover/step:shadow-lg">
+           <span class="inline-flex items-center rounded-full bg-gradient-to-r from-primary/15 to-accent/15 px-4 py-2 text-xs font-bold uppercase tracking-[0.2em] text-primary shadow-sm">
+            2020
+           </span>
+           <p class="mt-4 bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-base font-bold uppercase tracking-wide text-transparent">
+            Développement digital
+           </p>
+           <p class="mt-3 text-sm leading-relaxed text-slate-600">
+            Digitalisation de l'offre avec catalogues connectés et gestion proactive des consommables pour mieux servir mes clients.
+           </p>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section class="relative overflow-hidden bg-white py-24" id="services">
+    <div class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_right,_rgba(30,76,122,0.08),_transparent_55%)]">
+    </div>
+    <div class="absolute inset-x-0 bottom-0 -z-10 h-64 bg-gradient-to-t from-slate-100/70 to-transparent">
+    </div>
+    <div class="relative mx-auto max-w-6xl px-4">
+     <div class="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+      <div>
+       <p class="text-sm font-semibold uppercase tracking-[0.3em] text-primary">
+        Services
+       </p>
+       <h2 class="text-3xl font-semibold tracking-tight text-slate-900 md:text-4xl">
+        Des solutions complètes, du conseil au suivi après-vente
+       </h2>
+       <p class="mt-4 max-w-2xl text-base text-slate-600">
+        Du premier diagnostic à la livraison, chaque mission est gérée par un interlocuteur unique qui connaît vos chantiers et vos impératifs.
+       </p>
+      </div>
+     </div>
+     <div class="mt-12 grid gap-6 md:grid-cols-2">
+      <div class="transition-all duration-700 ease-out translate-y-8 opacity-0">
+       <article class="group relative flex h-full flex-col gap-4 rounded-3xl border border-slate-200 bg-gradient-to-br from-white to-slate-50/60 p-8 shadow-soft transition hover:border-primary/40 hover:shadow-soft-lg">
+        <div class="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 text-primary transition group-hover:bg-primary group-hover:text-white">
+         <svg class="h-7 w-7" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+          <path d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.324.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 011.37.49l1.296 2.247a1.125 1.125 0 01-.26 1.431l-1.003.827c-.293.24-.438.613-.431.992a6.759 6.759 0 010 .255c-.007.378.138.75.43.99l1.005.828c.424.35.534.954.26 1.43l-1.298 2.247a1.125 1.125 0 01-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.57 6.57 0 01-.22.128c-.331.183-.581.495-.644.869l-.213 1.28c-.09.543-.56.941-1.11.941h-2.594c-.55 0-1.02-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 01-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 01-1.369-.49l-1.297-2.247a1.125 1.125 0 01.26-1.431l1.004-.827c.292-.24.437-.613.43-.992a6.932 6.932 0 010-.255c.007-.378-.138-.75-.43-.99l-1.004-.828a1.125 1.125 0 01-.26-1.43l1.297-2.247a1.125 1.125 0 011.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.087.22-.128.332-.183.582-.495.644-.869l.214-1.281z" stroke-linecap="round" stroke-linejoin="round">
+          </path>
+          <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round">
+          </path>
+         </svg>
+        </div>
+        <div class="space-y-2">
+         <h3 class="text-xl font-semibold text-slate-900">
+          Vente d’outillage et consommables
+         </h3>
+         <p class="text-base text-slate-600">
+          Sélection sur mesure de matériels, EPI, abrasifs, visserie, électroportatif et équipements atelier.
+         </p>
+        </div>
+        <div class="mt-auto flex items-center gap-2 text-sm font-semibold text-primary/80 transition group-hover:text-primary">
+         <span class="h-1 w-1 rounded-full bg-primary/50">
+         </span>
+         Service disponible sur demande
+        </div>
+        <div class="pointer-events-none absolute inset-0 rounded-3xl opacity-0 transition group-hover:opacity-100">
+         <div aria-hidden="true" class="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/5 via-transparent to-accent/10">
+         </div>
+        </div>
+       </article>
+      </div>
+      <div class="transition-all duration-700 ease-out translate-y-8 opacity-0">
+       <article class="group relative flex h-full flex-col gap-4 rounded-3xl border border-slate-200 bg-gradient-to-br from-white to-slate-50/60 p-8 shadow-soft transition hover:border-primary/40 hover:shadow-soft-lg">
+        <div class="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 text-primary transition group-hover:bg-primary group-hover:text-white">
+         <svg class="h-7 w-7" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+          <path d="M21.75 6.75a4.5 4.5 0 01-4.884 4.484c-1.076-.091-2.264.071-2.95.904l-7.152 8.684a2.548 2.548 0 11-3.586-3.586l8.684-7.152c.833-.686.995-1.874.904-2.95a4.5 4.5 0 016.336-4.486l-3.276 3.276a3.004 3.004 0 002.25 2.25l3.276-3.276c.256.565.398 1.192.398 1.852z" stroke-linecap="round" stroke-linejoin="round">
+          </path>
+          <path d="M4.867 19.125h.008v.008h-.008v-.008z" stroke-linecap="round" stroke-linejoin="round">
+          </path>
+         </svg>
+        </div>
+        <div class="space-y-2">
+         <h3 class="text-xl font-semibold text-slate-900">
+          Service après-vente et maintenance
+         </h3>
+         <p class="text-base text-slate-600">
+          Prise en charge des réparations, prêt de matériel, relai avec les marques pour un suivi efficace.
+         </p>
+        </div>
+        <div class="mt-auto flex items-center gap-2 text-sm font-semibold text-primary/80 transition group-hover:text-primary">
+         <span class="h-1 w-1 rounded-full bg-primary/50">
+         </span>
+         Service disponible sur demande
+        </div>
+        <div class="pointer-events-none absolute inset-0 rounded-3xl opacity-0 transition group-hover:opacity-100">
+         <div aria-hidden="true" class="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/5 via-transparent to-accent/10">
+         </div>
+        </div>
+       </article>
+      </div>
+      <div class="transition-all duration-700 ease-out translate-y-8 opacity-0">
+       <article class="group relative flex h-full flex-col gap-4 rounded-3xl border border-slate-200 bg-gradient-to-br from-white to-slate-50/60 p-8 shadow-soft transition hover:border-primary/40 hover:shadow-soft-lg">
+        <div class="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 text-primary transition group-hover:bg-primary group-hover:text-white">
+         <svg class="h-7 w-7" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+          <path d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25zM6.75 12h.008v.008H6.75V12zm0 3h.008v.008H6.75V15zm0 3h.008v.008H6.75V18z" stroke-linecap="round" stroke-linejoin="round">
+          </path>
+         </svg>
+        </div>
+        <div class="space-y-2">
+         <h3 class="text-xl font-semibold text-slate-900">
+          Conseil et accompagnement
+         </h3>
+         <p class="text-base text-slate-600">
+          Audits de vos besoins, recommandations techniques et veille sur les innovations métiers.
+         </p>
+        </div>
+        <div class="mt-auto flex items-center gap-2 text-sm font-semibold text-primary/80 transition group-hover:text-primary">
+         <span class="h-1 w-1 rounded-full bg-primary/50">
+         </span>
+         Service disponible sur demande
+        </div>
+        <div class="pointer-events-none absolute inset-0 rounded-3xl opacity-0 transition group-hover:opacity-100">
+         <div aria-hidden="true" class="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/5 via-transparent to-accent/10">
+         </div>
+        </div>
+       </article>
+      </div>
+      <div class="transition-all duration-700 ease-out translate-y-8 opacity-0">
+       <article class="group relative flex h-full flex-col gap-4 rounded-3xl border border-slate-200 bg-gradient-to-br from-white to-slate-50/60 p-8 shadow-soft transition hover:border-primary/40 hover:shadow-soft-lg">
+        <div class="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 text-primary transition group-hover:bg-primary group-hover:text-white">
+         <svg class="h-7 w-7" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+          <path d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25zM6.75 12h.008v.008H6.75V12zm0 3h.008v.008H6.75V15zm0 3h.008v.008H6.75V18z" stroke-linecap="round" stroke-linejoin="round">
+          </path>
+         </svg>
+        </div>
+        <div class="space-y-2">
+         <h3 class="text-xl font-semibold text-slate-900">
+          Déplacement sur site
+         </h3>
+         <p class="text-base text-slate-600">
+          Je me déplace sur vos chantiers et ateliers principalement en Occitanie (32, 31, 40, 47, 65, 82) pour analyser vos besoins et livrer rapidement.
+         </p>
+        </div>
+        <div class="mt-auto flex items-center gap-2 text-sm font-semibold text-primary/80 transition group-hover:text-primary">
+         <span class="h-1 w-1 rounded-full bg-primary/50">
+         </span>
+         Service disponible sur demande
+        </div>
+        <div class="pointer-events-none absolute inset-0 rounded-3xl opacity-0 transition group-hover:opacity-100">
+         <div aria-hidden="true" class="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/5 via-transparent to-accent/10">
+         </div>
+        </div>
+       </article>
+      </div>
+     </div>
+     <div class="mt-14 rounded-3xl border border-primary/15 bg-gradient-to-r from-primary/5 via-white to-accent/10 p-8 text-sm text-slate-700 shadow-soft md:flex md:items-center md:justify-between">
+      <div>
+       <p class="text-xs font-semibold uppercase tracking-[0.35em] text-primary">
+        Accompagnement continu
+       </p>
+       <p class="mt-2 text-base md:text-lg">
+        Besoin d’un suivi régulier de vos consommables ou d’une mise à jour de parc ? Je planifie des visites terrain pour anticiper vos besoins.
+       </p>
+      </div>
+      <a class="mt-4 inline-flex items-center justify-center gap-2 rounded-full border border-primary/40 px-5 py-2 text-sm font-semibold text-primary transition hover:border-primary hover:bg-primary hover:text-white md:mt-0" href="#contact">
+       Organiser un point atelier →
+      </a>
+     </div>
+    </div>
+   </section>
+   <section class="relative bg-white py-24" id="fournisseurs">
+    <div class="absolute inset-0 -z-10 bg-gradient-to-br from-slate-100 via-white to-white">
+    </div>
+    <div class="mx-auto max-w-6xl px-4">
+     <div class="mb-12 space-y-4 text-center">
+      <p class="text-sm font-semibold uppercase tracking-[0.3em] text-primary">
+       Fournisseurs
+      </p>
+      <h2 class="text-3xl font-semibold tracking-tight text-slate-900 md:text-4xl">
+       Des marques professionnelles reconnues et durables
+      </h2>
+      <p class="mx-auto max-w-3xl text-lg text-slate-600">
+       Je sélectionne des partenaires fiables pour garantir des solutions performantes, des fiches techniques claires et un SAV simplifié.
+      </p>
+     </div>
+     <div class="mt-12 grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
+      <div class="transition-all duration-700 ease-out translate-y-8 opacity-0">
+       <article class="group relative overflow-hidden rounded-3xl bg-white p-6 shadow-soft transition hover:shadow-xl">
+        <div class="relative mb-4 flex h-32 w-full items-center justify-center overflow-hidden rounded-2xl border border-slate-100 bg-gradient-to-br from-slate-50 to-white">
+         <img alt="Makita" class="object-contain p-4 transition duration-500 group-hover:scale-110" data-nimg="fill" decoding="async" loading="lazy" sizes="(min-width: 1280px) 240px, (min-width: 768px) 220px, 100vw" src="public/images/logo-fournisseurs/Makita_Logo.png?w=3840&q=75" srcset="public/images/logo-fournisseurs/Makita_Logo.png?w=640&q=75 640w, public/images/logo-fournisseurs/Makita_Logo.png?w=750&q=75 750w, public/images/logo-fournisseurs/Makita_Logo.png?w=828&q=75 828w, public/images/logo-fournisseurs/Makita_Logo.png?w=1080&q=75 1080w, public/images/logo-fournisseurs/Makita_Logo.png?w=1200&q=75 1200w, public/images/logo-fournisseurs/Makita_Logo.png?w=1920&q=75 1920w, public/images/logo-fournisseurs/Makita_Logo.png?w=2048&q=75 2048w, public/images/logo-fournisseurs/Makita_Logo.png?w=3840&q=75 3840w" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent"/>
+        </div>
+        <div class="flex flex-col gap-3">
+         <h3 class="text-xl font-semibold text-slate-900">
+          Makita
+         </h3>
+         <p class="text-sm leading-relaxed text-slate-600">
+          Électroportatif, machines sans-fil LXT et accessoires pour le chantier et l’atelier.
+         </p>
+         <a class="group/link inline-flex items-center gap-2 text-sm font-semibold text-primary transition hover:text-accent" href="https://www.makita.fr" rel="noopener noreferrer" target="_blank">
+          Consulter le catalogue
+          <span aria-hidden="true" class="transition-transform duration-300 group-hover/link:translate-x-1">
+           →
+          </span>
+         </a>
+        </div>
+       </article>
+      </div>
+      <div class="transition-all duration-700 ease-out translate-y-8 opacity-0">
+       <article class="group relative overflow-hidden rounded-3xl bg-white p-6 shadow-soft transition hover:shadow-xl">
+        <div class="relative mb-4 flex h-32 w-full items-center justify-center overflow-hidden rounded-2xl border border-slate-100 bg-gradient-to-br from-slate-50 to-white">
+         <img alt="KS Tools" class="object-contain p-4 transition duration-500 group-hover:scale-110" data-nimg="fill" decoding="async" loading="lazy" sizes="(min-width: 1280px) 240px, (min-width: 768px) 220px, 100vw" src="public/images/logo-fournisseurs/FOT_PRO_ALG_FAN_1009_SALL_AING_V15b81fb255a512_600x600%402x.jpg?w=3840&q=75" srcset="public/images/logo-fournisseurs/FOT_PRO_ALG_FAN_1009_SALL_AING_V15b81fb255a512_600x600%402x.jpg?w=640&q=75 640w, public/images/logo-fournisseurs/FOT_PRO_ALG_FAN_1009_SALL_AING_V15b81fb255a512_600x600%402x.jpg?w=750&q=75 750w, public/images/logo-fournisseurs/FOT_PRO_ALG_FAN_1009_SALL_AING_V15b81fb255a512_600x600%402x.jpg?w=828&q=75 828w, public/images/logo-fournisseurs/FOT_PRO_ALG_FAN_1009_SALL_AING_V15b81fb255a512_600x600%402x.jpg?w=1080&q=75 1080w, public/images/logo-fournisseurs/FOT_PRO_ALG_FAN_1009_SALL_AING_V15b81fb255a512_600x600%402x.jpg?w=1200&q=75 1200w, public/images/logo-fournisseurs/FOT_PRO_ALG_FAN_1009_SALL_AING_V15b81fb255a512_600x600%402x.jpg?w=1920&q=75 1920w, public/images/logo-fournisseurs/FOT_PRO_ALG_FAN_1009_SALL_AING_V15b81fb255a512_600x600%402x.jpg?w=2048&q=75 2048w, public/images/logo-fournisseurs/FOT_PRO_ALG_FAN_1009_SALL_AING_V15b81fb255a512_600x600%402x.jpg?w=3840&q=75 3840w" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent"/>
+        </div>
+        <div class="flex flex-col gap-3">
+         <h3 class="text-xl font-semibold text-slate-900">
+          KS Tools
+         </h3>
+         <p class="text-sm leading-relaxed text-slate-600">
+          Outillage à main et solutions de serrage pour l'automobile, l'industrie et le BTP.
+         </p>
+         <a class="group/link inline-flex items-center gap-2 text-sm font-semibold text-primary transition hover:text-accent" href="https://kstools.fr" rel="noopener noreferrer" target="_blank">
+          Consulter le catalogue
+          <span aria-hidden="true" class="transition-transform duration-300 group-hover/link:translate-x-1">
+           →
+          </span>
+         </a>
+        </div>
+       </article>
+      </div>
+      <div class="transition-all duration-700 ease-out translate-y-8 opacity-0">
+       <article class="group relative overflow-hidden rounded-3xl bg-white p-6 shadow-soft transition hover:shadow-xl">
+        <div class="relative mb-4 flex h-32 w-full items-center justify-center overflow-hidden rounded-2xl border border-slate-100 bg-gradient-to-br from-slate-50 to-white">
+         <img alt="Sodise" class="object-contain p-4 transition duration-500 group-hover:scale-110" data-nimg="fill" decoding="async" loading="lazy" sizes="(min-width: 1280px) 240px, (min-width: 768px) 220px, 100vw" src="public/images/logo-fournisseurs/LogoSodise.png?w=3840&q=75" srcset="public/images/logo-fournisseurs/LogoSodise.png?w=640&q=75 640w, public/images/logo-fournisseurs/LogoSodise.png?w=750&q=75 750w, public/images/logo-fournisseurs/LogoSodise.png?w=828&q=75 828w, public/images/logo-fournisseurs/LogoSodise.png?w=1080&q=75 1080w, public/images/logo-fournisseurs/LogoSodise.png?w=1200&q=75 1200w, public/images/logo-fournisseurs/LogoSodise.png?w=1920&q=75 1920w, public/images/logo-fournisseurs/LogoSodise.png?w=2048&q=75 2048w, public/images/logo-fournisseurs/LogoSodise.png?w=3840&q=75 3840w" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent"/>
+        </div>
+        <div class="flex flex-col gap-3">
+         <h3 class="text-xl font-semibold text-slate-900">
+          Sodise
+         </h3>
+         <p class="text-sm leading-relaxed text-slate-600">
+          Distributeur de consommables, EPI et fournitures techniques pour artisans et industriels.
+         </p>
+         <a class="group/link inline-flex items-center gap-2 text-sm font-semibold text-primary transition hover:text-accent" href="https://www.sodise.com" rel="noopener noreferrer" target="_blank">
+          Consulter le catalogue
+          <span aria-hidden="true" class="transition-transform duration-300 group-hover/link:translate-x-1">
+           →
+          </span>
+         </a>
+        </div>
+       </article>
+      </div>
+      <div class="transition-all duration-700 ease-out translate-y-8 opacity-0">
+       <article class="group relative overflow-hidden rounded-3xl bg-white p-6 shadow-soft transition hover:shadow-xl">
+  <div class="relative mb-4 flex h-32 w-full items-center justify-center overflow-hidden rounded-2xl border border-slate-100 bg-gradient-to-br from-slate-50 to-white">
+   <img alt="King Tony" class="object-contain p-4 transition duration-500 group-hover:scale-110" data-nimg="fill" decoding="async" loading="lazy" sizes="(min-width: 1280px) 240px, (min-width: 768px) 220px, 100vw" src="public/images/logo-fournisseurs/king-tony-logo-png-transparent.png?w=3840&q=75" srcset="public/images/logo-fournisseurs/king-tony-logo-png-transparent.png?w=640&q=75 640w, public/images/logo-fournisseurs/king-tony-logo-png-transparent.png?w=750&q=75 750w, public/images/logo-fournisseurs/king-tony-logo-png-transparent.png?w=828&q=75 828w, public/images/logo-fournisseurs/king-tony-logo-png-transparent.png?w=1080&q=75 1080w, public/images/logo-fournisseurs/king-tony-logo-png-transparent.png?w=1200&q=75 1200w, public/images/logo-fournisseurs/king-tony-logo-png-transparent.png?w=1920&q=75 1920w, public/images/logo-fournisseurs/king-tony-logo-png-transparent.png?w=2048&q=75 2048w, public/images/logo-fournisseurs/king-tony-logo-png-transparent.png?w=3840&q=75 3840w" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent"/>
+  </div>
+        <div class="flex flex-col gap-3">
+         <h3 class="text-xl font-semibold text-slate-900">
+          King Tony
+         </h3>
+         <p class="text-sm leading-relaxed text-slate-600">
+          Clés et outillage manuel haute résistance dédiés aux environnements exigeants.
+         </p>
+         <a class="group/link inline-flex items-center gap-2 text-sm font-semibold text-primary transition hover:text-accent" href="https://www.kingtonyeurope.com" rel="noopener noreferrer" target="_blank">
+          Consulter le catalogue
+          <span aria-hidden="true" class="transition-transform duration-300 group-hover/link:translate-x-1">
+           →
+          </span>
+         </a>
+        </div>
+       </article>
+      </div>
+      <div class="transition-all duration-700 ease-out translate-y-8 opacity-0">
+       <article class="group relative overflow-hidden rounded-3xl bg-white p-6 shadow-soft transition hover:shadow-xl">
+        <div class="relative mb-4 flex h-32 w-full items-center justify-center overflow-hidden rounded-2xl border border-slate-100 bg-gradient-to-br from-slate-50 to-white">
+         <img alt="Legallais" class="object-contain p-4 transition duration-500 group-hover:scale-110" data-nimg="fill" decoding="async" loading="lazy" sizes="(min-width: 1280px) 240px, (min-width: 768px) 220px, 100vw" src="public/images/logo-fournisseurs/Legallais-logo2.jpg?w=3840&q=75" srcset="public/images/logo-fournisseurs/Legallais-logo2.jpg?w=640&q=75 640w, public/images/logo-fournisseurs/Legallais-logo2.jpg?w=750&q=75 750w, public/images/logo-fournisseurs/Legallais-logo2.jpg?w=828&q=75 828w, public/images/logo-fournisseurs/Legallais-logo2.jpg?w=1080&q=75 1080w, public/images/logo-fournisseurs/Legallais-logo2.jpg?w=1200&q=75 1200w, public/images/logo-fournisseurs/Legallais-logo2.jpg?w=1920&q=75 1920w, public/images/logo-fournisseurs/Legallais-logo2.jpg?w=2048&q=75 2048w, public/images/logo-fournisseurs/Legallais-logo2.jpg?w=3840&q=75 3840w" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent"/>
+        </div>
+        <div class="flex flex-col gap-3">
+         <h3 class="text-xl font-semibold text-slate-900">
+          Legallais
+         </h3>
+         <p class="text-sm leading-relaxed text-slate-600">
+          Quincaillerie, fixations, équipements d’atelier et services logistiques pour les pros.
+         </p>
+         <a class="group/link inline-flex items-center gap-2 text-sm font-semibold text-primary transition hover:text-accent" href="https://www.legallais.com" rel="noopener noreferrer" target="_blank">
+          Consulter le catalogue
+          <span aria-hidden="true" class="transition-transform duration-300 group-hover/link:translate-x-1">
+           →
+          </span>
+         </a>
+        </div>
+       </article>
+      </div>
+      <div class="transition-all duration-700 ease-out translate-y-8 opacity-0">
+       <article class="group relative overflow-hidden rounded-3xl bg-white p-6 shadow-soft transition hover:shadow-xl">
+        <div class="relative mb-4 flex h-32 w-full items-center justify-center overflow-hidden rounded-2xl border border-slate-100 bg-gradient-to-br from-slate-50 to-white">
+         <img alt="Hydrokit" class="object-contain p-4 transition duration-500 group-hover:scale-110" data-nimg="fill" decoding="async" loading="lazy" sizes="(min-width: 1280px) 240px, (min-width: 768px) 220px, 100vw" src="public/images/logo-fournisseurs/kal-theme-logo-footer_2.png?w=3840&q=75" srcset="public/images/logo-fournisseurs/kal-theme-logo-footer_2.png?w=640&q=75 640w, public/images/logo-fournisseurs/kal-theme-logo-footer_2.png?w=750&q=75 750w, public/images/logo-fournisseurs/kal-theme-logo-footer_2.png?w=828&q=75 828w, public/images/logo-fournisseurs/kal-theme-logo-footer_2.png?w=1080&q=75 1080w, public/images/logo-fournisseurs/kal-theme-logo-footer_2.png?w=1200&q=75 1200w, public/images/logo-fournisseurs/kal-theme-logo-footer_2.png?w=1920&q=75 1920w, public/images/logo-fournisseurs/kal-theme-logo-footer_2.png?w=2048&q=75 2048w, public/images/logo-fournisseurs/kal-theme-logo-footer_2.png?w=3840&q=75 3840w" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent"/>
+        </div>
+        <div class="flex flex-col gap-3">
+         <h3 class="text-xl font-semibold text-slate-900">
+          Hydrokit
+         </h3>
+         <p class="text-sm leading-relaxed text-slate-600">
+          Solutions hydrauliques globales, composants et maintenance pour matériels mobiles.
+         </p>
+         <a class="group/link inline-flex items-center gap-2 text-sm font-semibold text-primary transition hover:text-accent" href="https://www.hydrokit.com" rel="noopener noreferrer" target="_blank">
+          Consulter le catalogue
+          <span aria-hidden="true" class="transition-transform duration-300 group-hover/link:translate-x-1">
+           →
+          </span>
+         </a>
+        </div>
+       </article>
+      </div>
+      <div class="transition-all duration-700 ease-out translate-y-8 opacity-0">
+       <article class="group relative overflow-hidden rounded-3xl bg-white p-6 shadow-soft transition hover:shadow-xl">
+        <div class="relative mb-4 flex h-32 w-full items-center justify-center overflow-hidden rounded-2xl border border-slate-100 bg-gradient-to-br from-slate-50 to-white">
+         <img alt="Buisard Distribution" class="object-contain p-4 transition duration-500 group-hover:scale-110" data-nimg="fill" decoding="async" loading="lazy" sizes="(min-width: 1280px) 240px, (min-width: 768px) 220px, 100vw" src="public/images/logo-fournisseurs/logo2-625x250.png?w=3840&q=75" srcset="public/images/logo-fournisseurs/logo2-625x250.png?w=640&q=75 640w, public/images/logo-fournisseurs/logo2-625x250.png?w=750&q=75 750w, public/images/logo-fournisseurs/logo2-625x250.png?w=828&q=75 828w, public/images/logo-fournisseurs/logo2-625x250.png?w=1080&q=75 1080w, public/images/logo-fournisseurs/logo2-625x250.png?w=1200&q=75 1200w, public/images/logo-fournisseurs/logo2-625x250.png?w=1920&q=75 1920w, public/images/logo-fournisseurs/logo2-625x250.png?w=2048&q=75 2048w, public/images/logo-fournisseurs/logo2-625x250.png?w=3840&q=75 3840w" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent"/>
+        </div>
+        <div class="flex flex-col gap-3">
+         <h3 class="text-xl font-semibold text-slate-900">
+          Buisard Distribution
+         </h3>
+         <p class="text-sm leading-relaxed text-slate-600">
+          Consommables, abrasifs, EPI et fournitures pour les métiers du métal et du bâtiment.
+         </p>
+         <a class="group/link inline-flex items-center gap-2 text-sm font-semibold text-primary transition hover:text-accent" href="https://www.buisard-distribution.fr" rel="noopener noreferrer" target="_blank">
+          Consulter le catalogue
+          <span aria-hidden="true" class="transition-transform duration-300 group-hover/link:translate-x-1">
+           →
+          </span>
+         </a>
+        </div>
+       </article>
+      </div>
+      <div class="transition-all duration-700 ease-out translate-y-8 opacity-0">
+       <article class="group relative overflow-hidden rounded-3xl bg-white p-6 shadow-soft transition hover:shadow-xl">
+        <div class="relative mb-4 flex h-32 w-full items-center justify-center overflow-hidden rounded-2xl border border-slate-100 bg-gradient-to-br from-slate-50 to-white">
+         <img alt="Robert Lye" class="object-contain p-4 transition duration-500 group-hover:scale-110" data-nimg="fill" decoding="async" loading="lazy" sizes="(min-width: 1280px) 240px, (min-width: 768px) 220px, 100vw" src="public/images/logo-fournisseurs/robert-lye.png?w=3840&q=75" srcset="public/images/logo-fournisseurs/robert-lye.png?w=640&q=75 640w, public/images/logo-fournisseurs/robert-lye.png?w=750&q=75 750w, public/images/logo-fournisseurs/robert-lye.png?w=828&q=75 828w, public/images/logo-fournisseurs/robert-lye.png?w=1080&q=75 1080w, public/images/logo-fournisseurs/robert-lye.png?w=1200&q=75 1200w, public/images/logo-fournisseurs/robert-lye.png?w=1920&q=75 1920w, public/images/logo-fournisseurs/robert-lye.png?w=2048&q=75 2048w, public/images/logo-fournisseurs/robert-lye.png?w=3840&q=75 3840w" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent"/>
+        </div>
+        <div class="flex flex-col gap-3">
+         <h3 class="text-xl font-semibold text-slate-900">
+          Robert Lye
+         </h3>
+         <p class="text-sm leading-relaxed text-slate-600">
+          Électricité, équipement pour véhicules légers, utilitaires et poids lourds.
+         </p>
+         <a class="group/link inline-flex items-center gap-2 text-sm font-semibold text-primary transition hover:text-accent" href="https://www.robert-lye.fr" rel="noopener noreferrer" target="_blank">
+          Consulter le catalogue
+          <span aria-hidden="true" class="transition-transform duration-300 group-hover/link:translate-x-1">
+           →
+          </span>
+         </a>
+        </div>
+       </article>
+      </div>
+      <div class="transition-all duration-700 ease-out translate-y-8 opacity-0">
+       <article class="group relative overflow-hidden rounded-3xl bg-white p-6 shadow-soft transition hover:shadow-xl">
+        <div class="relative mb-4 flex h-32 w-full items-center justify-center overflow-hidden rounded-2xl border border-slate-100 bg-gradient-to-br from-slate-50 to-white">
+         <img alt="Volvis" class="object-contain p-4 transition duration-500 group-hover:scale-110" data-nimg="fill" decoding="async" loading="lazy" sizes="(min-width: 1280px) 240px, (min-width: 768px) 220px, 100vw" src="public/images/logo-fournisseurs/cropped-Logo-VOLVIS-rouge.png?w=3840&q=75" srcset="public/images/logo-fournisseurs/cropped-Logo-VOLVIS-rouge.png?w=640&q=75 640w, public/images/logo-fournisseurs/cropped-Logo-VOLVIS-rouge.png?w=750&q=75 750w, public/images/logo-fournisseurs/cropped-Logo-VOLVIS-rouge.png?w=828&q=75 828w, public/images/logo-fournisseurs/cropped-Logo-VOLVIS-rouge.png?w=1080&q=75 1080w, public/images/logo-fournisseurs/cropped-Logo-VOLVIS-rouge.png?w=1200&q=75 1200w, public/images/logo-fournisseurs/cropped-Logo-VOLVIS-rouge.png?w=1920&q=75 1920w, public/images/logo-fournisseurs/cropped-Logo-VOLVIS-rouge.png?w=2048&q=75 2048w, public/images/logo-fournisseurs/cropped-Logo-VOLVIS-rouge.png?w=3840&q=75 3840w" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent"/>
+        </div>
+        <div class="flex flex-col gap-3">
+         <h3 class="text-xl font-semibold text-slate-900">
+          Volvis
+         </h3>
+         <p class="text-sm leading-relaxed text-slate-600">
+          Visserie, boulonnerie et pièces spéciales sur mesure pour vos assemblages critiques.
+         </p>
+         <a class="group/link inline-flex items-center gap-2 text-sm font-semibold text-primary transition hover:text-accent" href="https://www.volvis.fr" rel="noopener noreferrer" target="_blank">
+          Consulter le catalogue
+          <span aria-hidden="true" class="transition-transform duration-300 group-hover/link:translate-x-1">
+           →
+          </span>
+         </a>
+        </div>
+       </article>
+      </div>
+      <div class="transition-all duration-700 ease-out translate-y-8 opacity-0">
+       <article class="group relative overflow-hidden rounded-3xl bg-white p-6 shadow-soft transition hover:shadow-xl">
+        <div class="relative mb-4 flex h-32 w-full items-center justify-center overflow-hidden rounded-2xl border border-slate-100 bg-gradient-to-br from-slate-50 to-white">
+         <img alt="Kramp" class="object-contain p-4 transition duration-500 group-hover:scale-110" data-nimg="fill" decoding="async" loading="lazy" sizes="(min-width: 1280px) 240px, (min-width: 768px) 220px, 100vw" src="public/images/logo-fournisseurs/Striim_Logo_Kramp_01.webp?w=3840&q=75" srcset="public/images/logo-fournisseurs/Striim_Logo_Kramp_01.webp?w=640&q=75 640w, public/images/logo-fournisseurs/Striim_Logo_Kramp_01.webp?w=750&q=75 750w, public/images/logo-fournisseurs/Striim_Logo_Kramp_01.webp?w=828&q=75 828w, public/images/logo-fournisseurs/Striim_Logo_Kramp_01.webp?w=1080&q=75 1080w, public/images/logo-fournisseurs/Striim_Logo_Kramp_01.webp?w=1200&q=75 1200w, public/images/logo-fournisseurs/Striim_Logo_Kramp_01.webp?w=1920&q=75 1920w, public/images/logo-fournisseurs/Striim_Logo_Kramp_01.webp?w=2048&q=75 2048w, public/images/logo-fournisseurs/Striim_Logo_Kramp_01.webp?w=3840&q=75 3840w" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent"/>
+        </div>
+        <div class="flex flex-col gap-3">
+         <h3 class="text-xl font-semibold text-slate-900">
+          Kramp
+         </h3>
+         <p class="text-sm leading-relaxed text-slate-600">
+          Pièces détachées, fournitures et consommables pour l’agriculture et les travaux publics.
+         </p>
+         <a class="group/link inline-flex items-center gap-2 text-sm font-semibold text-primary transition hover:text-accent" href="https://www.kramp.com" rel="noopener noreferrer" target="_blank">
+          Consulter le catalogue
+          <span aria-hidden="true" class="transition-transform duration-300 group-hover/link:translate-x-1">
+           →
+          </span>
+         </a>
+        </div>
+       </article>
+      </div>
+      <div class="transition-all duration-700 ease-out translate-y-8 opacity-0">
+       <article class="group relative overflow-hidden rounded-3xl bg-white p-6 shadow-soft transition hover:shadow-xl">
+        <div class="relative mb-4 flex h-32 w-full items-center justify-center overflow-hidden rounded-2xl border border-slate-100 bg-gradient-to-br from-slate-50 to-white">
+         <img alt="De Witte" class="object-contain p-4 transition duration-500 group-hover:scale-110" data-nimg="fill" decoding="async" loading="lazy" sizes="(min-width: 1280px) 240px, (min-width: 768px) 220px, 100vw" src="public/images/logo-fournisseurs/logo.png?w=3840&q=75" srcset="public/images/logo-fournisseurs/logo.png?w=640&q=75 640w, public/images/logo-fournisseurs/logo.png?w=750&q=75 750w, public/images/logo-fournisseurs/logo.png?w=828&q=75 828w, public/images/logo-fournisseurs/logo.png?w=1080&q=75 1080w, public/images/logo-fournisseurs/logo.png?w=1200&q=75 1200w, public/images/logo-fournisseurs/logo.png?w=1920&q=75 1920w, public/images/logo-fournisseurs/logo.png?w=2048&q=75 2048w, public/images/logo-fournisseurs/logo.png?w=3840&q=75 3840w" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent"/>
+        </div>
+        <div class="flex flex-col gap-3">
+         <h3 class="text-xl font-semibold text-slate-900">
+          De Witte
+         </h3>
+         <p class="text-sm leading-relaxed text-slate-600">
+          Solutions de nettoyage professionnel, pulvérisation et entretien des véhicules.
+         </p>
+         <a class="group/link inline-flex items-center gap-2 text-sm font-semibold text-primary transition hover:text-accent" href="https://www.dewitte.com/categorie" rel="noopener noreferrer" target="_blank">
+          Consulter le catalogue
+          <span aria-hidden="true" class="transition-transform duration-300 group-hover/link:translate-x-1">
+           →
+          </span>
+         </a>
+        </div>
+       </article>
+      </div>
+      <div class="transition-all duration-700 ease-out translate-y-8 opacity-0">
+       <article class="group relative overflow-hidden rounded-3xl bg-white p-6 shadow-soft transition hover:shadow-xl">
+        <div class="relative mb-4 flex h-32 w-full items-center justify-center overflow-hidden rounded-2xl border border-slate-100 bg-gradient-to-br from-slate-50 to-white">
+         <img alt="Renson" class="object-contain p-4 transition duration-500 group-hover:scale-110" data-nimg="fill" decoding="async" loading="lazy" sizes="(min-width: 1280px) 240px, (min-width: 768px) 220px, 100vw" src="public/images/logo-fournisseurs/Logo-RENSON-1024x795.png?w=3840&q=75" srcset="public/images/logo-fournisseurs/Logo-RENSON-1024x795.png?w=640&q=75 640w, public/images/logo-fournisseurs/Logo-RENSON-1024x795.png?w=750&q=75 750w, public/images/logo-fournisseurs/Logo-RENSON-1024x795.png?w=828&q=75 828w, public/images/logo-fournisseurs/Logo-RENSON-1024x795.png?w=1080&q=75 1080w, public/images/logo-fournisseurs/Logo-RENSON-1024x795.png?w=1200&q=75 1200w, public/images/logo-fournisseurs/Logo-RENSON-1024x795.png?w=1920&q=75 1920w, public/images/logo-fournisseurs/Logo-RENSON-1024x795.png?w=2048&q=75 2048w, public/images/logo-fournisseurs/Logo-RENSON-1024x795.png?w=3840&q=75 3840w" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent"/>
+        </div>
+        <div class="flex flex-col gap-3">
+         <h3 class="text-xl font-semibold text-slate-900">
+          Renson
+         </h3>
+         <p class="text-sm leading-relaxed text-slate-600">
+          Équipement de station gasoil, irrigation et distribution Ad Blue.
+         </p>
+         <a class="group/link inline-flex items-center gap-2 text-sm font-semibold text-primary transition hover:text-accent" href="https://www.renson.fr" rel="noopener noreferrer" target="_blank">
+          Consulter le catalogue
+          <span aria-hidden="true" class="transition-transform duration-300 group-hover/link:translate-x-1">
+           →
+          </span>
+         </a>
+        </div>
+       </article>
+      </div>
+      <div class="transition-all duration-700 ease-out translate-y-8 opacity-0">
+       <article class="group relative overflow-hidden rounded-3xl bg-white p-6 shadow-soft transition hover:shadow-xl">
+        <div class="relative mb-4 flex h-32 w-full items-center justify-center overflow-hidden rounded-2xl border border-slate-100 bg-gradient-to-br from-slate-50 to-white">
+         <img alt="Fournial" class="object-contain p-4 transition duration-500 group-hover:scale-110" data-nimg="fill" decoding="async" loading="lazy" sizes="(min-width: 1280px) 240px, (min-width: 768px) 220px, 100vw" src="public/images/logo-fournisseurs/fournial.png?w=3840&q=75" srcset="public/images/logo-fournisseurs/fournial.png?w=640&q=75 640w, public/images/logo-fournisseurs/fournial.png?w=750&q=75 750w, public/images/logo-fournisseurs/fournial.png?w=828&q=75 828w, public/images/logo-fournisseurs/fournial.png?w=1080&q=75 1080w, public/images/logo-fournisseurs/fournial.png?w=1200&q=75 1200w, public/images/logo-fournisseurs/fournial.png?w=1920&q=75 1920w, public/images/logo-fournisseurs/fournial.png?w=2048&q=75 2048w, public/images/logo-fournisseurs/fournial.png?w=3840&q=75 3840w" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent"/>
+        </div>
+        <div class="flex flex-col gap-3">
+         <h3 class="text-xl font-semibold text-slate-900">
+          Fournial
+         </h3>
+         <p class="text-sm leading-relaxed text-slate-600">
+          Matériel et équipement pour professionnels.
+         </p>
+         <a class="group/link inline-flex items-center gap-2 text-sm font-semibold text-primary transition hover:text-accent" href="https://fournial.fr/" rel="noopener noreferrer" target="_blank">
+          Consulter le catalogue
+          <span aria-hidden="true" class="transition-transform duration-300 group-hover/link:translate-x-1">
+           →
+          </span>
+         </a>
+        </div>
+       </article>
+      </div>
+      <div class="transition-all duration-700 ease-out translate-y-8 opacity-0">
+       <article class="group relative overflow-hidden rounded-3xl bg-white p-6 shadow-soft transition hover:shadow-xl">
+        <div class="relative mb-4 flex h-32 w-full items-center justify-center overflow-hidden rounded-2xl border border-slate-100 bg-gradient-to-br from-slate-50 to-white">
+         <img alt="BGS" class="object-contain p-4 transition duration-500 group-hover:scale-110" data-nimg="fill" decoding="async" loading="lazy" sizes="(min-width: 1280px) 240px, (min-width: 768px) 220px, 100vw" src="public/images/logo-fournisseurs/bgs.png?w=3840&q=75" srcset="public/images/logo-fournisseurs/bgs.png?w=640&q=75 640w, public/images/logo-fournisseurs/bgs.png?w=750&q=75 750w, public/images/logo-fournisseurs/bgs.png?w=828&q=75 828w, public/images/logo-fournisseurs/bgs.png?w=1080&q=75 1080w, public/images/logo-fournisseurs/bgs.png?w=1200&q=75 1200w, public/images/logo-fournisseurs/bgs.png?w=1920&q=75 1920w, public/images/logo-fournisseurs/bgs.png?w=2048&q=75 2048w, public/images/logo-fournisseurs/bgs.png?w=3840&q=75 3840w" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent"/>
+        </div>
+        <div class="flex flex-col gap-3">
+         <h3 class="text-xl font-semibold text-slate-900">
+          BGS
+         </h3>
+         <p class="text-sm leading-relaxed text-slate-600">
+          Outillage professionnel et équipement technique.
+         </p>
+         <a class="group/link inline-flex items-center gap-2 text-sm font-semibold text-primary transition hover:text-accent" href="https://www.bgstechnic.com/fr/Produits/" rel="noopener noreferrer" target="_blank">
+          Consulter le catalogue
+          <span aria-hidden="true" class="transition-transform duration-300 group-hover/link:translate-x-1">
+           →
+          </span>
+         </a>
+        </div>
+       </article>
+      </div>
+      <div class="transition-all duration-700 ease-out translate-y-8 opacity-0">
+       <article class="group relative overflow-hidden rounded-3xl bg-white p-6 shadow-soft transition hover:shadow-xl">
+        <div class="relative mb-4 flex h-32 w-full items-center justify-center overflow-hidden rounded-2xl border border-slate-100 bg-gradient-to-br from-slate-50 to-white">
+         <img alt="Levac" class="object-contain p-4 transition duration-500 group-hover:scale-110" data-nimg="fill" decoding="async" loading="lazy" sizes="(min-width: 1280px) 240px, (min-width: 768px) 220px, 100vw" src="public/images/logo-fournisseurs/levac.jpg?w=3840&q=75" srcset="public/images/logo-fournisseurs/levac.jpg?w=640&q=75 640w, public/images/logo-fournisseurs/levac.jpg?w=750&q=75 750w, public/images/logo-fournisseurs/levac.jpg?w=828&q=75 828w, public/images/logo-fournisseurs/levac.jpg?w=1080&q=75 1080w, public/images/logo-fournisseurs/levac.jpg?w=1200&q=75 1200w, public/images/logo-fournisseurs/levac.jpg?w=1920&q=75 1920w, public/images/logo-fournisseurs/levac.jpg?w=2048&q=75 2048w, public/images/logo-fournisseurs/levac.jpg?w=3840&q=75 3840w" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent"/>
+        </div>
+        <div class="flex flex-col gap-3">
+         <h3 class="text-xl font-semibold text-slate-900">
+          Levac
+         </h3>
+         <p class="text-sm leading-relaxed text-slate-600">
+          Solutions et équipements spécialisés.
+         </p>
+         <a class="group/link inline-flex items-center gap-2 text-sm font-semibold text-primary transition hover:text-accent" href="https://www.levac.fr/" rel="noopener noreferrer" target="_blank">
+          Consulter le catalogue
+          <span aria-hidden="true" class="transition-transform duration-300 group-hover/link:translate-x-1">
+           →
+          </span>
+         </a>
+        </div>
+       </article>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section class="relative overflow-hidden bg-slate-950 py-24 text-white" id="promotions">
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(142,174,210,0.1),_transparent_50%)]">
+    </div>
+    <div class="relative mx-auto max-w-6xl px-4">
+     <div class="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
+      <div class="space-y-4">
+       <p class="text-sm font-semibold uppercase tracking-[0.3em] text-accent">
+        Offres spéciales
+       </p>
+       <h2 class="text-3xl font-semibold tracking-tight text-white md:text-4xl">
+        Promotions &amp; offres du moment
+       </h2>
+      </div>
+     </div>
+     <div class="mt-14 grid gap-8 md:grid-cols-2">
+      <article class="group flex flex-col overflow-hidden rounded-3xl border border-white/10 bg-white/5 shadow-lg backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-accent/60 hover:shadow-2xl">
+       <div class="relative aspect-[16/9] w-full overflow-hidden">
+        <img alt="Outils2" class="object-cover transition duration-700 group-hover:scale-110" data-nimg="fill" decoding="async" loading="lazy" sizes="100vw" src="/AS-PRO-SERVICE/promotions/beige-noir-moderne-page-de-garde-rapport-1762532140879.jpg&amp;w=3840&amp;q=75" srcset="/AS-PRO-SERVICE/promotions/beige-noir-moderne-page-de-garde-rapport-1762532140879.jpg&amp;w=640&amp;q=75 640w, /AS-PRO-SERVICE/promotions/beige-noir-moderne-page-de-garde-rapport-1762532140879.jpg&amp;w=750&amp;q=75 750w, /AS-PRO-SERVICE/promotions/beige-noir-moderne-page-de-garde-rapport-1762532140879.jpg&amp;w=828&amp;q=75 828w, /AS-PRO-SERVICE/promotions/beige-noir-moderne-page-de-garde-rapport-1762532140879.jpg&amp;w=1080&amp;q=75 1080w, /AS-PRO-SERVICE/promotions/beige-noir-moderne-page-de-garde-rapport-1762532140879.jpg&amp;w=1200&amp;q=75 1200w, /AS-PRO-SERVICE/promotions/beige-noir-moderne-page-de-garde-rapport-1762532140879.jpg&amp;w=1920&amp;q=75 1920w, /AS-PRO-SERVICE/promotions/beige-noir-moderne-page-de-garde-rapport-1762532140879.jpg&amp;w=2048&amp;q=75 2048w, /AS-PRO-SERVICE/promotions/beige-noir-moderne-page-de-garde-rapport-1762532140879.jpg&amp;w=3840&amp;q=75 3840w" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent"/>
+        <span class="absolute left-5 top-5 rounded-full bg-accent px-4 py-1.5 text-xs font-bold uppercase tracking-wide text-slate-900 shadow-lg">
+         Outils2
+        </span>
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-slate-950/0">
+        </div>
+       </div>
+       <div class="flex flex-1 flex-col gap-4 p-8 text-white">
+        <h3 class="text-2xl font-semibold leading-tight">
+         Outils2
+        </h3>
+        <div class="text-sm leading-relaxed text-white/70">
+         Outils2
+        </div>
+        <div class="mt-3">
+         <a class="inline-block rounded bg-white/5 px-3 py-2 text-sm font-semibold text-accent hover:bg-white/10" href="/promotions/cv-alternance-ou-stage-safire-1-1762532140882.pdf" rel="noopener noreferrer" target="_blank">
+          Télécharger le document (PDF)
+         </a>
+        </div>
+        <p class="mt-auto text-xs font-semibold uppercase tracking-[0.3em] text-accent">
+         Offre valable jusqu'au
+         <!-- -->
+         12 novembre 2025
+        </p>
+       </div>
+      </article>
+      <article class="group flex flex-col overflow-hidden rounded-3xl border border-white/10 bg-white/5 shadow-lg backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-accent/60 hover:shadow-2xl">
+       <div class="relative aspect-[16/9] w-full overflow-hidden">
+        <img alt="Outils" class="object-cover transition duration-700 group-hover:scale-110" data-nimg="fill" decoding="async" loading="lazy" sizes="100vw" src="/AS-PRO-SERVICE/promotions/beige-noir-moderne-page-de-garde-rapport-1762531389872.jpg&amp;w=3840&amp;q=75" srcset="/AS-PRO-SERVICE/promotions/beige-noir-moderne-page-de-garde-rapport-1762531389872.jpg&amp;w=640&amp;q=75 640w, /AS-PRO-SERVICE/promotions/beige-noir-moderne-page-de-garde-rapport-1762531389872.jpg&amp;w=750&amp;q=75 750w, /AS-PRO-SERVICE/promotions/beige-noir-moderne-page-de-garde-rapport-1762531389872.jpg&amp;w=828&amp;q=75 828w, /AS-PRO-SERVICE/promotions/beige-noir-moderne-page-de-garde-rapport-1762531389872.jpg&amp;w=1080&amp;q=75 1080w, /AS-PRO-SERVICE/promotions/beige-noir-moderne-page-de-garde-rapport-1762531389872.jpg&amp;w=1200&amp;q=75 1200w, /AS-PRO-SERVICE/promotions/beige-noir-moderne-page-de-garde-rapport-1762531389872.jpg&amp;w=1920&amp;q=75 1920w, /AS-PRO-SERVICE/promotions/beige-noir-moderne-page-de-garde-rapport-1762531389872.jpg&amp;w=2048&amp;q=75 2048w, /AS-PRO-SERVICE/promotions/beige-noir-moderne-page-de-garde-rapport-1762531389872.jpg&amp;w=3840&amp;q=75 3840w" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent"/>
+        <span class="absolute left-5 top-5 rounded-full bg-accent px-4 py-1.5 text-xs font-bold uppercase tracking-wide text-slate-900 shadow-lg">
+         Outils
+        </span>
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-slate-950/0">
+        </div>
+       </div>
+       <div class="flex flex-1 flex-col gap-4 p-8 text-white">
+        <h3 class="text-2xl font-semibold leading-tight">
+         Outils
+        </h3>
+        <div class="text-sm leading-relaxed text-white/70">
+         Outils
+        </div>
+        <p class="mt-auto text-xs font-semibold uppercase tracking-[0.3em] text-accent">
+         Offre valable jusqu'au
+         <!-- -->
+         12 novembre 2025
+        </p>
+       </div>
+      </article>
+     </div>
+    </div>
+   </section>
+   <section class="relative overflow-hidden bg-white py-24" id="temoignages">
+    <div class="absolute inset-0 -z-10 bg-gradient-to-b from-white via-white to-slate-100">
+    </div>
+    <div aria-hidden="true" class="absolute inset-x-0 top-1/3 -z-10 h-[420px] bg-gradient-to-br from-primary/10 via-transparent to-accent/10 blur-3xl">
+    </div>
+    <div class="mx-auto max-w-6xl px-4">
+     <div class="text-center">
+      <p class="text-sm font-semibold uppercase tracking-[0.3em] text-primary">
+       Avis clients
+      </p>
+      <h2 class="section-title">
+       Ils font confiance à AS PRO SERVICES
+      </h2>
+      <p class="section-subtitle mx-auto mt-4">
+       Extraits d’avis Google et retours clients, parfaits pour rassurer vos prospects sur la qualité de votre accompagnement.
+      </p>
+     </div>
+     <div class="mt-12">
+      <div class="relative mx-auto max-w-3xl overflow-hidden rounded-[32px] border border-slate-200 bg-white/60 p-2 shadow-soft backdrop-blur">
+       <div aria-live="polite" class="flex transition-transform duration-700" style="transform:translateX(-0%)">
+        <div class="min-w-full px-4 pb-4 pt-6">
+         <article class="relative h-full rounded-[28px] border border-white bg-gradient-to-br from-white via-slate-50 to-white shadow-soft-lg">
+          <div aria-hidden="true" class="absolute -left-16 top-6 hidden h-32 w-32 rounded-full bg-primary/15 blur-3xl md:block">
+          </div>
+          <div aria-hidden="true" class="absolute -right-10 -top-12 hidden h-24 w-24 rounded-full bg-accent/20 blur-3xl md:block">
+          </div>
+          <div class="relative flex h-full flex-col gap-5 px-8 py-10 text-left">
+           <div class="flex items-center gap-3 text-accent">
+            <span class="flex h-10 w-10 items-center justify-center rounded-full border border-accent/40 bg-accent/10 text-2xl font-serif">
+             “
+            </span>
+            <div class="flex items-center gap-1 text-sm font-semibold text-accent">
+             <span aria-hidden="true">
+              ★
+             </span>
+             <span aria-hidden="true">
+              ★
+             </span>
+             <span aria-hidden="true">
+              ★
+             </span>
+             <span aria-hidden="true">
+              ★
+             </span>
+             <span aria-hidden="true">
+              ★
+             </span>
+             <span class="ml-2 text-xs uppercase tracking-[0.3em] text-accent/80">
+              Avis vérifié
+             </span>
+            </div>
+           </div>
+           <blockquote class="text-lg leading-relaxed text-slate-700">
+            “
+            <!-- -->
+            Un partenaire précieux qui connaît nos contraintes et trouve toujours la bonne solution.
+            <!-- -->
+            ”
+           </blockquote>
+           <div class="mt-auto">
+            <p class="text-sm font-semibold uppercase tracking-[0.3em] text-primary">
+             Atelier Mécanique du Gers
+            </p>
+            <p class="text-xs text-slate-500">
+             Client professionnel
+            </p>
+           </div>
+          </div>
+         </article>
+        </div>
+        <div class="min-w-full px-4 pb-4 pt-6">
+         <article class="relative h-full rounded-[28px] border border-white bg-gradient-to-br from-white via-slate-50 to-white shadow-soft-lg">
+          <div aria-hidden="true" class="absolute -left-16 top-6 hidden h-32 w-32 rounded-full bg-primary/15 blur-3xl md:block">
+          </div>
+          <div aria-hidden="true" class="absolute -right-10 -top-12 hidden h-24 w-24 rounded-full bg-accent/20 blur-3xl md:block">
+          </div>
+          <div class="relative flex h-full flex-col gap-5 px-8 py-10 text-left">
+           <div class="flex items-center gap-3 text-accent">
+            <span class="flex h-10 w-10 items-center justify-center rounded-full border border-accent/40 bg-accent/10 text-2xl font-serif">
+             “
+            </span>
+            <div class="flex items-center gap-1 text-sm font-semibold text-accent">
+             <span aria-hidden="true">
+              ★
+             </span>
+             <span aria-hidden="true">
+              ★
+             </span>
+             <span aria-hidden="true">
+              ★
+             </span>
+             <span aria-hidden="true">
+              ★
+             </span>
+             <span aria-hidden="true">
+              ★
+             </span>
+             <span class="ml-2 text-xs uppercase tracking-[0.3em] text-accent/80">
+              Avis vérifié
+             </span>
+            </div>
+           </div>
+           <blockquote class="text-lg leading-relaxed text-slate-700">
+            “
+            <!-- -->
+            Livraison rapide, service après-vente réactif et conseils pertinents sur les innovations outillage.
+            <!-- -->
+            ”
+           </blockquote>
+           <div class="mt-auto">
+            <p class="text-sm font-semibold uppercase tracking-[0.3em] text-primary">
+             BTP Sud-Ouest
+            </p>
+            <p class="text-xs text-slate-500">
+             Client professionnel
+            </p>
+           </div>
+          </div>
+         </article>
+        </div>
+        <div class="min-w-full px-4 pb-4 pt-6">
+         <article class="relative h-full rounded-[28px] border border-white bg-gradient-to-br from-white via-slate-50 to-white shadow-soft-lg">
+          <div aria-hidden="true" class="absolute -left-16 top-6 hidden h-32 w-32 rounded-full bg-primary/15 blur-3xl md:block">
+          </div>
+          <div aria-hidden="true" class="absolute -right-10 -top-12 hidden h-24 w-24 rounded-full bg-accent/20 blur-3xl md:block">
+          </div>
+          <div class="relative flex h-full flex-col gap-5 px-8 py-10 text-left">
+           <div class="flex items-center gap-3 text-accent">
+            <span class="flex h-10 w-10 items-center justify-center rounded-full border border-accent/40 bg-accent/10 text-2xl font-serif">
+             “
+            </span>
+            <div class="flex items-center gap-1 text-sm font-semibold text-accent">
+             <span aria-hidden="true">
+              ★
+             </span>
+             <span aria-hidden="true">
+              ★
+             </span>
+             <span aria-hidden="true">
+              ★
+             </span>
+             <span aria-hidden="true">
+              ★
+             </span>
+             <span class="ml-2 text-xs uppercase tracking-[0.3em] text-accent/80">
+              Avis vérifié
+             </span>
+            </div>
+           </div>
+           <blockquote class="text-lg leading-relaxed text-slate-700">
+            “
+            <!-- -->
+            Des consommables de qualité, disponibilité impeccable et service personnalisé sur site.
+            <!-- -->
+            ”
+           </blockquote>
+           <div class="mt-auto">
+            <p class="text-sm font-semibold uppercase tracking-[0.3em] text-primary">
+             Carrosserie Nougaroulet
+            </p>
+            <p class="text-xs text-slate-500">
+             Client professionnel
+            </p>
+           </div>
+          </div>
+         </article>
+        </div>
+       </div>
+      </div>
+      <div class="mt-8 flex justify-center gap-2">
+       <button aria-label="Afficher le témoignage 1" class="h-2 w-10 rounded-full transition-all duration-300 w-12 bg-primary">
+       </button>
+       <button aria-label="Afficher le témoignage 2" class="h-2 w-10 rounded-full transition-all duration-300 bg-slate-300 hover:bg-slate-400">
+       </button>
+       <button aria-label="Afficher le témoignage 3" class="h-2 w-10 rounded-full transition-all duration-300 bg-slate-300 hover:bg-slate-400">
+       </button>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section class="relative overflow-hidden bg-slate-950 py-24 text-white" id="contact">
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,_rgba(142,174,210,0.1),_transparent_50%)]">
+    </div>
+    <div class="relative mx-auto max-w-6xl px-4">
+     <div class="grid gap-12 md:grid-cols-2 md:items-center">
+      <div class="space-y-6">
+       <p class="text-sm font-semibold uppercase tracking-[0.3em] text-accent">
+        Contact
+       </p>
+       <h2 class="text-3xl font-semibold tracking-tight text-white md:text-4xl">
+        Un contact direct et rapide
+       </h2>
+       <p class="text-lg text-white/70">
+        Pour toute demande de devis, disponibilité produit ou visite sur vos chantiers, contactez-moi directement par téléphone ou email. Je me déplace dans vos ateliers principalement en Occitanie.
+       </p>
+       <div class="grid gap-4">
+        <div class="rounded-2xl border border-white/15 bg-white/10 p-4 shadow-soft">
+         <p class="text-sm font-semibold uppercase text-white/60">
+          Téléphone
+         </p>
+         <a class="mt-2 inline-flex items-center text-xl font-semibold text-white hover:text-accent" href="tel:+33607159308">
+          06 07 15 93 08
+         </a>
+        </div>
+        <div class="rounded-2xl border border-white/15 bg-white/10 p-4 shadow-soft">
+         <p class="text-sm font-semibold uppercase text-white/60">
+          Email
+         </p>
+         <a class="mt-2 inline-flex items-center text-lg text-white hover:text-accent" href="mailto:aspro.services@orange.fr">
+          aspro.services@orange.fr
+         </a>
+        </div>
+        <div class="rounded-2xl border border-white/15 bg-white/10 p-4 shadow-soft">
+         <p class="text-sm font-semibold uppercase text-white/60">
+          Adresse
+         </p>
+         <p class="mt-2 text-white/80">
+          Lieu-dit la Boubée, 32270 Nougaroulet
+         </p>
+         <p class="text-xs text-white/60">
+          Du lundi au vendredi, 8h00 – 18h00
+         </p>
+        </div>
+       </div>
+       <a class="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-base font-semibold text-slate-900 transition hover:bg-accent/90" href="tel:+33607159308">
+        <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+         <path d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" stroke-linecap="round" stroke-linejoin="round">
+         </path>
+        </svg>
+        Appeler maintenant
+       </a>
+      </div>
+      <div class="flex h-full items-center">
+       <iframe class="w-full rounded-3xl border-0 shadow-xl" height="500" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2855.3112860246385!2d0.2419!3d43.7593!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12abb5dc5517da8f%3A0x86ad9edc0dbe11b9!2sNougaroulet!5e0!3m2!1sfr!2sfr!4v1700000000000" title="Carte AS PRO SERVICES" width="100%">
+       </iframe>
+      </div>
+     </div>
+    </div>
+   </section>
+   <footer class="relative overflow-hidden bg-slate-950 text-white">
+    <div class="absolute inset-0 -z-10 bg-gradient-to-tr from-slate-950 via-slate-900 to-slate-950">
+    </div>
+    <div aria-hidden="true" class="absolute inset-x-0 top-0 -z-10 h-40 bg-gradient-to-b from-accent/15 to-transparent blur-2xl">
+    </div>
+    <div class="border-b border-white/10 bg-slate-950/40">
+     <div class="mx-auto flex max-w-6xl flex-col gap-6 px-4 py-10 text-center md:flex-row md:items-center md:justify-between md:text-left">
+      <div>
+       <p class="text-xs font-semibold uppercase tracking-[0.4em] text-accent">
+        Prendre contact
+       </p>
+       <h3 class="mt-2 text-2xl font-semibold">
+        Parlons de vos besoins outillage
+       </h3>
+       <p class="mt-3 max-w-xl text-sm text-white/60">
+        Une question sur une marque, un besoin urgent ou un SAV ? Je réponds directement et me déplace dans votre atelier si nécessaire.
+       </p>
+      </div>
+      <div class="flex flex-col items-center gap-3 md:items-end">
+       <a class="inline-flex items-center justify-center gap-3 rounded-full bg-accent px-8 py-3 text-base font-semibold text-slate-900 shadow-soft transition hover:-translate-y-0.5 hover:bg-accent/90" href="tel:+33607159308">
+        Appeler le
+        <!-- -->
+        06 07 15 93 08
+       </a>
+       <a class="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 px-6 py-2 text-sm font-semibold text-white/80 transition hover:border-accent/60 hover:text-accent" href="mailto:aspro.services@orange.fr">
+        aspro.services@orange.fr
+       </a>
+      </div>
+     </div>
+    </div>
+    <div class="mx-auto grid max-w-6xl gap-8 px-4 py-12 md:grid-cols-3">
+     <div class="space-y-3">
+      <h3 class="text-lg font-semibold">
+       AS PRO SERVICES
+      </h3>
+      <p class="text-sm text-white/60">
+       Fourniture d’outillage et consommables pour professionnels.
+       <!-- -->
+       20
+       <!-- -->
+       + ans d’expertise au service de vos chantiers et ateliers.
+      </p>
+      <p class="text-sm text-white/40">
+       Lieu-dit la Boubée, 32270 Nougaroulet
+      </p>
+     </div>
+     <div>
+      <h4 class="text-sm font-semibold uppercase tracking-[0.3em] text-accent">
+       Engagements
+      </h4>
+      <ul class="mt-4 space-y-2 text-sm text-white/60">
+       <li>
+        •
+        <!-- -->
+        Indépendant et proche de vos métiers
+       </li>
+       <li>
+        •
+        <!-- -->
+        Conseil personnalisé sur site ou à distance
+       </li>
+       <li>
+        •
+        <!-- -->
+        Sélection exigeante des meilleures marques
+       </li>
+       <li>
+        •
+        <!-- -->
+        Service après-vente réactif et suivi durable
+       </li>
+      </ul>
+     </div>
+     <div class="space-y-4">
+      <h4 class="text-sm font-semibold uppercase tracking-[0.3em] text-accent">
+       Contact
+      </h4>
+      <div class="rounded-2xl border border-white/10 bg-white/5 p-4 text-sm text-white/70">
+       <p class="text-xs font-semibold uppercase tracking-[0.3em] text-white/50">
+        Téléphone
+       </p>
+       <a class="mt-1 block text-lg font-semibold text-white hover:text-accent" href="tel:+33607159308">
+        06 07 15 93 08
+       </a>
+       <p class="mt-4 text-xs font-semibold uppercase tracking-[0.3em] text-white/50">
+        Horaires
+       </p>
+       <p class="mt-1">
+        Du lundi au vendredi, 8h00 – 18h00
+       </p>
+      </div>
+      <a class="inline-flex items-center gap-2 text-sm text-white/60 transition hover:text-accent" href="/AS-PRO-SERVICE/admin/">
+       Administration des promotions →
+      </a>
+     </div>
+    </div>
+    <div class="border-t border-white/10 py-6 text-center text-xs text-white/40">
+     ©
+     <!-- -->
+     2025
+     <!-- -->
+     <!-- -->
+     AS PRO SERVICES
+     <!-- -->
+     — Tous droits réservés.
+    </div>
+   </footer>
+  </main>
+  <script async="" crossorigin="" src="./frontend/_next/static/chunks/webpack-3d3e2f3f4f558231.js">
+  </script>
+  <script>
+   (self.__next_f=self.__next_f||[]).push([0]);self.__next_f.push([2,null])
+  </script>
+  <script>
+   self.__next_f.push([1,"1:HL[\"./frontend/_next/static/css/9561675e61965850.css\",\"style\",{\"crossOrigin\":\"\"}]\n0:\"$L2\"\n"])
+  </script>
+  <script>
+   self.__next_f.push([1,"3:I[7690,[],\"\"]\n5:I[3082,[\"866\",\"static/chunks/866-4a1b4f5fd27f74c7.js\",\"931\",\"static/chunks/app/page-8f0182166fe77c1e.js\"],\"HeroSection\"]\n6:I[2877,[\"866\",\"static/chunks/866-4a1b4f5fd27f74c7.js\",\"931\",\"static/chunks/app/page-8f0182166fe77c1e.js\"],\"ScrollReveal\"]\n7:I[1749,[\"866\",\"static/chunks/866-4a1b4f5fd27f74c7.js\",\"931\",\"static/chunks/app/page-8f0182166fe77c1e.js\"],\"Image\"]\n8:I[5250,[\"866\",\"static/chunks/866-4a1b4f5fd27f74c7.js\",\"931\",\"static/chunks/app/page-8f0182166fe77c1e.js\"],\"\"]\na:I[8038,[\"866\",\"sta"])
+  </script>
+  <script>
+   self.__next_f.push([1,"tic/chunks/866-4a1b4f5fd27f74c7.js\",\"931\",\"static/chunks/app/page-8f0182166fe77c1e.js\"],\"TestimonialsSection\"]\nb:I[5613,[],\"\"]\nc:I[1778,[],\"\"]\ne:I[8955,[],\"\"]\nf:[]\n"])
+  </script>
+  <script>
+   self.__next_f.push([1,"2:[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"./frontend/_next/static/css/9561675e61965850.css\",\"precedence\":\"next\",\"crossOrigin\":\"\"}]],[\"$\",\"$L3\",null,{\"buildId\":\"TAn-9sZO4BDSiLP4FBPkD\",\"assetPrefix\":\"/AS-PRO-SERVICE\",\"initialCanonicalUrl\":\"/\",\"initialTree\":[\"\",{\"children\":[\"__PAGE__\",{}]},\"$undefined\",\"$undefined\",true],\"initialSeedData\":[\"\",{\"children\":[\"__PAGE__\",{},[\"$L4\",[\"$\",\"main\",null,{\"className\":\"bg-[rgb(247,249,251)]\",\"children\":[[\"$\",\"script\",null,{\"type\":\"application/ld+json\",\"dangerouslySetInnerHTML\":{\"__html\":\"{\\\"@context\\\":\\\"https://schema.org\\\",\\\"@type\\\":\\\"HardwareStore\\\",\\\"name\\\":\\\"AS PRO SERVICES\\\",\\\"description\\\":\\\"Fournisseur indépendant d'outillage professionnel, consommables et service après-vente basé à Nougaroulet (Gers).\\\",\\\"url\\\":\\\"https://www.asproservices.fr\\\",\\\"telephone\\\":\\\"+33607159308\\\",\\\"email\\\":\\\"aspro.services@orange.fr\\\",\\\"address\\\":{\\\"@type\\\":\\\"PostalAddress\\\",\\\"streetAddress\\\":\\\"Lieu-dit la Boubée, 32270 Nougaroulet\\\",\\\"addressLocality\\\":\\\"Nougaroulet\\\",\\\"postalCode\\\":\\\"32270\\\",\\\"addressCountry\\\":\\\"FR\\\"},\\\"areaServed\\\":[\\\"Gers\\\",\\\"Landes\\\",\\\"Hautes-Pyrénées\\\",\\\"Pyrénées-Atlantiques\\\",\\\"Tarn-et-Garonne\\\",\\\"Haute-Garonne\\\"],\\\"openingHours\\\":\\\"Mo-Fr 08:00-18:00\\\",\\\"founder\\\":{\\\"@type\\\":\\\"Person\\\",\\\"name\\\":\\\"AS PRO SERVICES\\\"},\\\"sameAs\\\":[]}\"}}],[\"$\",\"$L5\",null,{}],[\"$\",\"section\",null,{\"id\":\"a-propos\",\"className\":\"relative overflow-hidden bg-gradient-to-b from-white via-slate-50/50 to-white py-24\",\"children\":[[\"$\",\"div\",null,{\"className\":\"absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,_rgba(30,76,122,0.08),_transparent_60%)]\"}],[\"$\",\"div\",null,{\"className\":\"absolute inset-0 -z-10 bg-[radial-gradient(circle_at_bottom_right,_rgba(245,180,0,0.05),_transparent_50%)]\"}],[\"$\",\"div\",null,{\"className\":\"mx-auto max-w-7xl px-4\",\"children\":[[\"$\",\"$L6\",null,{\"children\":[\"$\",\"div\",null,{\"className\":\"mb-16 text-center\",\"children\":[[\"$\",\"p\",null,{\"className\":\"text-sm font-semibold uppercase tracking-[0.3em] text-primary\",\"children\":\"À propos\"}],[\"$\",\"h2\",null,{\"className\":\"mt-4 text-4xl font-semibold tracking-tight text-slate-900 md:text-5xl\",\"children\":\"Indépendant, engagé et proche du terrain\"}],[\"$\",\"p\",null,{\"className\":\"mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-slate-600\",\"children\":\"J'accompagne les artisans, PME, collectivités et industriels principalement en Occitanie. Ma différence : des visites régulières sur site, une sélection exigeante des produits et un service après-vente que je pilote directement.\"}]]}]}],[\"$\",\"div\",null,{\"className\":\"grid gap-6 lg:grid-cols-3\",\"children\":[[\"$\",\"div\",null,{\"className\":\"flex flex-col gap-6\",\"children\":[[\"$\",\"$L6\",\"années d’engagement\",{\"delay\":0,\"children\":[\"$\",\"div\",null,{\"className\":\"group relative overflow-hidden rounded-3xl bg-gradient-to-br from-white to-primary/5 p-6 shadow-soft transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/20\",\"children\":[[\"$\",\"div\",null,{\"className\":\"absolute -right-4 -top-4 h-24 w-24 rounded-full bg-primary/5 blur-2xl transition-all duration-500 group-hover:bg-primary/10\"}],[\"$\",\"div\",null,{\"className\":\"relative\",\"children\":[[\"$\",\"p\",null,{\"className\":\"bg-gradient-to-br from-primary to-primary/70 bg-clip-text text-5xl font-bold text-transparent\",\"children\":\"20+\"}],[\"$\",\"p\",null,{\"className\":\"mt-3 text-xs font-bold uppercase tracking-[0.3em] text-primary/70\",\"children\":\"années d’engagement\"}],[\"$\",\"p\",null,{\"className\":\"mt-3 text-sm leading-relaxed text-slate-600\",\"children\":\"Disponibilité terrain, conseils et SAV réactif pour chaque client.\"}]]}]]}]}],[\"$\",\"$L6\",\"départements couverts\",{\"delay\":100,\"children\":[\"$\",\"div\",null,{\"className\":\"group relative overflow-hidden rounded-3xl bg-gradient-to-br from-white to-primary/5 p-6 shadow-soft transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/20\",\"children\":[[\"$\",\"div\",null,{\"className\":\"absolute -right-4 -top-4 h-24 w-24 rounded-full bg-primary/5 blur-2xl transition-all duration-500 group-hover:bg-primary/10\"}],[\"$\",\"div\",null,{\"className\":\"relative\",\"children\":[[\"$\",\"p\",null,{\"className\":\"bg-gradient-to-br from-primary to-primary/70 bg-clip-text text-5xl font-bold text-transparent\",\"children\":\"6\"}],[\"$\",\"p\",null,{\"className\":\"mt-3 text-xs font-bold uppercase tracking-[0.3em] text-primary/70\",\"children\":\"départements couverts\"}],[\"$\",\"p\",null,{\"className\":\"mt-3 text-sm leading-relaxed text-slate-600\",\"children\":\"Gers (32) · Haute-Garonne (31) · Landes (40) · Lot-et-Garonne (47) · Hautes-Pyrénées (65) · Tarn-et-Garonne (82)\"}]]}]]}]}],[\"$\",\"$L6\",\"marques sélectionnées\",{\"delay\":200,\"children\":[\"$\",\"div\",null,{\"className\":\"group relative overflow-hidden rounded-3xl bg-gradient-to-br from-white to-primary/5 p-6 shadow-soft transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/20\",\"children\":[[\"$\",\"div\",null,{\"className\":\"absolute -right-4 -top-4 h-24 w-24 rounded-full bg-primary/5 blur-2xl transition-all duration-500 group-hover:bg-primary/10\"}],[\"$\",\"div\",null,{\"className\":\"relative\",\"children\":[[\"$\",\"p\",null,{\"className\":\"bg-gradient-to-br from-primary to-primary/70 bg-clip-text text-5xl font-bold text-transparent\",\"children\":\"100%\"}],[\"$\",\"p\",null,{\"className\":\"mt-3 text-xs font-bold uppercase tracking-[0.3em] text-primary/70\",\"children\":\"marques sélectionnées\"}],[\"$\",\"p\",null,{\"className\":\"mt-3 text-sm leading-relaxed text-slate-600\",\"children\":\"Des fabricants reconnus pour la fiabilité de leurs outils.\"}]]}]]}]}]]}],[\"$\",\"$L6\",null,{\"delay\":300,\"className\":\"lg:col-span-2\",\"children\":[\"$\",\"div\",null,{\"className\":\"group relative min-h-[500px] overflow-hidden rounded-[36px] bg-slate-900 shadow-2xl transition-all duration-700 hover:shadow-3xl\",\"children\":[[\"$\",\"$L7\",null,{\"src\":\"/images/Stive-camion.jpg\",\"alt\":\"Stive, fondateur AS PRO SERVICES en visite chez un client\",\"fill\":true,\"className\":\"object-cover transition duration-700 group-hover:scale-105\",\"priority\":true}],[\"$\",\"div\",null,{\"className\":\"absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent\"}],[\"$\",\"div\",null,{\"className\":\"absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-accent/20 opacity-0 transition-opacity duration-500 group-hover:opacity-100\"}],[\"$\",\"div\",null,{\"className\":\"absolute inset-x-0 bottom-0 p-10 transition-transform duration-500 group-hover:translate-y-0\",\"children\":[[\"$\",\"div\",null,{\"className\":\"mb-4 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-accent to-accent/90 px-5 py-2 shadow-lg transition-all duration-300 hover:scale-105\",\"children\":[[\"$\",\"span\",null,{\"className\":\"text-2xl\",\"children\":\"👨‍💼\"}],[\"$\",\"span\",null,{\"className\":\"text-sm font-bold uppercase tracking-wide text-slate-900\",\"children\":\"Stive, fondateur\"}]]}],[\"$\",\"p\",null,{\"className\":\"text-2xl font-bold leading-tight text-white drop-shadow-lg\",\"children\":\"\\\"Rester joignable et présent sur le terrain est la meilleure façon d'apporter une réponse rapide à chaque besoin.\\\"\"}],[\"$\",\"p\",null,{\"className\":\"mt-4 text-sm leading-relaxed text-white/90 drop-shadow\",\"children\":\"Accompagnement sur site, diagnostic atelier, suivi de vos commandes et déclenchement des réparations SAV.\"}]]}]]}]}]]}],[\"$\",\"div\",null,{\"className\":\"mt-6 grid gap-6 lg:grid-cols-[1.5fr_1fr]\",\"children\":[[\"$\",\"$L6\",null,{\"delay\":400,\"children\":[\"$\",\"div\",null,{\"className\":\"group relative overflow-hidden rounded-3xl bg-gradient-to-br from-primary/8 via-primary/5 to-white p-8 shadow-soft transition-all duration-500 hover:-translate-y-1 hover:shadow-xl\",\"children\":[[\"$\",\"div\",null,{\"className\":\"absolute -left-10 -top-10 h-32 w-32 rounded-full bg-primary/10 blur-3xl transition-all duration-500 group-hover:bg-primary/20\"}],[\"$\",\"div\",null,{\"className\":\"relative\",\"children\":[[\"$\",\"div\",null,{\"className\":\"mb-2 inline-flex items-center gap-2\",\"children\":[[\"$\",\"div\",null,{\"className\":\"rounded-full bg-primary/10 p-2\",\"children\":[\"$\",\"svg\",null,{\"className\":\"h-5 w-5 text-primary\",\"fill\":\"currentColor\",\"viewBox\":\"0 0 20 20\",\"children\":[\"$\",\"path\",null,{\"fillRule\":\"evenodd\",\"d\":\"M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z\",\"clipRule\":\"evenodd\"}]}]}],[\"$\",\"p\",null,{\"className\":\"text-sm font-bold uppercase tracking-[0.3em] text-primary\",\"children\":\"Mes engagements\"}]]}],[\"$\",\"ul\",null,{\"className\":\"mt-6 space-y-4 text-sm leading-relaxed text-slate-700\",\"children\":[[\"$\",\"li\",\"Indépendant et proche de vos métiers\",{\"className\":\"group/item flex items-start gap-3 transition-all duration-300 hover:translate-x-1\",\"style\":{\"animationDelay\":\"0ms\"},\"children\":[[\"$\",\"div\",null,{\"className\":\"mt-0.5 rounded-full bg-gradient-to-br from-primary to-primary/70 p-1 shadow-sm transition-all duration-300 group-hover/item:scale-110 group-hover/item:shadow-md\",\"children\":[\"$\",\"svg\",null,{\"className\":\"h-3 w-3 text-white\",\"fill\":\"currentColor\",\"viewBox\":\"0 0 20 20\",\"children\":[\"$\",\"path\",null,{\"fillRule\":\"evenodd\",\"d\":\"M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z\",\"clipRule\":\"evenodd\"}]}]}],[\"$\",\"span\",null,{\"className\":\"flex-1\",\"children\":\"Indépendant et proche de vos métiers\"}]]}],[\"$\",\"li\",\"Conseil personnalisé sur site ou à distance\",{\"className\":\"group/item flex items-start gap-3 transition-all duration-300 hover:translate-x-1\",\"style\":{\"animationDelay\":\"50ms\"},\"children\":[[\"$\",\"div\",null,{\"className\":\"mt-0.5 rounded-full bg-gradient-to-br from-primary to-primary/70 p-1 shadow-sm transition-all duration-300 group-hover/item:scale-110 group-hover/item:shadow-md\",\"children\":[\"$\",\"svg\",null,{\"className\":\"h-3 w-3 text-white\",\"fill\":\"currentColor\",\"viewBox\":\"0 0 20 20\",\"children\":[\"$\",\"path\",null,{\"fillRule\":\"evenodd\",\"d\":\"M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z\",\"clipRule\":\"evenodd\"}]}]}],[\"$\",\"span\",null,{\"className\":\"flex-1\",\"children\":\"Conseil personnalisé sur site ou à distance\"}]]}],[\"$\",\"li\",\"Sélection exigeante des meilleures marques\",{\"className\":\"group/item flex items-start gap-3 transition-all duration-300 hover:translate-x-1\",\"style\":{\"animationDelay\":\"100ms\"},\"children\":[[\"$\",\"div\",null,{\"className\":\"mt-0.5 rounded-full bg-gradient-to-br from-primary to-primary/70 p-1 shadow-sm transition-all duration-300 group-hover/item:scale-110 group-hover/item:shadow-md\",\"children\":[\"$\",\"svg\",null,{\"className\":\"h-3 w-3 text-white\",\"fill\":\"currentColor\",\"viewBox\":\"0 0 20 20\",\"children\":[\"$\",\"path\",null,{\"fillRule\":\"evenodd\",\"d\":\"M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z\",\"clipRule\":\"evenodd\"}]}]}],[\"$\",\"span\",null,{\"className\":\"flex-1\",\"children\":\"Sélection exigeante des meilleures marques\"}]]}],[\"$\",\"li\",\"Service après-vente réactif et suivi durable\",{\"className\":\"group/item flex items-start gap-3 transition-all duration-300 hover:translate-x-1\",\"style\":{\"animationDelay\":\"150ms\"},\"children\":[[\"$\",\"div\",null,{\"className\":\"mt-0.5 rounded-full bg-gradient-to-br from-primary to-primary/70 p-1 shadow-sm transition-all duration-300 group-hover/item:scale-110 group-hover/item:shadow-md\",\"children\":[\"$\",\"svg\",null,{\"className\":\"h-3 w-3 text-white\",\"fill\":\"currentColor\",\"viewBox\":\"0 0 20 20\",\"children\":[\"$\",\"path\",null,{\"fillRule\":\"evenodd\",\"d\":\"M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z\",\"clipRule\":\"evenodd\"}]}]}],[\"$\",\"span\",null,{\"className\":\"flex-1\",\"children\":\"Service après-vente réactif et suivi durable\"}]]}]]}],[\"$\",\"div\",null,{\"className\":\"mt-8 flex flex-wrap gap-2\",\"children\":[[\"$\",\"span\",\"Fournir l'outillage et les consommables les plus adaptés aux exigences professionnelles\",{\"className\":\"rounded-full bg-gradient-to-r from-primary/10 to-primary/5 px-4 py-2 text-xs font-bold uppercase tracking-wide text-primary transition-all duration-300 hover:scale-105 hover:from-primary/20 hover:to-primary/10 hover:shadow-md\",\"children\":\"Fournir l'outillage et les consommables les plus adaptés aux exigences professionnelles\"}],[\"$\",\"span\",\"Assurer un accompagnement technique fiable sur la durée\",{\"className\":\"rounded-full bg-gradient-to-r from-primary/10 to-primary/5 px-4 py-2 text-xs font-bold uppercase tracking-wide text-primary transition-all duration-300 hover:scale-105 hover:from-primary/20 hover:to-primary/10 hover:shadow-md\",\"children\":\"Assurer un accompagnement technique fiable sur la durée\"}],[\"$\",\"span\",\"Être votre relais local des grandes marques spécialisées\",{\"className\":\"rounded-full bg-gradient-to-r from-primary/10 to-primary/5 px-4 py-2 text-xs font-bold uppercase tracking-wide text-primary transition-all duration-300 hover:scale-105 hover:from-primary/20 hover:to-primary/10 hover:shadow-md\",\"children\":\"Être votre relais local des grandes marques spécialisées\"}]]}]]}]]}]}],[\"$\",\"$L6\",null,{\"delay\":500,\"children\":[\"$\",\"div\",null,{\"className\":\"group relative overflow-hidden rounded-3xl bg-gradient-to-br from-accent/8 via-accent/5 to-white p-8 shadow-soft transition-all duration-500 hover:-translate-y-1 hover:shadow-xl\",\"children\":[[\"$\",\"div\",null,{\"className\":\"absolute -right-10 -top-10 h-32 w-32 rounded-full bg-accent/10 blur-3xl transition-all duration-500 group-hover:bg-accent/20\"}],[\"$\",\"div\",null,{\"className\":\"relative\",\"children\":[[\"$\",\"div\",null,{\"className\":\"mb-2 inline-flex items-center gap-2\",\"children\":[[\"$\",\"div\",null,{\"className\":\"rounded-full bg-accent/20 p-2\",\"children\":[\"$\",\"svg\",null,{\"className\":\"h-5 w-5 text-accent\",\"fill\":\"none\",\"viewBox\":\"0 0 24 24\",\"stroke\":\"currentColor\",\"strokeWidth\":2.5,\"children\":[\"$\",\"path\",null,{\"strokeLinecap\":\"round\",\"strokeLinejoin\":\"round\",\"d\":\"M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7\"}]}]}],[\"$\",\"p\",null,{\"className\":\"text-sm font-bold uppercase tracking-[0.3em] text-accent\",\"children\":\"Zones d'intervention\"}]]}],[\"$\",\"div\",null,{\"className\":\"mt-6 grid grid-cols-2 gap-3\",\"children\":[[\"$\",\"div\",\"Gers (32)\",{\"className\":\"group/area relative overflow-hidden rounded-xl border-2 border-accent/20 bg-white px-4 py-3 text-center text-sm font-semibold text-slate-700 shadow-sm transition-all duration-300 hover:scale-105 hover:border-accent hover:bg-gradient-to-br hover:from-accent/10 hover:to-accent/5 hover:shadow-md\",\"style\":{\"animationDelay\":\"0ms\"},\"children\":[[\"$\",\"div\",null,{\"className\":\"absolute inset-0 bg-gradient-to-br from-accent/0 to-accent/0 transition-all duration-300 group-hover/area:from-accent/5 group-hover/area:to-accent/10\"}],[\"$\",\"span\",null,{\"className\":\"relative\",\"children\":\"Gers (32)\"}]]}],[\"$\",\"div\",\"Haute-Garonne (31)\",{\"className\":\"group/area relative overflow-hidden rounded-xl border-2 border-accent/20 bg-white px-4 py-3 text-center text-sm font-semibold text-slate-700 shadow-sm transition-all duration-300 hover:scale-105 hover:border-accent hover:bg-gradient-to-br hover:from-accent/10 hover:to-accent/5 hover:shadow-md\",\"style\":{\"animationDelay\":\"50ms\"},\"children\":[[\"$\",\"div\",null,{\"className\":\"absolute inset-0 bg-gradient-to-br from-accent/0 to-accent/0 transition-all duration-300 group-hover/area:from-accent/5 group-hover/area:to-accent/10\"}],[\"$\",\"span\",null,{\"className\":\"relative\",\"children\":\"Haute-Garonne (31)\"}]]}],[\"$\",\"div\",\"Landes (40)\",{\"className\":\"group/area relative overflow-hidden rounded-xl border-2 border-accent/20 bg-white px-4 py-3 text-center text-sm font-semibold text-slate-700 shadow-sm transition-all duration-300 hover:scale-105 hover:border-accent hover:bg-gradient-to-br hover:from-accent/10 hover:to-accent/5 hover:shadow-md\",\"style\":{\"animationDelay\":\"100ms\"},\"children\":[[\"$\",\"div\",null,{\"className\":\"absolute inset-0 bg-gradient-to-br from-accent/0 to-accent/0 transition-all duration-300 group-hover/area:from-accent/5 group-hover/area:to-accent/10\"}],[\"$\",\"span\",null,{\"className\":\"relative\",\"children\":\"Landes (40)\"}]]}],[\"$\",\"div\",\"Lot-et-Garonne (47)\",{\"className\":\"group/area relative overflow-hidden rounded-xl border-2 border-accent/20 bg-white px-4 py-3 text-center text-sm font-semibold text-slate-700 shadow-sm transition-all duration-300 hover:scale-105 hover:border-accent hover:bg-gradient-to-br hover:from-accent/10 hover:to-accent/5 hover:shadow-md\",\"style\":{\"animationDelay\":\"150ms\"},\"children\":[[\"$\",\"div\",null,{\"className\":\"absolute inset-0 bg-gradient-to-br from-accent/0 to-accent/0 transition-all duration-300 group-hover/area:from-accent/5 group-hover/area:to-accent/10\"}],[\"$\",\"span\",null,{\"className\":\"relative\",\"children\":\"Lot-et-Garonne (47)\"}]]}],[\"$\",\"div\",\"Hautes-Pyrénées (65)\",{\"className\":\"group/area relative overflow-hidden rounded-xl border-2 border-accent/20 bg-white px-4 py-3 text-center text-sm font-semibold text-slate-700 shadow-sm transition-all duration-300 hover:scale-105 hover:border-accent hover:bg-gradient-to-br hover:from-accent/10 hover:to-accent/5 hover:shadow-md\",\"style\":{\"animationDelay\":\"200ms\"},\"children\":[[\"$\",\"div\",null,{\"className\":\"absolute inset-0 bg-gradient-to-br from-accent/0 to-accent/0 transition-all duration-300 group-hover/area:from-accent/5 group-hover/area:to-accent/10\"}],[\"$\",\"span\",null,{\"className\":\"relative\",\"children\":\"Hautes-Pyrénées (65)\"}]]}],[\"$\",\"div\",\"Tarn-et-Garonne (82)\",{\"className\":\"group/area relative overflow-hidden rounded-xl border-2 border-accent/20 bg-white px-4 py-3 text-center text-sm font-semibold text-slate-700 shadow-sm transition-all duration-300 hover:scale-105 hover:border-accent hover:bg-gradient-to-br hover:from-accent/10 hover:to-accent/5 hover:shadow-md\",\"style\":{\"animationDelay\":\"250ms\"},\"children\":[[\"$\",\"div\",null,{\"className\":\"absolute inset-0 bg-gradient-to-br from-accent/0 to-accent/0 transition-all duration-300 group-hover/area:from-accent/5 group-hover/area:to-accent/10\"}],[\"$\",\"span\",null,{\"className\":\"relative\",\"children\":\"Tarn-et-Garonne (82)\"}]]}]]}],[\"$\",\"div\",null,{\"className\":\"mt-8 grid grid-cols-2 gap-3 text-xs font-semibold uppercase tracking-wide text-slate-600\",\"children\":[[\"$\",\"div\",null,{\"className\":\"flex items-center gap-2 rounded-lg bg-slate-50 px-3 py-2 transition-colors hover:bg-accent/10\",\"children\":[[\"$\",\"span\",null,{\"children\":\"📦\"}],\" Livraison\"]}],[\"$\",\"div\",null,{\"className\":\"flex items-center gap-2 rounded-lg bg-slate-50 px-3 py-2 transition-colors hover:bg-accent/10\",\"children\":[[\"$\",\"span\",null,{\"children\":\"🔧\"}],\" Mise en route\"]}],[\"$\",\"div\",null,{\"className\":\"flex items-center gap-2 rounded-lg bg-slate-50 px-3 py-2 transition-colors hover:bg-accent/10\",\"children\":[[\"$\",\"span\",null,{\"children\":\"⚙️\"}],\" Suivi SAV\"]}],[\"$\",\"div\",null,{\"className\":\"flex items-center gap-2 rounded-lg bg-slate-50 px-3 py-2 transition-colors hover:bg-accent/10\",\"children\":[[\"$\",\"span\",null,{\"children\":\"💡\"}],\" Conseils\"]}]]}]]}]]}]}]]}],[\"$\",\"$L6\",null,{\"delay\":600,\"children\":[\"$\",\"div\",null,{\"className\":\"group mt-6 rounded-3xl bg-gradient-to-br from-slate-50 via-white to-slate-50 p-8 shadow-soft transition-all duration-500 hover:shadow-xl lg:p-12\",\"children\":[[\"$\",\"div\",null,{\"className\":\"mb-2 inline-flex items-center gap-2\",\"children\":[[\"$\",\"div\",null,{\"className\":\"rounded-full bg-gradient-to-br from-primary/10 to-accent/10 p-2\",\"children\":[\"$\",\"svg\",null,{\"className\":\"h-5 w-5 text-primary\",\"fill\":\"none\",\"viewBox\":\"0 0 24 24\",\"stroke\":\"currentColor\",\"strokeWidth\":2,\"children\":[\"$\",\"path\",null,{\"strokeLinecap\":\"round\",\"strokeLinejoin\":\"round\",\"d\":\"M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z\"}]}]}],[\"$\",\"p\",null,{\"className\":\"text-center text-sm font-bold uppercase tracking-[0.3em] text-primary\",\"children\":\"Mon histoire\"}]]}],[\"$\",\"div\",null,{\"className\":\"relative mt-10\",\"children\":[[\"$\",\"div\",null,{\"className\":\"absolute left-0 top-0 h-1 w-full overflow-hidden rounded-full bg-slate-200\",\"aria-hidden\":true,\"children\":[\"$\",\"div\",null,{\"className\":\"h-full w-full animate-pulse bg-gradient-to-r from-primary via-accent to-primary\"}]}],[\"$\",\"div\",null,{\"className\":\"grid gap-12 pt-12 md:grid-cols-3\",\"children\":[[\"$\",\"div\",\"2005\",{\"className\":\"group/step relative transition-all duration-500 hover:-translate-y-1\",\"style\":{\"animationDelay\":\"0ms\"},\"children\":[[\"$\",\"div\",null,{\"className\":\"absolute -top-12 left-0 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border-4 border-white bg-gradient-to-br from-primary via-primary to-accent shadow-lg transition-all duration-500 group-hover/step:scale-125 group-hover/step:shadow-xl group-hover/step:shadow-primary/30\",\"aria-hidden\":true,\"children\":[\"$\",\"span\",null,{\"className\":\"text-xs font-bold text-white\",\"children\":\"05\"}]}],[\"$\",\"div\",null,{\"className\":\"rounded-2xl bg-gradient-to-br from-white to-slate-50/50 p-6 shadow-sm transition-all duration-500 group-hover/step:shadow-lg\",\"children\":[[\"$\",\"span\",null,{\"className\":\"inline-flex items-center rounded-full bg-gradient-to-r from-primary/15 to-accent/15 px-4 py-2 text-xs font-bold uppercase tracking-[0.2em] text-primary shadow-sm\",\"children\":2005}],[\"$\",\"p\",null,{\"className\":\"mt-4 bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-base font-bold uppercase tracking-wide text-transparent\",\"children\":\"Débuts\"}],[\"$\",\"p\",null,{\"className\":\"mt-3 text-sm leading-relaxed text-slate-600\",\"children\":\"Salarié dans une grande entreprise de vente d'outillage, j'y ai développé mon expertise et ma connaissance des besoins professionnels.\"}]]}]]}],[\"$\",\"div\",\"2013\",{\"className\":\"group/step relative transition-all duration-500 hover:-translate-y-1\",\"style\":{\"animationDelay\":\"100ms\"},\"children\":[[\"$\",\"div\",null,{\"className\":\"absolute -top-12 left-0 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border-4 border-white bg-gradient-to-br from-primary via-primary to-accent shadow-lg transition-all duration-500 group-hover/step:scale-125 group-hover/step:shadow-xl group-hover/step:shadow-primary/30\",\"aria-hidden\":true,\"children\":[\"$\",\"span\",null,{\"className\":\"text-xs font-bold text-white\",\"children\":\"13\"}]}],[\"$\",\"div\",null,{\"className\":\"rounded-2xl bg-gradient-to-br from-white to-slate-50/50 p-6 shadow-sm transition-all duration-500 group-hover/step:shadow-lg\",\"children\":[[\"$\",\"span\",null,{\"className\":\"inline-flex items-center rounded-full bg-gradient-to-r from-primary/15 to-accent/15 px-4 py-2 text-xs font-bold uppercase tracking-[0.2em] text-primary shadow-sm\",\"children\":2013}],[\"$\",\"p\",null,{\"className\":\"mt-4 bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-base font-bold uppercase tracking-wide text-transparent\",\"children\":\"Création AS PRO SERVICES\"}],[\"$\",\"p\",null,{\"className\":\"mt-3 text-sm leading-relaxed text-slate-600\",\"children\":\"Création de mon entreprise pour proposer un service personnalisé et de proximité aux artisans et PME de la région.\"}]]}]]}],[\"$\",\"div\",\"2020\",{\"className\":\"group/step relative transition-all duration-500 hover:-translate-y-1\",\"style\":{\"animationDelay\":\"200ms\"},\"children\":[[\"$\",\"div\",null,{\"className\":\"absolute -top-12 left-0 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border-4 border-white bg-gradient-to-br from-primary via-primary to-accent shadow-lg transition-all duration-500 group-hover/step:scale-125 group-hover/step:shadow-xl group-hover/step:shadow-primary/30\",\"aria-hidden\":true,\"children\":[\"$\",\"span\",null,{\"className\":\"text-xs font-bold text-white\",\"children\":\"20\"}]}],[\"$\",\"div\",null,{\"className\":\"rounded-2xl bg-gradient-to-br from-white to-slate-50/50 p-6 shadow-sm transition-all duration-500 group-hover/step:shadow-lg\",\"children\":[[\"$\",\"span\",null,{\"className\":\"inline-flex items-center rounded-full bg-gradient-to-r from-primary/15 to-accent/15 px-4 py-2 text-xs font-bold uppercase tracking-[0.2em] text-primary shadow-sm\",\"children\":2020}],[\"$\",\"p\",null,{\"className\":\"mt-4 bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-base font-bold uppercase tracking-wide text-transparent\",\"children\":\"Développement digital\"}],[\"$\",\"p\",null,{\"className\":\"mt-3 text-sm leading-relaxed text-slate-600\",\"children\":\"Digitalisation de l'offre avec catalogues connectés et gestion proactive des consommables pour mieux servir mes clients.\"}]]}]]}]]}]]}]]}]}]]}]]}],[\"$\",\"section\",null,{\"id\":\"services\",\"className\":\"relative overflow-hidden bg-white py-24\",\"children\":[[\"$\",\"div\",null,{\"className\":\"absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_right,_rgba(30,76,122,0.08),_transparent_55%)]\"}],[\"$\",\"div\",null,{\"className\":\"absolute inset-x-0 bottom-0 -z-10 h-64 bg-gradient-to-t from-slate-100/70 to-transparent\"}],[\"$\",\"div\",null,{\"className\":\"relative mx-auto max-w-6xl px-4\",\"children\":[[\"$\",\"div\",null,{\"className\":\"flex flex-col gap-4 md:flex-row md:items-end md:justify-between\",\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"p\",null,{\"className\":\"text-sm font-semibold uppercase tracking-[0.3em] text-primary\",\"children\":\"Services\"}],[\"$\",\"h2\",null,{\"className\":\"text-3xl font-semibold tracking-tight text-slate-900 md:text-4xl\",\"children\":\"Des solutions complètes, du conseil au suivi après-vente\"}],[\"$\",\"p\",null,{\"className\":\"mt-4 max-w-2xl text-base text-slate-600\",\"children\":\"Du premier diagnostic à la livraison, chaque mission est gérée par un interlocuteur unique qui connaît vos chantiers et vos impératifs.\"}]]}]}],[\"$\",\"div\",null,{\"className\":\"mt-12 grid gap-6 md:grid-cols-2\",\"children\":[[\"$\",\"$L6\",\"Vente d’outillage et consommables\",{\"children\":[\"$\",\"article\",null,{\"className\":\"group relative flex h-full flex-col gap-4 rounded-3xl border border-slate-200 bg-gradient-to-br from-white to-slate-50/60 p-8 shadow-soft transition hover:border-primary/40 hover:shadow-soft-lg\",\"children\":[[\"$\",\"div\",null,{\"className\":\"inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 text-primary transition group-hover:bg-primary group-hover:text-white\",\"children\":[\"$\",\"svg\",null,{\"className\":\"h-7 w-7\",\"fill\":\"none\",\"viewBox\":\"0 0 24 24\",\"stroke\":\"currentColor\",\"strokeWidth\":2,\"children\":[[\"$\",\"path\",null,{\"strokeLinecap\":\"round\",\"strokeLinejoin\":\"round\",\"d\":\"M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.324.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 011.37.49l1.296 2.247a1.125 1.125 0 01-.26 1.431l-1.003.827c-.293.24-.438.613-.431.992a6.759 6.759 0 010 .255c-.007.378.138.75.43.99l1.005.828c.424.35.534.954.26 1.43l-1.298 2.247a1.125 1.125 0 01-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.57 6.57 0 01-.22.128c-.331.183-.581.495-.644.869l-.213 1.28c-.09.543-.56.941-1.11.941h-2.594c-.55 0-1.02-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 01-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 01-1.369-.49l-1.297-2.247a1.125 1.125 0 01.26-1.431l1.004-.827c.292-.24.437-.613.43-.992a6.932 6.932 0 010-.255c.007-.378-.138-.75-.43-.99l-1.004-.828a1.125 1.125 0 01-.26-1.43l1.297-2.247a1.125 1.125 0 011.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.087.22-.128.332-.183.582-.495.644-.869l.214-1.281z\"}],[\"$\",\"path\",null,{\"strokeLinecap\":\"round\",\"strokeLinejoin\":\"round\",\"d\":\"M15 12a3 3 0 11-6 0 3 3 0 016 0z\"}]]}]}],[\"$\",\"div\",null,{\"className\":\"space-y-2\",\"children\":[[\"$\",\"h3\",null,{\"className\":\"text-xl font-semibold text-slate-900\",\"children\":\"Vente d’outillage et consommables\"}],[\"$\",\"p\",null,{\"className\":\"text-base text-slate-600\",\"children\":\"Sélection sur mesure de matériels, EPI, abrasifs, visserie, électroportatif et équipements atelier.\"}]]}],[\"$\",\"div\",null,{\"className\":\"mt-auto flex items-center gap-2 text-sm font-semibold text-primary/80 transition group-hover:text-primary\",\"children\":[[\"$\",\"span\",null,{\"className\":\"h-1 w-1 rounded-full bg-primary/50\"}],\"Service disponible sur demande\"]}],[\"$\",\"div\",null,{\"className\":\"pointer-events-none absolute inset-0 rounded-3xl opacity-0 transition group-hover:opacity-100\",\"children\":[\"$\",\"div\",null,{\"className\":\"absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/5 via-transparent to-accent/10\",\"aria-hidden\":true}]}]]}]}],[\"$\",\"$L6\",\"Service après-vente et maintenance\",{\"children\":[\"$\",\"article\",null,{\"className\":\"group relative flex h-full flex-col gap-4 rounded-3xl border border-slate-200 bg-gradient-to-br from-white to-slate-50/60 p-8 shadow-soft transition hover:border-primary/40 hover:shadow-soft-lg\",\"children\":[[\"$\",\"div\",null,{\"className\":\"inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 text-primary transition group-hover:bg-primary group-hover:text-white\",\"children\":[\"$\",\"svg\",null,{\"className\":\"h-7 w-7\",\"fill\":\"none\",\"viewBox\":\"0 0 24 24\",\"stroke\":\"currentColor\",\"strokeWidth\":2,\"children\":[[\"$\",\"path\",null,{\"strokeLinecap\":\"round\",\"strokeLinejoin\":\"round\",\"d\":\"M21.75 6.75a4.5 4.5 0 01-4.884 4.484c-1.076-.091-2.264.071-2.95.904l-7.152 8.684a2.548 2.548 0 11-3.586-3.586l8.684-7.152c.833-.686.995-1.874.904-2.95a4.5 4.5 0 016.336-4.486l-3.276 3.276a3.004 3.004 0 002.25 2.25l3.276-3.276c.256.565.398 1.192.398 1.852z\"}],[\"$\",\"path\",null,{\"strokeLinecap\":\"round\",\"strokeLinejoin\":\"round\",\"d\":\"M4.867 19.125h.008v.008h-.008v-.008z\"}]]}]}],[\"$\",\"div\",null,{\"className\":\"space-y-2\",\"children\":[[\"$\",\"h3\",null,{\"className\":\"text-xl font-semibold text-slate-900\",\"children\":\"Service après-vente et maintenance\"}],[\"$\",\"p\",null,{\"className\":\"text-base text-slate-600\",\"children\":\"Prise en charge des réparations, prêt de matériel, relai avec les marques pour un suivi efficace.\"}]]}],[\"$\",\"div\",null,{\"className\":\"mt-auto flex items-center gap-2 text-sm font-semibold text-primary/80 transition group-hover:text-primary\",\"children\":[[\"$\",\"span\",null,{\"className\":\"h-1 w-1 rounded-full bg-primary/50\"}],\"Service disponible sur demande\"]}],[\"$\",\"div\",null,{\"className\":\"pointer-events-none absolute inset-0 rounded-3xl opacity-0 transition group-hover:opacity-100\",\"children\":[\"$\",\"div\",null,{\"className\":\"absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/5 via-transparent to-accent/10\",\"aria-hidden\":true}]}]]}]}],[\"$\",\"$L6\",\"Conseil et accompagnement\",{\"children\":[\"$\",\"article\",null,{\"className\":\"group relative flex h-full flex-col gap-4 rounded-3xl border border-slate-200 bg-gradient-to-br from-white to-slate-50/60 p-8 shadow-soft transition hover:border-primary/40 hover:shadow-soft-lg\",\"children\":[[\"$\",\"div\",null,{\"className\":\"inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 text-primary transition group-hover:bg-primary group-hover:text-white\",\"children\":[\"$\",\"svg\",null,{\"className\":\"h-7 w-7\",\"fill\":\"none\",\"viewBox\":\"0 0 24 24\",\"stroke\":\"currentColor\",\"strokeWidth\":2,\"children\":[\"$\",\"path\",null,{\"strokeLinecap\":\"round\",\"strokeLinejoin\":\"round\",\"d\":\"M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25zM6.75 12h.008v.008H6.75V12zm0 3h.008v.008H6.75V15zm0 3h.008v.008H6.75V18z\"}]}]}],[\"$\",\"div\",null,{\"className\":\"space-y-2\",\"children\":[[\"$\",\"h3\",null,{\"className\":\"text-xl font-semibold text-slate-900\",\"children\":\"Conseil et accompagnement\"}],[\"$\",\"p\",null,{\"className\":\"text-base text-slate-600\",\"children\":\"Audits de vos besoins, recommandations techniques et veille sur les innovations métiers.\"}]]}],[\"$\",\"div\",null,{\"className\":\"mt-auto flex items-center gap-2 text-sm font-semibold text-primary/80 transition group-hover:text-primary\",\"children\":[[\"$\",\"span\",null,{\"className\":\"h-1 w-1 rounded-full bg-primary/50\"}],\"Service disponible sur demande\"]}],[\"$\",\"div\",null,{\"className\":\"pointer-events-none absolute inset-0 rounded-3xl opacity-0 transition group-hover:opacity-100\",\"children\":[\"$\",\"div\",null,{\"className\":\"absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/5 via-transparent to-accent/10\",\"aria-hidden\":true}]}]]}]}],[\"$\",\"$L6\",\"Déplacement sur site\",{\"children\":[\"$\",\"article\",null,{\"className\":\"group relative flex h-full flex-col gap-4 rounded-3xl border border-slate-200 bg-gradient-to-br from-white to-slate-50/60 p-8 shadow-soft transition hover:border-primary/40 hover:shadow-soft-lg\",\"children\":[[\"$\",\"div\",null,{\"className\":\"inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 text-primary transition group-hover:bg-primary group-hover:text-white\",\"children\":[\"$\",\"svg\",null,{\"className\":\"h-7 w-7\",\"fill\":\"none\",\"viewBox\":\"0 0 24 24\",\"stroke\":\"currentColor\",\"strokeWidth\":2,\"children\":[\"$\",\"path\",null,{\"strokeLinecap\":\"round\",\"strokeLinejoin\":\"round\",\"d\":\"M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25zM6.75 12h.008v.008H6.75V12zm0 3h.008v.008H6.75V15zm0 3h.008v.008H6.75V18z\"}]}]}],[\"$\",\"div\",null,{\"className\":\"space-y-2\",\"children\":[[\"$\",\"h3\",null,{\"className\":\"text-xl font-semibold text-slate-900\",\"children\":\"Déplacement sur site\"}],[\"$\",\"p\",null,{\"className\":\"text-base text-slate-600\",\"children\":\"Je me déplace sur vos chantiers et ateliers principalement en Occitanie (32, 31, 40, 47, 65, 82) pour analyser vos besoins et livrer rapidement.\"}]]}],[\"$\",\"div\",null,{\"className\":\"mt-auto flex items-center gap-2 text-sm font-semibold text-primary/80 transition group-hover:text-primary\",\"children\":[[\"$\",\"span\",null,{\"className\":\"h-1 w-1 rounded-full bg-primary/50\"}],\"Service disponible sur demande\"]}],[\"$\",\"div\",null,{\"className\":\"pointer-events-none absolute inset-0 rounded-3xl opacity-0 transition group-hover:opacity-100\",\"children\":[\"$\",\"div\",null,{\"className\":\"absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/5 via-transparent to-accent/10\",\"aria-hidden\":true}]}]]}]}]]}],[\"$\",\"div\",null,{\"className\":\"mt-14 rounded-3xl border border-primary/15 bg-gradient-to-r from-primary/5 via-white to-accent/10 p-8 text-sm text-slate-700 shadow-soft md:flex md:items-center md:justify-between\",\"children\":[[\"$\",\"div\",null,{\"children\":[[\"$\",\"p\",null,{\"className\":\"text-xs font-semibold uppercase tracking-[0.35em] text-primary\",\"children\":\"Accompagnement continu\"}],[\"$\",\"p\",null,{\"className\":\"mt-2 text-base md:text-lg\",\"children\":\"Besoin d’un suivi régulier de vos consommables ou d’une mise à jour de parc ? Je planifie des visites terrain pour anticiper vos besoins.\"}]]}],[\"$\",\"$L8\",null,{\"href\":\"#contact\",\"className\":\"mt-4 inline-flex items-center justify-center gap-2 rounded-full border border-primary/40 px-5 py-2 text-sm font-semibold text-primary transition hover:border-primary hover:bg-primary hover:text-white md:mt-0\",\"children\":\"Organiser un point atelier →\"}]]}]]}]]}],[\"$\",\"section\",null,{\"id\":\"fournisseurs\",\"className\":\"relative bg-white py-24\",\"children\":[[\"$\",\"div\",null,{\"className\":\"absolute inset-0 -z-10 bg-gradient-to-br from-slate-100 via-white to-white\"}],[\"$\",\"div\",null,{\"className\":\"mx-auto max-w-6xl px-4\",\"children\":[[\"$\",\"div\",null,{\"className\":\"mb-12 space-y-4 text-center\",\"children\":[[\"$\",\"p\",null,{\"className\":\"text-sm font-semibold uppercase tracking-[0.3em] text-primary\",\"children\":\"Fournisseurs\"}],[\"$\",\"h2\",null,{\"className\":\"text-3xl font-semibold tracking-tight text-slate-900 md:text-4xl\",\"children\":\"Des marques professionnelles reconnues et durables\"}],[\"$\",\"p\",null,{\"className\":\"mx-auto max-w-3xl text-lg text-slate-600\",\"children\":\"Je sélectionne des partenaires fiables pour garantir des solutions performantes, des fiches techniques claires et un SAV simplifié.\"}]]}],[\"$\",\"div\",null,{\"className\":\"mt-12 grid gap-6 sm:grid-cols-2 xl:grid-cols-3\",\"children\":[[\"$\",\"$L6\",\"Makita\",{\"delay\":0,\"children\":[\"$\",\"article\",null,{\"className\":\"group relative overflow-hidden rounded-3xl bg-white p-6 shadow-soft transition hover:shadow-xl\",\"children\":[[\"$\",\"div\",null,{\"className\":\"relative mb-4 flex h-32 w-full items-center justify-center overflow-hidden rounded-2xl border border-slate-100 bg-gradient-to-br from-slate-50 to-white\",\"children\":[\"$\",\"$L7\",null,{\"src\":\"/images/logo-fournisseurs/Makita_Logo.png\",\"alt\":\"Makita\",\"fill\":true,\"className\":\"object-contain p-4 transition duration-500 group-hover:scale-110\",\"sizes\":\"(min-width: 1280px) 240px, (min-width: 768px) 220px, 100vw\"}]}],[\"$\",\"div\",null,{\"className\":\"flex flex-col gap-3\",\"children\":[[\"$\",\"h3\",null,{\"className\":\"text-xl font-semibold text-slate-900\",\"children\":\"Makita\"}],[\"$\",\"p\",null,{\"className\":\"text-sm leading-relaxed text-slate-600\",\"children\":\"Électroportatif, machines sans-fil LXT et accessoires pour le chantier et l’atelier.\"}],[\"$\",\"$L8\",null,{\"href\":\"https://www.makita.fr\",\"className\":\"group/link inline-flex items-center gap-2 text-sm font-semibold text-primary transition hover:text-accent\",\"target\":\"_blank\",\"rel\":\"noopener noreferrer\",\"children\":[\"Consulter le catalogue\",[\"$\",\"span\",null,{\"className\":\"transition-transform duration-300 group-hover/link:translate-x-1\",\"aria-hidden\":true,\"children\":\"→\"}]]}]]}]]}]}],[\"$\",\"$L6\",\"KS Tools\",{\"delay\":100,\"children\":[\"$\",\"article\",null,{\"className\":\"group relative overflow-hidden rounded-3xl bg-white p-6 shadow-soft transition hover:shadow-xl\",\"children\":[[\"$\",\"div\",null,{\"className\":\"relative mb-4 flex h-32 w-full items-center justify-center overflow-hidden rounded-2xl border border-slate-100 bg-gradient-to-br from-slate-50 to-white\",\"children\":[\"$\",\"$L7\",null,{\"src\":\"/images/logo-fournisseurs/FOT_PRO_ALG_FAN_1009_SALL_AING_V15b81fb255a512_600x600@2x.jpg\",\"alt\":\"KS Tools\",\"fill\":true,\"className\":\"object-contain p-4 transition duration-500 group-hover:scale-110\",\"sizes\":\"(min-width: 1280px) 240px, (min-width: 768px) 220px, 100vw\"}]}],[\"$\",\"div\",null,{\"className\":\"flex flex-col gap-3\",\"children\":[[\"$\",\"h3\",null,{\"className\":\"text-xl font-semibold text-slate-900\",\"children\":\"KS Tools\"}],[\"$\",\"p\",null,{\"className\":\"text-sm leading-relaxed text-slate-600\",\"children\":\"Outillage à main et solutions de serrage pour l'automobile, l'industrie et le BTP.\"}],[\"$\",\"$L8\",null,{\"href\":\"https://kstools.fr\",\"className\":\"group/link inline-flex items-center gap-2 text-sm font-semibold text-primary transition hover:text-accent\",\"target\":\"_blank\",\"rel\":\"noopener noreferrer\",\"children\":[\"Consulter le catalogue\",[\"$\",\"span\",null,{\"className\":\"transition-transform duration-300 group-hover/link:translate-x-1\",\"aria-hidden\":true,\"children\":\"→\"}]]}]]}]]}]}],[\"$\",\"$L6\",\"Sodise\",{\"delay\":200,\"children\":[\"$\",\"article\",null,{\"className\":\"group relative overflow-hidden rounded-3xl bg-white p-6 shadow-soft transition hover:shadow-xl\",\"children\":[[\"$\",\"div\",null,{\"className\":\"relative mb-4 flex h-32 w-full items-center justify-center overflow-hidden rounded-2xl border border-slate-100 bg-gradient-to-br from-slate-50 to-white\",\"children\":[\"$\",\"$L7\",null,{\"src\":\"/images/logo-fournisseurs/LogoSodise.png\",\"alt\":\"Sodise\",\"fill\":true,\"className\":\"object-contain p-4 transition duration-500 group-hover:scale-110\",\"sizes\":\"(min-width: 1280px) 240px, (min-width: 768px) 220px, 100vw\"}]}],[\"$\",\"div\",null,{\"className\":\"flex flex-col gap-3\",\"children\":[[\"$\",\"h3\",null,{\"className\":\"text-xl font-semibold text-slate-900\",\"children\":\"Sodise\"}],[\"$\",\"p\",null,{\"className\":\"text-sm leading-relaxed text-slate-600\",\"children\":\"Distributeur de consommables, EPI et fournitures techniques pour artisans et industriels.\"}],[\"$\",\"$L8\",null,{\"href\":\"https://www.sodise.com\",\"className\":\"group/link inline-flex items-center gap-2 text-sm font-semibold text-primary transition hover:text-accent\",\"target\":\"_blank\",\"rel\":\"noopener noreferrer\",\"children\":[\"Consulter le catalogue\",[\"$\",\"span\",null,{\"className\":\"transition-transform duration-300 group-hover/link:translate-x-1\",\"aria-hidden\":true,\"children\":\"→\"}]]}]]}]]}]}],[\"$\",\"$L6\",\"King Tony\",{\"delay\":300,\"children\":[\"$\",\"article\",null,{\"className\":\"group relative overflow-hidden rounded-3xl bg-white p-6 shadow-soft transition hover:shadow-xl\",\"children\":[[\"$\",\"div\",null,{\"className\":\"relative mb-4 flex h-32 w-full items-center justify-center overflow-hidden rounded-2xl border border-slate-100 bg-gradient-to-br from-slate-50 to-white\",\"children\":[\"$\",\"$L7\",null,{\"src\":\"/images/logo-fournisseurs/king-tony-logo-png-transparent.png\",\"alt\":\"King Tony\",\"fill\":true,\"className\":\"object-contain p-4 transition duration-500 group-hover:scale-110\",\"sizes\":\"(min-width: 1280px) 240px, (min-width: 768px) 220px, 100vw\"}]}],[\"$\",\"div\",null,{\"className\":\"flex flex-col gap-3\",\"children\":[[\"$\",\"h3\",null,{\"className\":\"text-xl font-semibold text-slate-900\",\"children\":\"King Tony\"}],[\"$\",\"p\",null,{\"className\":\"text-sm leading-relaxed text-slate-600\",\"children\":\"Clés et outillage manuel haute résistance dédiés aux environnements exigeants.\"}],[\"$\",\"$L8\",null,{\"href\":\"https://www.kingtonyeurope.com\",\"className\":\"group/link inline-flex items-center gap-2 text-sm font-semibold text-primary transition hover:text-accent\",\"target\":\"_blank\",\"rel\":\"noopener noreferrer\",\"children\":[\"Consulter le catalogue\",[\"$\",\"span\",null,{\"className\":\"transition-transform duration-300 group-hover/link:translate-x-1\",\"aria-hidden\":true,\"children\":\"→\"}]]}]]}]]}]}],[\"$\",\"$L6\",\"Legallais\",{\"delay\":400,\"children\":[\"$\",\"article\",null,{\"className\":\"group relative overflow-hidden rounded-3xl bg-white p-6 shadow-soft transition hover:shadow-xl\",\"children\":[[\"$\",\"div\",null,{\"className\":\"relative mb-4 flex h-32 w-full items-center justify-center overflow-hidden rounded-2xl border border-slate-100 bg-gradient-to-br from-slate-50 to-white\",\"children\":[\"$\",\"$L7\",null,{\"src\":\"/images/logo-fournisseurs/Legallais-logo2.jpg\",\"alt\":\"Legallais\",\"fill\":true,\"className\":\"object-contain p-4 transition duration-500 group-hover:scale-110\",\"sizes\":\"(min-width: 1280px) 240px, (min-width: 768px) 220px, 100vw\"}]}],[\"$\",\"div\",null,{\"className\":\"flex flex-col gap-3\",\"children\":[[\"$\",\"h3\",null,{\"className\":\"text-xl font-semibold text-slate-900\",\"children\":\"Legallais\"}],[\"$\",\"p\",null,{\"className\":\"text-sm leading-relaxed text-slate-600\",\"children\":\"Quincaillerie, fixations, équipements d’atelier et services logistiques pour les pros.\"}],[\"$\",\"$L8\",null,{\"href\":\"https://www.legallais.com\",\"className\":\"group/link inline-flex items-center gap-2 text-sm font-semibold text-primary transition hover:text-accent\",\"target\":\"_blank\",\"rel\":\"noopener noreferrer\",\"children\":[\"Consulter le catalogue\",[\"$\",\"span\",null,{\"className\":\"transition-transform duration-300 group-hover/link:translate-x-1\",\"aria-hidden\":true,\"children\":\"→\"}]]}]]}]]}]}],[\"$\",\"$L6\",\"Hydrokit\",{\"delay\":500,\"children\":[\"$\",\"article\",null,{\"className\":\"group relative overflow-hidden rounded-3xl bg-white p-6 shadow-soft transition hover:shadow-xl\",\"children\":[[\"$\",\"div\",null,{\"className\":\"relative mb-4 flex h-32 w-full items-center justify-center overflow-hidden rounded-2xl border border-slate-100 bg-gradient-to-br from-slate-50 to-white\",\"children\":[\"$\",\"$L7\",null,{\"src\":\"/images/logo-fournisseurs/kal-theme-logo-footer_2.png\",\"alt\":\"Hydrokit\",\"fill\":true,\"className\":\"object-contain p-4 transition duration-500 group-hover:scale-110\",\"sizes\":\"(min-width: 1280px) 240px, (min-width: 768px) 220px, 100vw\"}]}],[\"$\",\"div\",null,{\"className\":\"flex flex-col gap-3\",\"children\":[[\"$\",\"h3\",null,{\"className\":\"text-xl font-semibold text-slate-900\",\"children\":\"Hydrokit\"}],[\"$\",\"p\",null,{\"className\":\"text-sm leading-relaxed text-slate-600\",\"children\":\"Solutions hydrauliques globales, composants et maintenance pour matériels mobiles.\"}],[\"$\",\"$L8\",null,{\"href\":\"https://www.hydrokit.com\",\"className\":\"group/link inline-flex items-center gap-2 text-sm font-semibold text-primary transition hover:text-accent\",\"target\":\"_blank\",\"rel\":\"noopener noreferrer\",\"children\":[\"Consulter le catalogue\",[\"$\",\"span\",null,{\"className\":\"transition-transform duration-300 group-hover/link:translate-x-1\",\"aria-hidden\":true,\"children\":\"→\"}]]}]]}]]}]}],[\"$\",\"$L6\",\"Buisard Distribution\",{\"delay\":600,\"children\":[\"$\",\"article\",null,{\"className\":\"group relative overflow-hidden rounded-3xl bg-white p-6 shadow-soft transition hover:shadow-xl\",\"children\":[[\"$\",\"div\",null,{\"className\":\"relative mb-4 flex h-32 w-full items-center justify-center overflow-hidden rounded-2xl border border-slate-100 bg-gradient-to-br from-slate-50 to-white\",\"children\":[\"$\",\"$L7\",null,{\"src\":\"/images/logo-fournisseurs/logo2-625x250.png\",\"alt\":\"Buisard Distribution\",\"fill\":true,\"className\":\"object-contain p-4 transition duration-500 group-hover:scale-110\",\"sizes\":\"(min-width: 1280px) 240px, (min-width: 768px) 220px, 100vw\"}]}],[\"$\",\"div\",null,{\"className\":\"flex flex-col gap-3\",\"children\":[[\"$\",\"h3\",null,{\"className\":\"text-xl font-semibold text-slate-900\",\"children\":\"Buisard Distribution\"}],[\"$\",\"p\",null,{\"className\":\"text-sm leading-relaxed text-slate-600\",\"children\":\"Consommables, abrasifs, EPI et fournitures pour les métiers du métal et du bâtiment.\"}],[\"$\",\"$L8\",null,{\"href\":\"https://www.buisard-distribution.fr\",\"className\":\"group/link inline-flex items-center gap-2 text-sm font-semibold text-primary transition hover:text-accent\",\"target\":\"_blank\",\"rel\":\"noopener noreferrer\",\"children\":[\"Consulter le catalogue\",[\"$\",\"span\",null,{\"className\":\"transition-transform duration-300 group-hover/link:translate-x-1\",\"aria-hidden\":true,\"children\":\"→\"}]]}]]}]]}]}],[\"$\",\"$L6\",\"Robert Lye\",{\"delay\":700,\"children\":[\"$\",\"article\",null,{\"className\":\"group relative overflow-hidden rounded-3xl bg-white p-6 shadow-soft transition hover:shadow-xl\",\"children\":[[\"$\",\"div\",null,{\"className\":\"relative mb-4 flex h-32 w-full items-center justify-center overflow-hidden rounded-2xl border border-slate-100 bg-gradient-to-br from-slate-50 to-white\",\"children\":[\"$\",\"$L7\",null,{\"src\":\"/images/logo-fournisseurs/robert-lye.png\",\"alt\":\"Robert Lye\",\"fill\":true,\"className\":\"object-contain p-4 transition duration-500 group-hover:scale-110\",\"sizes\":\"(min-width: 1280px) 240px, (min-width: 768px) 220px, 100vw\"}]}],[\"$\",\"div\",null,{\"className\":\"flex flex-col gap-3\",\"children\":[[\"$\",\"h3\",null,{\"className\":\"text-xl font-semibold text-slate-900\",\"children\":\"Robert Lye\"}],[\"$\",\"p\",null,{\"className\":\"text-sm leading-relaxed text-slate-600\",\"children\":\"Électricité, équipement pour véhicules légers, utilitaires et poids lourds.\"}],[\"$\",\"$L8\",null,{\"href\":\"https://www.robert-lye.fr\",\"className\":\"group/link inline-flex items-center gap-2 text-sm font-semibold text-primary transition hover:text-accent\",\"target\":\"_blank\",\"rel\":\"noopener noreferrer\",\"children\":[\"Consulter le catalogue\",[\"$\",\"span\",null,{\"className\":\"transition-transform duration-300 group-hover/link:translate-x-1\",\"aria-hidden\":true,\"children\":\"→\"}]]}]]}]]}]}],[\"$\",\"$L6\",\"Volvis\",{\"delay\":800,\"children\":[\"$\",\"article\",null,{\"className\":\"group relative overflow-hidden rounded-3xl bg-white p-6 shadow-soft transition hover:shadow-xl\",\"children\":[[\"$\",\"div\",null,{\"className\":\"relative mb-4 flex h-32 w-full items-center justify-center overflow-hidden rounded-2xl border border-slate-100 bg-gradient-to-br from-slate-50 to-white\",\"children\":[\"$\",\"$L7\",null,{\"src\":\"/images/logo-fournisseurs/cropped-Logo-VOLVIS-rouge.png\",\"alt\":\"Volvis\",\"fill\":true,\"className\":\"object-contain p-4 transition duration-500 group-hover:scale-110\",\"sizes\":\"(min-width: 1280px) 240px, (min-width: 768px) 220px, 100vw\"}]}],[\"$\",\"div\",null,{\"className\":\"flex flex-col gap-3\",\"children\":[[\"$\",\"h3\",null,{\"className\":\"text-xl font-semibold text-slate-900\",\"children\":\"Volvis\"}],[\"$\",\"p\",null,{\"className\":\"text-sm leading-relaxed text-slate-600\",\"children\":\"Visserie, boulonnerie et pièces spéciales sur mesure pour vos assemblages critiques.\"}],[\"$\",\"$L8\",null,{\"href\":\"https://www.volvis.fr\",\"className\":\"group/link inline-flex items-center gap-2 text-sm font-semibold text-primary transition hover:text-accent\",\"target\":\"_blank\",\"rel\":\"noopener noreferrer\",\"children\":[\"Consulter le catalogue\",[\"$\",\"span\",null,{\"className\":\"transition-transform duration-300 group-hover/link:translate-x-1\",\"aria-hidden\":true,\"children\":\"→\"}]]}]]}]]}]}],[\"$\",\"$L6\",\"Kramp\",{\"delay\":900,\"children\":[\"$\",\"article\",null,{\"className\":\"group relative overflow-hidden rounded-3xl bg-white p-6 shadow-soft transition hover:shadow-xl\",\"children\":[[\"$\",\"div\",null,{\"className\":\"relative mb-4 flex h-32 w-full items-center justify-center overflow-hidden rounded-2xl border border-slate-100 bg-gradient-to-br from-slate-50 to-white\",\"children\":[\"$\",\"$L7\",null,{\"src\":\"/images/logo-fournisseurs/Striim_Logo_Kramp_01.webp\",\"alt\":\"Kramp\",\"fill\":true,\"className\":\"object-contain p-4 transition duration-500 group-hover:scale-110\",\"sizes\":\"(min-width: 1280px) 240px, (min-width: 768px) 220px, 100vw\"}]}],[\"$\",\"div\",null,{\"className\":\"flex flex-col gap-3\",\"children\":[[\"$\",\"h3\",null,{\"className\":\"text-xl font-semibold text-slate-900\",\"children\":\"Kramp\"}],[\"$\",\"p\",null,{\"className\":\"text-sm leading-relaxed text-slate-600\",\"children\":\"Pièces détachées, fournitures et consommables pour l’agriculture et les travaux publics.\"}],[\"$\",\"$L8\",null,{\"href\":\"https://www.kramp.com\",\"className\":\"group/link inline-flex items-center gap-2 text-sm font-semibold text-primary transition hover:text-accent\",\"target\":\"_blank\",\"rel\":\"noopener noreferrer\",\"children\":[\"Consulter le catalogue\",[\"$\",\"span\",null,{\"className\":\"transition-transform duration-300 group-hover/link:translate-x-1\",\"aria-hidden\":true,\"children\":\"→\"}]]}]]}]]}]}],[\"$\",\"$L6\",\"De Witte\",{\"delay\":1000,\"children\":[\"$\",\"article\",null,{\"className\":\"group relative overflow-hidden rounded-3xl bg-white p-6 shadow-soft transition hover:shadow-xl\",\"children\":[[\"$\",\"div\",null,{\"className\":\"relative mb-4 flex h-32 w-full items-center justify-center overflow-hidden rounded-2xl border border-slate-100 bg-gradient-to-br from-slate-50 to-white\",\"children\":[\"$\",\"$L7\",null,{\"src\":\"/images/logo-fournisseurs/logo.png\",\"alt\":\"De Witte\",\"fill\":true,\"className\":\"object-contain p-4 transition duration-500 group-hover:scale-110\",\"sizes\":\"(min-width: 1280px) 240px, (min-width: 768px) 220px, 100vw\"}]}],[\"$\",\"div\",null,{\"className\":\"flex flex-col gap-3\",\"children\":[[\"$\",\"h3\",null,{\"className\":\"text-xl font-semibold text-slate-900\",\"children\":\"De Witte\"}],[\"$\",\"p\",null,{\"className\":\"text-sm leading-relaxed text-slate-600\",\"children\":\"Solutions de nettoyage professionnel, pulvérisation et entretien des véhicules.\"}],[\"$\",\"$L8\",null,{\"href\":\"https://www.dewitte.com/categorie\",\"className\":\"group/link inline-flex items-center gap-2 text-sm font-semibold text-primary transition hover:text-accent\",\"target\":\"_blank\",\"rel\":\"noopener noreferrer\",\"children\":[\"Consulter le catalogue\",[\"$\",\"span\",null,{\"className\":\"transition-transform duration-300 group-hover/link:translate-x-1\",\"aria-hidden\":true,\"children\":\"→\"}]]}]]}]]}]}],[\"$\",\"$L6\",\"Renson\",{\"delay\":1100,\"children\":[\"$\",\"article\",null,{\"className\":\"group relative overflow-hidden rounded-3xl bg-white p-6 shadow-soft transition hover:shadow-xl\",\"children\":[[\"$\",\"div\",null,{\"className\":\"relative mb-4 flex h-32 w-full items-center justify-center overflow-hidden rounded-2xl border border-slate-100 bg-gradient-to-br from-slate-50 to-white\",\"children\":[\"$\",\"$L7\",null,{\"src\":\"/images/logo-fournisseurs/Logo-RENSON-1024x795.png\",\"alt\":\"Renson\",\"fill\":true,\"className\":\"object-contain p-4 transition duration-500 group-hover:scale-110\",\"sizes\":\"(min-width: 1280px) 240px, (min-width: 768px) 220px, 100vw\"}]}],[\"$\",\"div\",null,{\"className\":\"flex flex-col gap-3\",\"children\":[[\"$\",\"h3\",null,{\"className\":\"text-xl font-semibold text-slate-900\",\"children\":\"Renson\"}],[\"$\",\"p\",null,{\"className\":\"text-sm leading-relaxed text-slate-600\",\"children\":\"Équipement de station gasoil, irrigation et distribution Ad Blue.\"}],[\"$\",\"$L8\",null,{\"href\":\"https://www.renson.fr\",\"className\":\"group/link inline-flex items-center gap-2 text-sm font-semibold text-primary transition hover:text-accent\",\"target\":\"_blank\",\"rel\":\"noopener noreferrer\",\"children\":[\"Consulter le catalogue\",[\"$\",\"span\",null,{\"className\":\"transition-transform duration-300 group-hover/link:translate-x-1\",\"aria-hidden\":true,\"children\":\"→\"}]]}]]}]]}]}],[\"$\",\"$L6\",\"Fournial\",{\"delay\":1200,\"children\":[\"$\",\"article\",null,{\"className\":\"group relative overflow-hidden rounded-3xl bg-white p-6 shadow-soft transition hover:shadow-xl\",\"children\":[[\"$\",\"div\",null,{\"className\":\"relative mb-4 flex h-32 w-full items-center justify-center overflow-hidden rounded-2xl border border-slate-100 bg-gradient-to-br from-slate-50 to-white\",\"children\":[\"$\",\"$L7\",null,{\"src\":\"/images/logo-fournisseurs/fournial.png\",\"alt\":\"Fournial\",\"fill\":true,\"className\":\"object-contain p-4 transition duration-500 group-hover:scale-110\",\"sizes\":\"(min-width: 1280px) 240px, (min-width: 768px) 220px, 100vw\"}]}],[\"$\",\"div\",null,{\"className\":\"flex flex-col gap-3\",\"children\":[[\"$\",\"h3\",null,{\"className\":\"text-xl font-semibold text-slate-900\",\"children\":\"Fournial\"}],[\"$\",\"p\",null,{\"className\":\"text-sm leading-relaxed text-slate-600\",\"children\":\"Matériel et équipement pour professionnels.\"}],[\"$\",\"$L8\",null,{\"href\":\"https://fournial.fr/\",\"className\":\"group/link inline-flex items-center gap-2 text-sm font-semibold text-primary transition hover:text-accent\",\"target\":\"_blank\",\"rel\":\"noopener noreferrer\",\"children\":[\"Consulter le catalogue\",[\"$\",\"span\",null,{\"className\":\"transition-transform duration-300 group-hover/link:translate-x-1\",\"aria-hidden\":true,\"children\":\"→\"}]]}]]}]]}]}],[\"$\",\"$L6\",\"BGS\",{\"delay\":1300,\"children\":[\"$\",\"article\",null,{\"className\":\"group relative overflow-hidden rounded-3xl bg-white p-6 shadow-soft transition hover:shadow-xl\",\"children\":[[\"$\",\"div\",null,{\"className\":\"relative mb-4 flex h-32 w-full items-center justify-center overflow-hidden rounded-2xl border border-slate-100 bg-gradient-to-br from-slate-50 to-white\",\"children\":[\"$\",\"$L7\",null,{\"src\":\"/images/logo-fournisseurs/bgs.png\",\"alt\":\"BGS\",\"fill\":true,\"className\":\"object-contain p-4 transition duration-500 group-hover:scale-110\",\"sizes\":\"(min-width: 1280px) 240px, (min-width: 768px) 220px, 100vw\"}]}],[\"$\",\"div\",null,{\"className\":\"flex flex-col gap-3\",\"children\":[[\"$\",\"h3\",null,{\"className\":\"text-xl font-semibold text-slate-900\",\"children\":\"BGS\"}],[\"$\",\"p\",null,{\"className\":\"text-sm leading-relaxed text-slate-600\",\"children\":\"Outillage professionnel et équipement technique.\"}],[\"$\",\"$L8\",null,{\"href\":\"https://www.bgstechnic.com/fr/Produits/\",\"className\":\"group/link inline-flex items-center gap-2 text-sm font-semibold text-primary transition hover:text-accent\",\"target\":\"_blank\",\"rel\":\"noopener noreferrer\",\"children\":[\"Consulter le catalogue\",[\"$\",\"span\",null,{\"className\":\"transition-transform duration-300 group-hover/link:translate-x-1\",\"aria-hidden\":true,\"children\":\"→\"}]]}]]}]]}]}],[\"$\",\"$L6\",\"Levac\",{\"delay\":1400,\"children\":[\"$\",\"article\",null,{\"className\":\"group relative overflow-hidden rounded-3xl bg-white p-6 shadow-soft transition hover:shadow-xl\",\"children\":[[\"$\",\"div\",null,{\"className\":\"relative mb-4 flex h-32 w-full items-center justify-center overflow-hidden rounded-2xl border border-slate-100 bg-gradient-to-br from-slate-50 to-white\",\"children\":[\"$\",\"$L7\",null,{\"src\":\"/images/logo-fournisseurs/levac.jpg\",\"alt\":\"Levac\",\"fill\":true,\"className\":\"object-contain p-4 transition duration-500 group-hover:scale-110\",\"sizes\":\"(min-width: 1280px) 240px, (min-width: 768px) 220px, 100vw\"}]}],[\"$\",\"div\",null,{\"className\":\"flex flex-col gap-3\",\"children\":[[\"$\",\"h3\",null,{\"className\":\"text-xl font-semibold text-slate-900\",\"children\":\"Levac\"}],[\"$\",\"p\",null,{\"className\":\"text-sm leading-relaxed text-slate-600\",\"children\":\"Solutions et équipements spécialisés.\"}],[\"$\",\"$L8\",null,{\"href\":\"https://www.levac.fr/\",\"className\":\"group/link inline-flex items-center gap-2 text-sm font-semibold text-primary transition hover:text-accent\",\"target\":\"_blank\",\"rel\":\"noopener noreferrer\",\"children\":[\"Consulter le catalogue\",[\"$\",\"span\",null,{\"className\":\"transition-transform duration-300 group-hover/link:translate-x-1\",\"aria-hidden\":true,\"children\":\"→\"}]]}]]}]]}]}]]}]]}]]}],\"$L9\",[\"$\",\"$La\",null,{}],[\"$\",\"section\",null,{\"id\":\"contact\",\"className\":\"relative overflow-hidden bg-slate-950 py-24 text-white\",\"children\":[[\"$\",\"div\",null,{\"className\":\"absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,_rgba(142,174,210,0.1),_transparent_50%)]\"}],[\"$\",\"div\",null,{\"className\":\"relative mx-auto max-w-6xl px-4\",\"children\":[\"$\",\"div\",null,{\"className\":\"grid gap-12 md:grid-cols-2 md:items-center\",\"children\":[[\"$\",\"div\",null,{\"className\":\"space-y-6\",\"children\":[[\"$\",\"p\",null,{\"className\":\"text-sm font-semibold uppercase tracking-[0.3em] text-accent\",\"children\":\"Contact\"}],[\"$\",\"h2\",null,{\"className\":\"text-3xl font-semibold tracking-tight text-white md:text-4xl\",\"children\":\"Un contact direct et rapide\"}],[\"$\",\"p\",null,{\"className\":\"text-lg text-white/70\",\"children\":\"Pour toute demande de devis, disponibilité produit ou visite sur vos chantiers, contactez-moi directement par téléphone ou email. Je me déplace dans vos ateliers principalement en Occitanie.\"}],[\"$\",\"div\",null,{\"className\":\"grid gap-4\",\"children\":[[\"$\",\"div\",null,{\"className\":\"rounded-2xl border border-white/15 bg-white/10 p-4 shadow-soft\",\"children\":[[\"$\",\"p\",null,{\"className\":\"text-sm font-semibold uppercase text-white/60\",\"children\":\"Téléphone\"}],[\"$\",\"$L8\",null,{\"href\":\"tel:+33607159308\",\"className\":\"mt-2 inline-flex items-center text-xl font-semibold text-white hover:text-accent\",\"children\":\"06 07 15 93 08\"}]]}],[\"$\",\"div\",null,{\"className\":\"rounded-2xl border border-white/15 bg-white/10 p-4 shadow-soft\",\"children\":[[\"$\",\"p\",null,{\"className\":\"text-sm font-semibold uppercase text-white/60\",\"children\":\"Email\"}],[\"$\",\"$L8\",null,{\"href\":\"mailto:aspro.services@orange.fr\",\"className\":\"mt-2 inline-flex items-center text-lg text-white hover:text-accent\",\"children\":\"aspro.services@orange.fr\"}]]}],[\"$\",\"div\",null,{\"className\":\"rounded-2xl border border-white/15 bg-white/10 p-4 shadow-soft\",\"children\":[[\"$\",\"p\",null,{\"className\":\"text-sm font-semibold uppercase text-white/60\",\"children\":\"Adresse\"}],[\"$\",\"p\",null,{\"className\":\"mt-2 text-white/80\",\"children\":\"Lieu-dit la Boubée, 32270 Nougaroulet\"}],[\"$\",\"p\",null,{\"className\":\"text-xs text-white/60\",\"children\":\"Du lundi au vendredi, 8h00 – 18h00\"}]]}]]}],[\"$\",\"$L8\",null,{\"href\":\"tel:+33607159308\",\"className\":\"inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-base font-semibold text-slate-900 transition hover:bg-accent/90\",\"children\":[[\"$\",\"svg\",null,{\"className\":\"h-5 w-5\",\"fill\":\"none\",\"viewBox\":\"0 0 24 24\",\"stroke\":\"currentColor\",\"strokeWidth\":2,\"children\":[\"$\",\"path\",null,{\"strokeLinecap\":\"round\",\"strokeLinejoin\":\"round\",\"d\":\"M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z\"}]}],\"Appeler maintenant\"]}]]}],[\"$\",\"div\",null,{\"className\":\"flex h-full items-center\",\"children\":[\"$\",\"iframe\",null,{\"title\":\"Carte AS PRO SERVICES\",\"src\":\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2855.3112860246385!2d0.2419!3d43.7593!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12abb5dc5517da8f%3A0x86ad9edc0dbe11b9!2sNougaroulet!5e0!3m2!1sfr!2sfr!4v1700000000000\",\"width\":\"100%\",\"height\":\"500\",\"loading\":\"lazy\",\"className\":\"w-full rounded-3xl border-0 shadow-xl\",\"referrerPolicy\":\"no-referrer-when-downgrade\"}]}]]}]}]]}],[\"$\",\"footer\",null,{\"className\":\"relative overflow-hidden bg-slate-950 text-white\",\"children\":[[\"$\",\"div\",null,{\"className\":\"absolute inset-0 -z-10 bg-gradient-to-tr from-slate-950 via-slate-900 to-slate-950\"}],[\"$\",\"div\",null,{\"className\":\"absolute inset-x-0 top-0 -z-10 h-40 bg-gradient-to-b from-accent/15 to-transparent blur-2xl\",\"aria-hidden\":true}],[\"$\",\"div\",null,{\"className\":\"border-b border-white/10 bg-slate-950/40\",\"children\":[\"$\",\"div\",null,{\"className\":\"mx-auto flex max-w-6xl flex-col gap-6 px-4 py-10 text-center md:flex-row md:items-center md:justify-between md:text-left\",\"children\":[[\"$\",\"div\",null,{\"children\":[[\"$\",\"p\",null,{\"className\":\"text-xs font-semibold uppercase tracking-[0.4em] text-accent\",\"children\":\"Prendre contact\"}],[\"$\",\"h3\",null,{\"className\":\"mt-2 text-2xl font-semibold\",\"children\":\"Parlons de vos besoins outillage\"}],[\"$\",\"p\",null,{\"className\":\"mt-3 max-w-xl text-sm text-white/60\",\"children\":\"Une question sur une marque, un besoin urgent ou un SAV ? Je réponds directement et me déplace dans votre atelier si nécessaire.\"}]]}],[\"$\",\"div\",null,{\"className\":\"flex flex-col items-center gap-3 md:items-end\",\"children\":[[\"$\",\"$L8\",null,{\"href\":\"tel:+33607159308\",\"className\":\"inline-flex items-center justify-center gap-3 rounded-full bg-accent px-8 py-3 text-base font-semibold text-slate-900 shadow-soft transition hover:-translate-y-0.5 hover:bg-accent/90\",\"children\":[\"Appeler le \",\"06 07 15 93 08\"]}],[\"$\",\"$L8\",null,{\"href\":\"mailto:aspro.services@orange.fr\",\"className\":\"inline-flex items-center justify-center gap-2 rounded-full border border-white/20 px-6 py-2 text-sm font-semibold text-white/80 transition hover:border-accent/60 hover:text-accent\",\"children\":\"aspro.services@orange.fr\"}]]}]]}]}],[\"$\",\"div\",null,{\"className\":\"mx-auto grid max-w-6xl gap-8 px-4 py-12 md:grid-cols-3\",\"children\":[[\"$\",\"div\",null,{\"className\":\"space-y-3\",\"children\":[[\"$\",\"h3\",null,{\"className\":\"text-lg font-semibold\",\"children\":\"AS PRO SERVICES\"}],[\"$\",\"p\",null,{\"className\":\"text-sm text-white/60\",\"children\":[\"Fourniture d’outillage et consommables pour professionnels. \",20,\"+ ans d’expertise au service de vos chantiers et ateliers.\"]}],[\"$\",\"p\",null,{\"className\":\"text-sm text-white/40\",\"children\":\"Lieu-dit la Boubée, 32270 Nougaroulet\"}]]}],[\"$\",\"div\",null,{\"children\":[[\"$\",\"h4\",null,{\"className\":\"text-sm font-semibold uppercase tracking-[0.3em] text-accent\",\"children\":\"Engagements\"}],[\"$\",\"ul\",null,{\"className\":\"mt-4 space-y-2 text-sm text-white/60\",\"children\":[[\"$\",\"li\",\"Indépendant et proche de vos métiers\",{\"children\":[\"• \",\"Indépendant et proche de vos métiers\"]}],[\"$\",\"li\",\"Conseil personnalisé sur site ou à distance\",{\"children\":[\"• \",\"Conseil personnalisé sur site ou à distance\"]}],[\"$\",\"li\",\"Sélection exigeante des meilleures marques\",{\"children\":[\"• \",\"Sélection exigeante des meilleures marques\"]}],[\"$\",\"li\",\"Service après-vente réactif et suivi durable\",{\"children\":[\"• \",\"Service après-vente réactif et suivi durable\"]}]]}]]}],[\"$\",\"div\",null,{\"className\":\"space-y-4\",\"children\":[[\"$\",\"h4\",null,{\"className\":\"text-sm font-semibold uppercase tracking-[0.3em] text-accent\",\"children\":\"Contact\"}],[\"$\",\"div\",null,{\"className\":\"rounded-2xl border border-white/10 bg-white/5 p-4 text-sm text-white/70\",\"children\":[[\"$\",\"p\",null,{\"className\":\"text-xs font-semibold uppercase tracking-[0.3em] text-white/50\",\"children\":\"Téléphone\"}],[\"$\",\"$L8\",null,{\"href\":\"tel:+33607159308\",\"className\":\"mt-1 block text-lg font-semibold text-white hover:text-accent\",\"children\":\"06 07 15 93 08\"}],[\"$\",\"p\",null,{\"className\":\"mt-4 text-xs font-semibold uppercase tracking-[0.3em] text-white/50\",\"children\":\"Horaires\"}],[\"$\",\"p\",null,{\"className\":\"mt-1\",\"children\":\"Du lundi au vendredi, 8h00 – 18h00\"}]]}],[\"$\",\"$L8\",null,{\"href\":\"/admin\",\"className\":\"inline-flex items-center gap-2 text-sm text-white/60 transition hover:text-accent\",\"children\":\"Administration des promotions →\"}]]}]]}],[\"$\",\"div\",null,{\"className\":\"border-t border-white/10 py-6 text-center text-xs text-white/40\",\"children\":[\"© \",2025,\" \",\"AS PRO SERVICES\",\" — Tous droits réservés.\"]}]]}]]}],null]]},[null,[\"$\",\"html\",null,{\"lang\":\"fr\",\"className\":\"__variable_ba02cf __variable_5bd5f9\",\"children\":[\"$\",\"body\",null,{\"children\":[\"$\",\"$Lb\",null,{\"parallelRouterKey\":\"children\",\"segmentPath\":[\"children\"],\"loading\":\"$undefined\",\"loadingStyles\":\"$undefined\",\"loadingScripts\":\"$undefined\",\"hasLoading\":false,\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$Lc\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":\"404\"}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],\"notFoundStyles\":[],\"styles\":null}]}]}],null]],\"initialHead\":[false,\"$Ld\"],\"globalErrorComponent\":\"$e\",\"missingSlots\":\"$Wf\"}]]\n"])
+  </script>
+  <script>
+   self.__next_f.push([1,"d:[[\"$\",\"meta\",\"0\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}],[\"$\",\"meta\",\"1\",{\"charSet\":\"utf-8\"}],[\"$\",\"title\",\"2\",{\"children\":\"AS PRO SERVICES | Fourniture d’outillage professionnel à Nougaroulet\"}],[\"$\",\"meta\",\"3\",{\"name\":\"description\",\"content\":\"AS PRO SERVICES accompagne les professionnels du Sud-Ouest avec une sélection exigeante d'outillage, de consommables et un service après-vente réactif depuis plus de 20 ans.\"}],[\"$\",\"meta\",\"4\",{\"name\":\"keywords\",\"content\":\"AS PRO SERVICES,Outillage professionnel,Nougaroulet,Gers,32,64,65,82,31,40,Consommables professionnels,Service après-vente\"}],[\"$\",\"link\",\"5\",{\"rel\":\"canonical\",\"href\":\"https://www.asproservices.fr/\"}],[\"$\",\"meta\",\"6\",{\"property\":\"og:title\",\"content\":\"AS PRO SERVICES | Outillage et consommables professionnels\"}],[\"$\",\"meta\",\"7\",{\"property\":\"og:description\",\"content\":\"AS PRO SERVICES fournit outillage, consommables et conseils personnalisés aux professionnels du Sud-Ouest depuis plus de 20 ans.\"}],[\"$\",\"meta\",\"8\",{\"property\":\"og:site_name\",\"content\":\"AS PRO SERVICES\"}],[\"$\",\"meta\",\"9\",{\"property\":\"og:locale\",\"content\":\"fr_FR\"}],[\"$\",\"meta\",\"10\",{\"property\":\"og:image\",\"content\":\"https://www.asproservices.fr/og-cover.svg\"}],[\"$\",\"meta\",\"11\",{\"property\":\"og:image:width\",\"content\":\"1200\"}],[\"$\",\"meta\",\"12\",{\"property\":\"og:image:height\",\"content\":\"630\"}],[\"$\",\"meta\",\"13\",{\"property\":\"og:image:alt\",\"content\":\"AS PRO SERVICES - Outillage professionnel\"}],[\"$\",\"meta\",\"14\",{\"property\":\"og:type\",\"content\":\"website\"}],[\"$\",\"meta\",\"15\",{\"name\":\"twitter:card\",\"content\":\"summary_large_image\"}],[\"$\",\"meta\",\"16\",{\"name\":\"twitter:title\",\"content\":\"AS PRO SERVICES\"}],[\"$\",\"meta\",\"17\",{\"name\":\"twitter:description\",\"content\":\"Votre partenaire outillage et consommables professionnels dans le Sud-Ouest avec 20 ans d'expérience.\"}],[\"$\",\"meta\",\"18\",{\"name\":\"twitter:image\",\"content\":\"https://www.asproservices.fr/og-cover.svg\"}]]\n"])
+  </script>
+  <script>
+   self.__next_f.push([1,"4:null\n"])
+  </script>
+  <script>
+   self.__next_f.push([1,"10:I[1155,[\"866\",\"static/chunks/866-4a1b4f5fd27f74c7.js\",\"931\",\"static/chunks/app/page-8f0182166fe77c1e.js\"],\"PromotionsSectionClient\"]\n9:[\"$\",\"$L10\",null,{\"promotions\":[{\"id\":\"2\",\"title\":\"Outils2\",\"discount\":\"Outils2\",\"description\":\"Outils2\",\"validUntil\":\"2025-11-12\",\"image\":\"/promotions/beige-noir-moderne-page-de-garde-rapport-1762532140879.jpg\",\"pdf\":\"/promotions/cv-alternance-ou-stage-safire-1-1762532140882.pdf\"},{\"id\":\"1\",\"title\":\"Outils\",\"discount\":\"Outils\",\"description\":\"Outils\",\"validUntil\":\"2025-11"])
+  </script>
+  <script>
+   self.__next_f.push([1,"-12\",\"image\":\"/promotions/beige-noir-moderne-page-de-garde-rapport-1762531389872.jpg\",\"pdf\":\"\"}]}]\n"])
+  </script>
+  <script>
+   self.__next_f.push([1,""])
+  </script>
+  <script>
+   // Ensure content reveal when the Next.js reveal scripts are not executed.
+   (function(){
+     function reveal() {
+       try {
+         var selector = '.transition-all.duration-700.ease-out.translate-y-8.opacity-0, .transition-all.duration-700.ease-out.opacity-0.translate-y-8';
+         document.querySelectorAll(selector).forEach(function(el){
+           el.classList.remove('translate-y-8','opacity-0');
+           el.classList.add('translate-y-0','opacity-100');
+         });
+       } catch (e) {
+         // silent
+       }
+     }
+     if (document.readyState === 'loading') {
+       document.addEventListener('DOMContentLoaded', reveal);
+     } else {
+       reveal();
+     }
+   })();
+  </script>
+ </body>
+</html>
