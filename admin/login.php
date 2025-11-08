@@ -78,7 +78,9 @@ if (!$cssFile) {
 </head>
 <body>
     <main class="min-h-screen flex items-center justify-center" style="padding:24px;display:flex;align-items:center;justify-content:center;min-height:100vh;">
-    <section class="card text-center" style="max-width:420px;width:100%;margin:0 auto;text-align:center;">
+    <section class="card text-center" style="position:relative;max-width:420px;width:100%;margin:0 auto;text-align:center;">
+        <!-- Small return link top-right of the card -->
+        <a href="<?= htmlspecialchars(SITE_URL . '/index.html') ?>" class="back-to-site" style="position:absolute;top:12px;right:12px;font-size:0.85rem;padding:6px 10px;background:#0b61a4;color:#fff;border-radius:999px;text-decoration:none;">Retour au site</a>
             <div id="login-area">
                 <h1 id="auth-title" class="text-2xl font-semibold text-slate-900 text-center">Connexion administrateur</h1>
                 <?php if ($error): ?>
@@ -108,7 +110,7 @@ if (!$cssFile) {
                     <p class="mt-3 text-sm text-green-600 text-center"><?= htmlspecialchars($regSuccess) ?></p>
                 <?php endif; ?>
 
-                <hr style="margin:12px 0;border:none;border-top:1px solid #e6e6e6" />
+                <!-- horizontal rule removed to keep the card clean -->
                 <h2 class="text-lg font-medium mt-2">Créer un nouveau compte</h2>
                 <form method="post" class="mt-4" style="text-align:center;">
                     <div style="margin-bottom:12px;text-align:center;">
@@ -131,6 +133,8 @@ if (!$cssFile) {
 
             
             </div>
+
+            
 
             <script>
                 (function(){

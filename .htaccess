@@ -1,0 +1,10 @@
+# Prefer index.php as directory index so the dynamic injector runs
+DirectoryIndex index.php index.html
+
+# Redirect direct requests for index.html to the root so promotions are injected
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  # Temporary redirect to allow quick testing; change to 301 when ready for production
+  # Redirect to the project folder root so we don't end up on the server dashboard
+  RewriteRule ^index\.html$ /AsproServices/ [R=302,L]
+</IfModule>
