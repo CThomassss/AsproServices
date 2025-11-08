@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  background: #f7f9fb;
+}
+
+body {
+  @apply bg-[rgb(247,249,251)] text-slate-900 antialiased font-sans;
+}
+
+section {
+  scroll-margin-top: 96px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+main {
+  @apply min-h-screen;
+}
+
+.section-title {
+  @apply text-3xl md:text-4xl font-semibold text-slate-900 tracking-tight;
+}
+
+.section-subtitle {
+  @apply text-lg text-secondary max-w-2xl;
+}
+
+.cta-button {
+  @apply inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-white font-semibold shadow-soft transition hover:-translate-y-0.5 hover:shadow-lg;
+}
+
+.card {
+  @apply rounded-3xl bg-white p-6 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-xl;
+}
+
+input, textarea {
+  @apply rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20;
+}
+
+button:disabled {
+  @apply opacity-50 cursor-not-allowed;
+}
+
+/* ScrollReveal helper styles
+   - Use the class `.sr` on elements to mark them as reveal candidates.
+   - When visible, the `.sr-visible` class is added by the small JS below.
+   - These rules are purposely placed in `globals.css` and should be loaded after the
+     compiled utility CSS so they can override utility classes like `translate-y-8` / `opacity-0`.
+*/
+.sr {
+  transition: all 0.7s ease-out;
+  transform: translateY(2rem); /* equivalent to translate-y-8 */
+  opacity: 0;
+  will-change: transform, opacity;
+}
+.sr.sr-visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sr,
+  .sr.sr-visible {
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}
