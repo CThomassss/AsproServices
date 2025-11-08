@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "title": "Offre de fou",
+    "discount": "-12",
+    "description": "Offre exceptionnelle sur une sélection de produits.\nProfitez-en vite !",
+    "validUntil": "2025-11-11",
+    "imageUrl": "/public/images/Hero-section.webp",
+    "document": "/public/promotions/sample-catalogue.pdf"
+  },
+  {
+    "id": 2,
+    "title": "Test",
+    "discount": "TEST",
+    "description": "Description de test",
+    "validUntil": "2025-11-14",
+    "imageUrl": "/public/images/Hero-section.webp",
+    "document": ""
+  }
+]

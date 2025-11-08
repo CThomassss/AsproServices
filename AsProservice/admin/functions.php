@@ -100,6 +100,14 @@ function verifyUserCredentials($username, $password)
 {
     $user = getUserByUsername($username);
     if ($user) {
+        // ensure the account is active
+        if (empty($user['isActive'])) {
+            return null;
+        }
+        // only allow admin or superadmin roles to sign in
+        if (empty($user['role']) || !in_array($user['role'], ['admin','superadmin'])) {
+            return null;
+        }
         if (password_verify($password, $user['passwordHash'])) return $user;
         return null;
     }
@@ -109,6 +117,29 @@ function verifyUserCredentials($username, $password)
         return ['id' => 0, 'username' => 'admin', 'role' => 'admin'];
     }
     return null;
+}
+
+/**
+ * Create a new user. Returns new user id on success, or false on failure.
+ * The account will be created with the provided role and isActive flag.
+ */
+function createUser($username, $password, $role = 'invite', $isActive = 0)
+{
+    if (!isUsingMysql()) return false;
+    $pdo = getPDO();
+    // basic validation
+    $username = trim($username);
+    if ($username === '' || strlen($password) < 6) return false;
+
+    // ensure username not already taken
+    $existing = getUserByUsername($username);
+    if ($existing) return false;
+
+    $passwordHash = password_hash($password, PASSWORD_DEFAULT);
+    $stmt = $pdo->prepare('INSERT INTO users (username, passwordHash, isActive, role) VALUES (?, ?, ?, ?)');
+    $ok = $stmt->execute([$username, $passwordHash, (int)$isActive, $role]);
+    if ($ok) return (int)$pdo->lastInsertId();
+    return false;
 }
 
 ?>

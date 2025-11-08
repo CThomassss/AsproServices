@@ -53,9 +53,7 @@ if (!$cssFile) {
         </div>
       </header>
 
-      <?php if ($flash): ?>
-        <div class="mb-6 rounded-md bg-green-50 border border-green-100 p-4 text-green-700"><?= htmlspecialchars($flash) ?></div>
-      <?php endif; ?>
+      <!-- flash message moved into the Add Promotion form beneath the PDF controls -->
 
       <!-- Vertical layout: add form, then promotions list, then profiles -->
       <div class="space-y-4">
@@ -106,6 +104,10 @@ if (!$cssFile) {
                 <p class="text-xs text-secondary mt-2">Cochez la case pour afficher ces options. Si vous saisissez une URL, elle sera enregistrée dans la base (pdfUrl).</p>
               </div>
             </div>
+              <div id="pdf-selected-name" class="text-sm text-slate-600 mt-2" aria-live="polite"></div>
+              <?php if (!empty($flash)): ?>
+                <div id="form-flash" class="mt-3 rounded-md bg-green-50 border border-green-100 p-3 text-green-700"><?= htmlspecialchars($flash) ?></div>
+              <?php endif; ?>
             <div style="grid-column:1 / -1" class="form-actions">
               <button type="submit" class="cta-button">Ajouter la promotion</button>
             </div>
@@ -132,9 +134,9 @@ if (!$cssFile) {
                       <?php if (!empty($p['imageUrl'])): ?><a href="<?= htmlspecialchars(SITE_URL . '/' . ltrim($p['imageUrl'],'/')) ?>" class="promo-link">Ouvrir l'image</a><?php endif; ?>
                       <?php if (!empty($p['pdfUrl'])): ?><a href="<?= htmlspecialchars(SITE_URL . '/' . ltrim($p['pdfUrl'],'/')) ?>" class="promo-link">Télécharger le PDF</a><?php endif; ?>
                     </div>
-                    <form method="post" action="delete_promotion.php" style="display:inline">
+                    <form method="post" action="delete_promotion.php" style="display:inline" class="delete-form">
                       <input type="hidden" name="id" value="<?= htmlspecialchars($p['id']) ?>">
-                      <button type="submit" class="btn-danger" onclick="return confirm('Supprimer ?')">Supprimer</button>
+                      <button type="button" class="btn-danger btn-delete" data-title="<?= htmlspecialchars($p['title']) ?>">Supprimer</button>
                     </form>
                   </div>
                 </article>
@@ -181,14 +183,18 @@ if (!$cssFile) {
                   </div>
                   <div>
                     <?php if (empty($u['isActive'])): ?>
-                      <form method="post" action="activate_user.php" style="display:inline">
-                        <input type="hidden" name="id" value="<?= htmlspecialchars($u['id']) ?>">
-                        <button type="submit" class="btn btn-success">Valider</button>
-                      </form>
+                      <?php if (!empty($_SESSION['user']['role']) && $_SESSION['user']['role'] === 'superadmin'): ?>
+                        <form method="post" action="activate_user.php" style="display:inline" class="activate-user-form" data-id="<?= htmlspecialchars($u['id']) ?>">
+                          <input type="hidden" name="id" value="<?= htmlspecialchars($u['id']) ?>">
+                          <button type="button" class="btn btn-success btn-activate-user" data-id="<?= htmlspecialchars($u['id']) ?>" data-username="<?= htmlspecialchars($u['username']) ?>">Valider</button>
+                        </form>
+                      <?php else: ?>
+                        <!-- only superadmin can validate: no action (status shown above) -->
+                      <?php endif; ?>
                     <?php endif; ?>
-                    <form method="post" action="delete_user.php" style="display:inline;margin-left:8px">
+                    <form method="post" action="delete_user.php" style="display:inline;margin-left:8px" class="delete-user-form" data-id="<?= htmlspecialchars($u['id']) ?>">
                       <input type="hidden" name="id" value="<?= htmlspecialchars($u['id']) ?>">
-                      <button type="submit" class="btn btn-outline" onclick="return confirm('Supprimer le compte ?')">Supprimer</button>
+                      <button type="button" class="btn btn-outline btn-delete-user" data-id="<?= htmlspecialchars($u['id']) ?>" data-username="<?= htmlspecialchars($u['username']) ?>">Supprimer</button>
                     </form>
                   </div>
                 </div>
@@ -200,6 +206,128 @@ if (!$cssFile) {
 
     </div>
   </main>
+  <!-- Confirmation modal -->
+  <div id="confirm-modal" role="dialog" aria-modal="true" aria-hidden="true" style="display:none;position:fixed;inset:0;z-index:9999;align-items:center;justify-content:center;">
+    <div id="confirm-backdrop" style="position:absolute;inset:0;background:rgba(2,6,23,0.6);"></div>
+    <div style="position:relative;max-width:480px;width:90%;background:#fff;border-radius:12px;box-shadow:0 20px 50px rgba(2,6,23,0.4);padding:20px;z-index:2;">
+      <h3 id="confirm-title" style="margin:0 0 8px;font-size:18px;color:#0b1724">Confirmer la suppression</h3>
+      <p id="confirm-message" style="margin:0 0 18px;color:#374151">Voulez-vous vraiment supprimer cette promotion ? Cette action est irréversible.</p>
+      <div style="display:flex;justify-content:flex-end;gap:8px">
+        <button id="confirm-cancel" class="btn" style="background:#fff;border:1px solid rgba(11,23,36,0.06)">Annuler</button>
+        <button id="confirm-reject" class="btn" style="background:#ef4444;border:none;color:#fff;display:none">Refuser</button>
+        <button id="confirm-ok" class="btn-danger" style="background:#ef4444;border:none;color:#fff">Supprimer</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function(){
+      var modal = document.getElementById('confirm-modal');
+      var titleEl = document.getElementById('confirm-title');
+      var msgEl = document.getElementById('confirm-message');
+      var btnOk = document.getElementById('confirm-ok');
+      var btnCancel = document.getElementById('confirm-cancel');
+      var btnReject = document.getElementById('confirm-reject');
+      var activeForm = null;
+      var activeAction = null; // 'delete-promo' | 'delete-user' | 'activate-user'
+
+      document.addEventListener('click', function(e){
+        // promotion delete buttons (existing)
+        var promoBtn = e.target.closest && e.target.closest('.btn-delete');
+        if (promoBtn) {
+          e.preventDefault();
+          activeForm = promoBtn.closest('form');
+          activeAction = 'delete-promo';
+          var title = promoBtn.getAttribute('data-title') || 'cette promotion';
+          titleEl.textContent = 'Supprimer « ' + title + ' » ?';
+          msgEl.textContent = 'Cette action supprimera définitivement la promotion. Confirmez pour continuer.';
+          btnReject.style.display = 'none';
+          btnOk.textContent = 'Supprimer';
+          modal.style.display = 'flex';
+          modal.setAttribute('aria-hidden','false');
+          btnOk.focus();
+          return;
+        }
+
+        // user delete button
+        var delUserBtn = e.target.closest && e.target.closest('.btn-delete-user');
+        if (delUserBtn) {
+          e.preventDefault();
+          activeForm = delUserBtn.closest('form');
+          activeAction = 'delete-user';
+          var uname = delUserBtn.getAttribute('data-username') || 'cet utilisateur';
+          titleEl.textContent = 'Supprimer le compte de « ' + uname + ' » ?';
+          msgEl.textContent = 'Voulez-vous vraiment supprimer ce compte ? Cette action est irréversible.';
+          btnReject.style.display = 'none';
+          btnOk.textContent = 'Supprimer';
+          modal.style.display = 'flex';
+          modal.setAttribute('aria-hidden','false');
+          btnOk.focus();
+          return;
+        }
+
+        // user activate button (superadmin only)
+        var actBtn = e.target.closest && e.target.closest('.btn-activate-user');
+        if (actBtn) {
+          e.preventDefault();
+          activeForm = actBtn.closest('form');
+          activeAction = 'activate-user';
+          var uname = actBtn.getAttribute('data-username') || 'cet utilisateur';
+          titleEl.textContent = 'Valider l\u2019utilisateur « ' + uname + ' » ?';
+          msgEl.textContent = 'Confirmez si vous souhaitez activer ce compte. Sinon vous pouvez le refuser (supprimer).';
+          btnReject.style.display = 'inline-block';
+          btnReject.textContent = 'Refuser';
+          btnOk.textContent = 'Valider';
+          modal.style.display = 'flex';
+          modal.setAttribute('aria-hidden','false');
+          btnOk.focus();
+          return;
+        }
+      });
+
+      btnCancel.addEventListener('click', function(){
+        modal.style.display = 'none';
+        modal.setAttribute('aria-hidden','true');
+        activeForm = null;
+        activeAction = null;
+      });
+
+      btnOk.addEventListener('click', function(){
+        if (!activeForm) { modal.style.display='none'; activeAction=null; return; }
+        // submit the form related to the action
+        if (activeAction === 'delete-promo' || activeAction === 'delete-user' || activeAction === 'activate-user') {
+          activeForm.submit();
+        }
+      });
+
+      btnReject.addEventListener('click', function(){
+        // when rejecting an activation, submit a delete user form (POST to delete_user.php)
+        if (!activeForm) { modal.style.display='none'; return; }
+        if (activeAction === 'activate-user') {
+          // extract user id from the activate form or data attribute
+          var id = activeForm.querySelector('input[name="id"]') ? activeForm.querySelector('input[name="id"]').value : activeForm.getAttribute('data-id');
+          // create and submit a small form to delete_user.php
+          var f = document.createElement('form');
+          f.method = 'post';
+          f.action = 'delete_user.php';
+          var i = document.createElement('input'); i.type='hidden'; i.name='id'; i.value = id; f.appendChild(i);
+          document.body.appendChild(f);
+          f.submit();
+        }
+      });
+
+      // Close when clicking backdrop
+      document.getElementById('confirm-backdrop').addEventListener('click', function(){
+        modal.style.display = 'none';
+        modal.setAttribute('aria-hidden','true');
+        activeForm = null;
+        activeAction = null;
+      });
+
+      // keyboard: ESC to cancel
+      document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && modal.style.display === 'flex') { btnCancel.click(); } });
+    })();
+  </script>
 </body>
 </html>
  

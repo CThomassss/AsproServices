@@ -20,6 +20,30 @@ html {
   font-variation-settings:normal;
   -webkit-tap-highlight-color:transparent
 }
+/* Typography override requested by the site owner:
+   Use Times New Roman for regular body text while keeping page headings
+   (h1-h6) in the original sans-serif / brand stack. Base font-size bumped
+   slightly for readability. This lives here so it applies site-wide and can
+   be edited centrally. */
+:root{--tnr-stack:"Times New Roman",Times,serif;--heading-stack:var(--font-manrope),system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+body{font-family:var(--tnr-stack);font-size:17px;line-height:1.6;color:inherit}
+h1,h2,h3,h4,h5,h6{font-family:var(--heading-stack)}
+
+/* ===== Typography overrides moved from index.html =====
+   Make paragraph and most inline text use Times New Roman while preserving
+   the site's sans-serif headings. This centralizes typography in the main CSS.
+*/
+:root{--tnr-stack:"Times New Roman",Times,serif;--heading-stack:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+/* Apply Times New Roman to body text elements (use !important to override utility stacks when necessary) */
+p, li, span, label, input, textarea, button, a, small, .text-sm, .text-base {
+  font-family: var(--tnr-stack) !important;
+}
+/* Keep headings in the site's sans-serif stack */
+h1,h2,h3,h4,h5,h6{font-family:var(--heading-stack) !important}
+/* Slightly larger base for readability */
+body{font-size:17px;line-height:1.6}
+
+
 body {
   margin:0;
   line-height:inherit
