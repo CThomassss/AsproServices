@@ -36,4 +36,9 @@ if (!is_dir(UPLOADS_DIR)) {
 // Path to JSON file used when no MySQL is configured
 define('PROMOTIONS_JSON', __DIR__ . '/../data/promotions.json');
 
+// Session timeout in seconds for admin pages (inactivity)
+// If the user is inactive for this many seconds, they will be logged out.
+// Adjust as needed (e.g., 300 = 5 minutes). Set to 0 to disable timeout.
+define('SESSION_TIMEOUT', 300);
+
 ?>

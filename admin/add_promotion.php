@@ -3,6 +3,9 @@ session_start();
 require_once __DIR__ . '/config.php';
 require_once __DIR__ . '/functions.php';
 
+// Enforce session inactivity timeout
+enforceSessionTimeout();
+
 if (empty($_SESSION['user'])) {
     header('Location: login.php');
     exit;

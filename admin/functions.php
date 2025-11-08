@@ -120,6 +120,39 @@ function verifyUserCredentials($username, $password)
 }
 
 /**
+ * Enforce a server-side inactivity timeout for the current session.
+ * If the timeout is reached this will destroy the session and redirect to login.
+ */
+function enforceSessionTimeout()
+{
+    // session must be started by the caller
+    if (session_status() !== PHP_SESSION_ACTIVE) return;
+
+    $timeout = defined('SESSION_TIMEOUT') ? (int)SESSION_TIMEOUT : 0;
+    if ($timeout > 0) {
+        if (!empty($_SESSION['last_activity'])) {
+            $elapsed = time() - (int)$_SESSION['last_activity'];
+            if ($elapsed > $timeout) {
+                // destroy session safely
+                $_SESSION = [];
+                if (ini_get('session.use_cookies')) {
+                    $params = session_get_cookie_params();
+                    setcookie(session_name(), '', time() - 42000,
+                        $params['path'], $params['domain'], $params['secure'], $params['httponly']
+                    );
+                }
+                session_destroy();
+                // redirect to login with a flag so UI can show a message
+                header('Location: login.php?timeout=1');
+                exit;
+            }
+        }
+        // update last activity
+        $_SESSION['last_activity'] = time();
+    }
+}
+
+/**
  * Create a new user. Returns new user id on success, or false on failure.
  * The account will be created with the provided role and isActive flag.
  */

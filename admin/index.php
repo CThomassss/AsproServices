@@ -4,6 +4,9 @@ session_start();
 require_once __DIR__ . '/config.php';
 require_once __DIR__ . '/functions.php';
 
+// Enforce server-side inactivity timeout (redirects to login.php on timeout)
+enforceSessionTimeout();
+
 if (empty($_SESSION['user'])) {
     header('Location: login.php');
     exit;
@@ -379,6 +382,28 @@ if (!$cssFile) {
 
       // keyboard: ESC to cancel
       document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && modal.style.display === 'flex') { btnCancel.click(); } });
+    })();
+  </script>
+  <!-- Attempt to log out the user when they close or navigate away from the admin page -->
+  <script>
+    (function(){
+      function sendLogout() {
+        // use navigator.sendBeacon if available (safe on unload)
+        try {
+          if (navigator.sendBeacon) {
+            navigator.sendBeacon('logout.php');
+          } else {
+            // fallback: synchronous XHR (may be blocked in modern browsers)
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', 'logout.php', false);
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhr.send('via=unload');
+          }
+        } catch (e) {
+          // ignore errors — best-effort
+        }
+      }
+      window.addEventListener('unload', sendLogout, {passive:true});
     })();
   </script>
 </body>
