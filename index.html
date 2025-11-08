@@ -2,39 +2,40 @@
 
 <html class="__variable_ba02cf __variable_5bd5f9" lang="fr">
  <head>
- 
-     <link rel="stylesheet" href="css/ddb61d76dd79ae12.css"> 
 
-     <meta charset="utf-8"/>
+  <!-- Feuille de typographie centrale : ne gère QUE la police (Times New Roman pour le corps) -->
+  <link rel="stylesheet" href="css/typography.css"> 
+  <!-- CSS principal compilé (utilitaires / layout) -->
+  <link rel="stylesheet" href="css/style.css"> 
+
+    <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1" name="viewport"/>
   <link as="image" fetchpriority="high" imagesizes="(min-width: 768px) 176px, 160px" imagesrcset="public/images/asProServ_logo.png?w=16&q=75 16w, public/images/asProServ_logo.png?w=32&q=75 32w, public/images/asProServ_logo.png?w=48&q=75 48w, public/images/asProServ_logo.png?w=64&q=75 64w, public/images/asProServ_logo.png?w=96&q=75 96w, public/images/asProServ_logo.png?w=128&q=75 128w, public/images/asProServ_logo.png?w=256&q=75 256w, public/images/asProServ_logo.png?w=384&q=75 384w, public/images/asProServ_logo.png?w=640&q=75 640w, public/images/asProServ_logo.png?w=750&q=75 750w, public/images/asProServ_logo.png?w=828&q=75 828w, public/images/asProServ_logo.png?w=1080&q=75 1080w, public/images/asProServ_logo.png?w=1200&q=75 1200w, public/images/asProServ_logo.png?w=1920&q=75 1920w, public/images/asProServ_logo.png?w=2048&q=75 2048w, public/images/asProServ_logo.png?w=3840&q=75 3840w" rel="preload"/>
   <link as="image" fetchpriority="high" imagesizes="100vw" imagesrcset="public/images/Hero-section.webp?w=640&q=75 640w, public/images/Hero-section.webp?w=750&q=75 750w, public/images/Hero-section.webp?w=828&q=75 828w, public/images/Hero-section.webp?w=1080&q=75 1080w, public/images/Hero-section.webp?w=1200&q=75 1200w, public/images/Hero-section.webp?w=1920&q=75 1920w, public/images/Hero-section.webp?w=2048&q=75 2048w, public/images/Hero-section.webp?w=3840&q=75 3840w" rel="preload"/>
   <link as="image" fetchpriority="high" imagesizes="100vw" imagesrcset="public/images/Stive-camion.jpg?w=640&q=75 640w, public/images/Stive-camion.jpg?w=750&q=75 750w, public/images/Stive-camion.jpg?w=828&q=75 828w, public/images/Stive-camion.jpg?w=1080&q=75 1080w, public/images/Stive-camion.jpg?w=1200&q=75 1200w, public/images/Stive-camion.jpg?w=1920&q=75 1920w, public/images/Stive-camion.jpg?w=2048&q=75 2048w, public/images/Stive-camion.jpg?w=3840&q=75 3840w" rel="preload"/>
     <style>
-/* When the page is scrolled a little, apply a navy background to the fixed header
-   so white header elements stay readable when the header sits over white sections. */
+/* Quand la page est légèrement défilée, appliquer un fond bleu marine à l'en-tête fixé
+   afin que les éléments blancs (logo, menu) restent lisibles lorsqu'ils se trouvent au-dessus
+   de sections claires. */
 header.scrolled {
-  background-color: rgba(2, 10, 24, 0.5); /* requested blue */
+  background-color: rgba(2, 10, 24, 0.5); /* bleu demandé */
   border-bottom-color: rgba(255, 255, 255, 0.308) !important;
   box-shadow: 0 8px 28px rgba(2,6,23,0.45);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
 }
 
-/* Slightly reduce padding when scrolled (optional compact header) */
+/* Réduction légère du padding quand scrolldown (optionnel, en-tête compact) */
 
-
-/* Ensure the mobile hamburger stays visible on dark background */
+/* Assurer que l'icône 'hamburger' reste visible sur fond sombre (mobile) */
 header.scrolled button[aria-label="Ouvrir le menu"] span, header.scrolled button[aria-label="Ouvrir le menu"] .block {
-  background-color: #ffffff; /* keep hamburger bars white */
+  background-color: #ffffff; /* barres du hamburger en blanc */
 }
 
-/* Smooth transition already present on header; ensure color transition applies */
+/* Transition fluide déjà définie pour l'en-tête ; préciser propriétés à animer */
 header { transition: background-color 220ms ease, box-shadow 220ms ease, border-color 220ms ease; }
 
 </style>
-     <link rel="stylesheet" href="css/ddb61d76dd79ae12.css"> 
-  </script>
   <script>
     (function () {
       if (typeof window === 'undefined') return;
@@ -166,9 +167,9 @@ header { transition: background-color 220ms ease, box-shadow 220ms ease, border-
        <a class="text-sm font-semibold transition relative text-white hover:text-accent" href="#contact">
         Contact
        </a>
-       <a class="rounded-full px-4 py-2 text-sm font-semibold transition border border-white text-white hover:bg-white/10" href="tel:+33607159308">
-        06 07 15 93 08
-       </a>
+  <a class="rounded-full px-4 py-2 text-sm font-semibold transition border border-white text-white hover:bg-white/10" href="admin/login.php">
+   Compte
+  </a>
       </nav>
       <button aria-controls="header-mobile-nav" aria-expanded="false" aria-label="Ouvrir le menu" class="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-full border transition border-white/40 bg-transparent" type="button">
        <span class="sr-only">
@@ -207,11 +208,9 @@ header { transition: background-color 220ms ease, box-shadow 220ms ease, border-
        <a class="rounded-xl px-3 py-2 text-sm font-semibold transition text-white hover:bg-white/10" href="#contact">
         Contact
        </a>
-       <a class="rounded-xl border px-3 py-2 text-center text-sm font-semibold transition border-white/40 text-white hover:bg-white/10" href="tel:+33607159308">
-        Appeler
-        <!-- -->
-        06 07 15 93 08
-       </a>
+  <a class="rounded-xl border px-3 py-2 text-center text-sm font-semibold transition border-white/40 text-white hover:bg-white/10" href="admin/login.php">
+   Compte
+  </a>
       </nav>
      </div>
     </header>
@@ -252,17 +251,15 @@ header { transition: background-color 220ms ease, box-shadow 220ms ease, border-
        <a class="inline-flex items-center justify-center gap-2 rounded-full bg-accent px-8 py-3 text-base font-semibold text-slate-900 shadow-[0_18px_40px_rgba(245,180,0,0.25)] transition hover:-translate-y-0.5 hover:bg-accent/90" href="#promotions">
         Découvrir les offres du moment
        </a>
-       <a class="inline-flex items-center justify-center gap-3 rounded-full border border-white/30 px-6 py-3 text-base font-semibold text-white transition hover:border-accent/60 hover:text-accent whitespace-nowrap" href="tel:+33607159308">
-        <svg class="h-5 w-5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
-         <path d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" stroke-linecap="round" stroke-linejoin="round">
-         </path>
-        </svg>
-        <span>
-         Appeler le
-         <!-- -->
-         06 07 15 93 08
-        </span>
-       </a>
+  <a class="inline-flex items-center justify-center gap-3 rounded-full border border-white/30 px-6 py-3 text-base font-semibold text-white transition hover:border-accent/60 hover:text-accent whitespace-nowrap" href="tel:+33607159308">
+   <svg class="h-5 w-5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+    <path d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" stroke-linecap="round" stroke-linejoin="round">
+    </path>
+   </svg>
+   <span>
+    Appeler le 06 07 15 93 08
+   </span>
+  </a>
       </div>
       <div class="mt-6 flex flex-wrap items-center gap-2 text-xs font-semibold uppercase tracking-wider text-white/60">
        <span class="rounded-full border border-white/15 bg-white/5 px-3 py-1">
@@ -277,13 +274,9 @@ header { transition: background-color 220ms ease, box-shadow 220ms ease, border-
        <span class="rounded-full border border-white/15 bg-white/5 px-3 py-1">
         Lot-et-Garonne (47)
        </span>
-       <span class="rounded-full border border-accent/30 bg-accent/20 px-3 py-1 text-accent">
-        +
-        <!-- -->
-        2
-        <!-- -->
-        départements
-       </span>
+  <span class="rounded-full border border-accent/30 bg-accent/20 px-3 py-1 text-accent">
+   + 2 départements
+  </span>
       </div>
      </div>
      <div class="relative z-10 flex flex-1 justify-end">
@@ -360,6 +353,90 @@ header { transition: background-color 220ms ease, box-shadow 220ms ease, border-
      </div>
     </div>
    </section>
+    <script>
+      // Carousel automatique pour la section "temoignages"
+      document.addEventListener('DOMContentLoaded', function () {
+        try {
+          var section = document.getElementById('temoignages');
+          if (!section) return;
+
+          var track = section.querySelector('[aria-live].flex');
+          if (!track) return;
+
+          var slides = Array.prototype.slice.call(track.children);
+          var dots = Array.prototype.slice.call(section.querySelectorAll('div.mt-8 button[aria-label^="Afficher le témoignage"]'));
+          if (slides.length <= 1) return; // rien à faire
+
+          var current = 0;
+          var delay = 5000; // ms
+          var timer = null;
+
+          function update() {
+            // translateX en pourcentage (chaque slide fait 100% de la largeur)
+            track.style.transform = 'translateX(-' + (current * 100) + '%)';
+            // update dots classes (active = bg-primary)
+            if (dots && dots.length) {
+              dots.forEach(function (b, i) {
+                if (i === current) {
+                  b.classList.add('bg-primary');
+                  b.classList.remove('bg-slate-300');
+                  b.classList.remove('hover:bg-slate-400');
+                } else {
+                  b.classList.remove('bg-primary');
+                  b.classList.add('bg-slate-300');
+                  b.classList.add('hover:bg-slate-400');
+                }
+              });
+            }
+          }
+
+          function next() {
+            current = (current + 1) % slides.length;
+            update();
+          }
+
+          function goTo(index) {
+            current = (index + slides.length) % slides.length;
+            update();
+          }
+
+          function startTimer() {
+            stopTimer();
+            timer = setInterval(next, delay);
+          }
+
+          function stopTimer() {
+            if (timer) {
+              clearInterval(timer);
+              timer = null;
+            }
+          }
+
+          // dots click
+          if (dots && dots.length) {
+            dots.forEach(function (btn, i) {
+              btn.addEventListener('click', function () {
+                goTo(i);
+                startTimer();
+              });
+            });
+          }
+
+          // pause on hover/focus for accessibility
+          section.addEventListener('mouseenter', stopTimer);
+          section.addEventListener('mouseleave', startTimer);
+          section.addEventListener('focusin', stopTimer);
+          section.addEventListener('focusout', startTimer);
+
+          // Make sure initial state is set
+          update();
+          // Start autoplay
+          startTimer();
+        } catch (e) {
+          console.error('Carousel testimonials error', e);
+        }
+      });
+    </script>
    <section class="relative overflow-hidden bg-gradient-to-b from-white via-slate-50/50 to-white py-24" id="a-propos">
     <div class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,_rgba(30,76,122,0.08),_transparent_60%)]">
     </div>
@@ -1243,11 +1320,7 @@ header { transition: background-color 220ms ease, box-shadow 220ms ease, border-
             </div>
            </div>
            <blockquote class="text-lg leading-relaxed text-slate-700">
-            “
-            <!-- -->
-            Un partenaire précieux qui connaît nos contraintes et trouve toujours la bonne solution.
-            <!-- -->
-            ”
+            “Un partenaire précieux qui connaît nos contraintes et trouve toujours la bonne solution.”
            </blockquote>
            <div class="mt-auto">
             <p class="text-sm font-semibold uppercase tracking-[0.3em] text-primary">
@@ -1293,11 +1366,7 @@ header { transition: background-color 220ms ease, box-shadow 220ms ease, border-
             </div>
            </div>
            <blockquote class="text-lg leading-relaxed text-slate-700">
-            “
-            <!-- -->
-            Livraison rapide, service après-vente réactif et conseils pertinents sur les innovations outillage.
-            <!-- -->
-            ”
+            “Livraison rapide, service après-vente réactif et conseils pertinents sur les innovations outillage.”
            </blockquote>
            <div class="mt-auto">
             <p class="text-sm font-semibold uppercase tracking-[0.3em] text-primary">
@@ -1341,9 +1410,7 @@ header { transition: background-color 220ms ease, box-shadow 220ms ease, border-
            </div>
            <blockquote class="text-lg leading-relaxed text-slate-700">
             “
-            <!-- -->
             Des consommables de qualité, disponibilité impeccable et service personnalisé sur site.
-            <!-- -->
             ”
            </blockquote>
            <div class="mt-auto">
@@ -1448,11 +1515,9 @@ header { transition: background-color 220ms ease, box-shadow 220ms ease, border-
        </p>
       </div>
       <div class="flex flex-col items-center gap-3 md:items-end">
-       <a class="inline-flex items-center justify-center gap-3 rounded-full bg-accent px-8 py-3 text-base font-semibold text-slate-900 shadow-soft transition hover:-translate-y-0.5 hover:bg-accent/90" href="tel:+33607159308">
-        Appeler le
-        <!-- -->
-        06 07 15 93 08
-       </a>
+  <a class="inline-flex items-center justify-center gap-3 rounded-full bg-accent px-8 py-3 text-base font-semibold text-slate-900 shadow-soft transition hover:-translate-y-0.5 hover:bg-accent/90" href="tel:+33607159308">
+   Appeler le 06 07 15 93 08
+  </a>
        <a class="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 px-6 py-2 text-sm font-semibold text-white/80 transition hover:border-accent/60 hover:text-accent" href="mailto:aspro.services@orange.fr">
         aspro.services@orange.fr
        </a>
@@ -1464,13 +1529,9 @@ header { transition: background-color 220ms ease, box-shadow 220ms ease, border-
       <h3 class="text-lg font-semibold">
        AS PRO SERVICES
       </h3>
-      <p class="text-sm text-white/60">
-       Fourniture d’outillage et consommables pour professionnels.
-       <!-- -->
-       20
-       <!-- -->
-       + ans d’expertise au service de vos chantiers et ateliers.
-      </p>
+  <p class="text-sm text-white/60">
+   Fourniture d’outillage et consommables pour professionnels. 20+ ans d’expertise au service de vos chantiers et ateliers.
+  </p>
       <p class="text-sm text-white/40">
        22 au vieux moulin lieu dit la boubée, 32270 Nougaroulet
       </p>
@@ -1480,26 +1541,10 @@ header { transition: background-color 220ms ease, box-shadow 220ms ease, border-
        Engagements
       </h4>
       <ul class="mt-4 space-y-2 text-sm text-white/60">
-       <li>
-        •
-        <!-- -->
-        Indépendant et proche de vos métiers
-       </li>
-       <li>
-        •
-        <!-- -->
-        Conseil personnalisé sur site ou à distance
-       </li>
-       <li>
-        •
-        <!-- -->
-        Sélection exigeante des meilleures marques
-       </li>
-       <li>
-        •
-        <!-- -->
-        Service après-vente réactif et suivi durable
-       </li>
+  <li>• Indépendant et proche de vos métiers</li>
+  <li>• Conseil personnalisé sur site ou à distance</li>
+  <li>• Sélection exigeante des meilleures marques</li>
+  <li>• Service après-vente réactif et suivi durable</li>
       </ul>
      </div>
      <div class="space-y-4">
@@ -1525,16 +1570,9 @@ header { transition: background-color 220ms ease, box-shadow 220ms ease, border-
       </a>
      </div>
     </div>
-    <div class="border-t border-white/10 py-6 text-center text-xs text-white/40">
-     ©
-     <!-- -->
-     2025
-     <!-- -->
-     <!-- -->
-     AS PRO SERVICES
-     <!-- -->
-     — Tous droits réservés.
-    </div>
+  <div class="border-t border-white/10 py-6 text-center text-xs text-white/40">
+   © 2025 AS PRO SERVICES — Tous droits réservés.
+  </div>
    </footer>
   </main>
   <script async="" crossorigin="" src="./frontend/_next/static/chunks/webpack-3d3e2f3f4f558231.js">
@@ -1655,6 +1693,46 @@ header { transition: background-color 220ms ease, box-shadow 220ms ease, border-
       document.addEventListener('DOMContentLoaded', setActive);
       setActive();
     })();
+  </script>
+  <script>
+   // Mobile nav toggle: ensure hamburger opens/closes the mobile menu reliably
+   (function(){
+    var btn = document.querySelector('button[aria-controls="header-mobile-nav"]');
+    var mnav = document.getElementById('header-mobile-nav');
+    if (!btn || !mnav) return;
+
+    function closeNav(){
+      btn.setAttribute('aria-expanded','false');
+      mnav.setAttribute('aria-hidden','true');
+      mnav.style.maxHeight = '0px';
+      mnav.style.opacity = '0';
+      mnav.classList.add('pointer-events-none');
+    }
+
+    function openNav(){
+      btn.setAttribute('aria-expanded','true');
+      mnav.setAttribute('aria-hidden','false');
+      mnav.classList.remove('pointer-events-none');
+      // allow transition by setting computed scrollHeight
+      mnav.style.opacity = '1';
+      mnav.style.maxHeight = mnav.scrollHeight + 'px';
+    }
+
+    btn.addEventListener('click', function(e){
+      var expanded = btn.getAttribute('aria-expanded') === 'true';
+      if (expanded) closeNav(); else openNav();
+    });
+
+    // Close mobile nav when navigating via hash links (optional UX)
+    mnav.querySelectorAll('a[href^="#"]').forEach(function(a){
+      a.addEventListener('click', function(){ closeNav(); });
+    });
+
+    // Ensure correct state on resize (close when switching to desktop)
+    window.addEventListener('resize', function(){
+      if (window.innerWidth >= 768) closeNav();
+    });
+   })();
   </script>
  </body>
 </html>
