@@ -118,7 +118,8 @@ if (!$cssFile) {
             </div>
               <div id="pdf-selected-name" class="text-sm text-slate-600 mt-2" aria-live="polite"></div>
               <?php if (!empty($flash)): ?>
-                <div id="form-flash" class="mt-3 rounded-md bg-green-50 border border-green-100 p-3 text-green-700"><?= htmlspecialchars($flash) ?></div>
+                <!-- flash is shown as toast popup; keep a hidden fallback for accessibility -->
+                <div id="form-flash" style="display:none;" aria-hidden="true"><?= htmlspecialchars($flash) ?></div>
               <?php endif; ?>
             <div style="grid-column:1 / -1" class="form-actions">
               <button type="submit" class="cta-button">Ajouter la promotion</button>
@@ -382,6 +383,49 @@ if (!$cssFile) {
 
       // keyboard: ESC to cancel
       document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && modal.style.display === 'flex') { btnCancel.click(); } });
+    })();
+  </script>
+  <!-- Toast notifications container (used for flash messages) -->
+  <style>
+    .toast-container{position:fixed;top:18px;right:18px;z-index:99999;display:flex;flex-direction:column;gap:10px}
+    .toast{min-width:220px;max-width:420px;padding:10px 14px;border-radius:8px;color:#fff;box-shadow:0 8px 24px rgba(2,6,23,0.2);font-size:0.95rem;display:flex;align-items:center;justify-content:space-between}
+    .toast-success{background:linear-gradient(90deg,#059669,#10b981)}
+    .toast-error{background:linear-gradient(90deg,#ef4444,#f97316)}
+    .toast-close{margin-left:12px;opacity:0.95;cursor:pointer;padding-left:12px}
+  </style>
+  <div id="toast-container" class="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+  <script>
+    (function(){
+      function createToast(message, type){
+        var container = document.getElementById('toast-container');
+        if (!container) return;
+        var t = document.createElement('div');
+        t.className = 'toast ' + (type === 'error' ? 'toast-error' : 'toast-success');
+        var span = document.createElement('div');
+        span.style.flex = '1';
+        span.textContent = message;
+        t.appendChild(span);
+        var close = document.createElement('button');
+        close.className = 'toast-close';
+        close.innerHTML = '\u2715';
+        close.setAttribute('aria-label','Fermer');
+        close.onclick = function(){ if (t.parentNode) t.parentNode.removeChild(t); };
+        t.appendChild(close);
+        container.appendChild(t);
+        // auto remove after 5s
+        setTimeout(function(){ if (t.parentNode) t.parentNode.removeChild(t); }, 5000);
+      }
+
+      // expose for inline calls
+      window.showAdminToast = function(message, type){ createToast(message, type || 'success'); };
+
+      // If server sent a flash message, show it
+      <?php if (!empty($flash)): ?>
+        document.addEventListener('DOMContentLoaded', function(){
+          try { showAdminToast(<?= json_encode($flash) ?>, 'success'); } catch(e){ /* ignore */ }
+        });
+      <?php endif; ?>
     })();
   </script>
 </body>
