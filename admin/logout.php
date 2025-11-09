@@ -1,6 +1,6 @@
 <?php
 session_start();
-// Destroy session and redirect to login
+// Destroy session safely
 $_SESSION = [];
 if (ini_get('session.use_cookies')) {
     $params = session_get_cookie_params();
@@ -15,5 +15,9 @@ if (ini_get('session.use_cookies')) {
     );
 }
 session_destroy();
-header('Location: login.php');
+
+// Redirect to the public site main page (use SITE_URL when available)
+@require_once __DIR__ . '/config.php';
+$redirect = defined('SITE_URL') ? rtrim(SITE_URL, '/') . '/' : 'login.php';
+header('Location: ' . $redirect);
 exit;
